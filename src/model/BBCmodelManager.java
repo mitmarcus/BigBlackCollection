@@ -46,9 +46,9 @@ public class BBCmodelManager implements BBCmodel
     userList.removeUser(user);
   }
 
-  @Override public void editMember(User user)
+  @Override public void editMember(User user, User user1)
   {
-
+    userList.setUser(user, user1);
   }
 
   @Override public User getUser(User user)
@@ -73,11 +73,6 @@ public class BBCmodelManager implements BBCmodel
   @Override public User getGuestByIndex(int index)
   {
     return guestList.getGuestByIndex(index);
-  }
-
-  @Override public void editUser(User user, User user1)
-  {
-    userList.setUser(user, user1);
   }
 
 

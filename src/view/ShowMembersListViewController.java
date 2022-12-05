@@ -85,7 +85,6 @@ public class ShowMembersListViewController
   }
   @FXML private void editMember()
   {
-    UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
     viewHandler.openView("editMember");
   }
 

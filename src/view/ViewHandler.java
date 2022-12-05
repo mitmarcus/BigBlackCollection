@@ -21,6 +21,8 @@ public class ViewHandler
   private ShowGuestsListViewController showGuestsListViewController;
   private ShowAllGamesViewController  showAllGamesViewController;
 
+  private EditMemberViewController editMemberViewController;
+
 
   public ViewHandler(BBCmodel model)
   {
@@ -54,6 +56,9 @@ public class ViewHandler
         break;
       case "games" :
         root = loadGamesWindowViewController("ShowAllGamesViewController.fxml");
+        break;
+      case "editMember" :
+        root = loadEditMemberViewController("EditMemberViewController.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -249,5 +254,28 @@ public class ViewHandler
       showAllGamesViewController.reset();
     }
     return showAllGamesViewController.getRoot();
+  }
+  private Region loadEditMemberViewController(String fxmlFile)
+  {
+    if(editMemberViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        editMemberViewController = loader.getController();
+        editMemberViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      editMemberViewController.reset();
+    }
+    return editMemberViewController.getRoot();
   }
 }

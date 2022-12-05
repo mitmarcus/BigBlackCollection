@@ -6,11 +6,11 @@ public interface BBCmodel
 {
   void addUser(User user);
   void removeUser(User user);
+  void editMember(User user, User user1);
   User getUser(User user);
   User getUser(int index);
   User getGuest(User guest);
   User getGuestByIndex(int index);
-  void editUser(User user, User user1);
   int getUserListSize();
   int getGuestListSize();
   ArrayList<User> getMemberList();
