@@ -7,7 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.User;
+import model.Game;
 
 import java.util.Optional;
 
@@ -18,9 +18,11 @@ public class ShowAllGamesViewController
   private BBCmodel model;
   private ViewHandler viewHandler;
   private GameListViewModel viewModel;
-  @FXML private TableView<UserViewModel> userListTable;
-  @FXML private TableColumn<UserViewModel, Number> phoneNumberColumn;
-  @FXML private TableColumn<UserViewModel, String> fullNameColumn;
+  @FXML private TableView<GameViewModel> gameListTable;
+  @FXML private TableColumn<GameViewModel, Number> ratingColumn;
+  @FXML private TableColumn<GameViewModel, Number> playersColumn;
+  @FXML private TableColumn<GameViewModel, String> nameColumn;
+  @FXML private TableColumn<GameViewModel, String> ownerColumn;
 
 
   public ShowAllGamesViewController()
@@ -65,19 +67,19 @@ public class ShowAllGamesViewController
   @FXML private void removeGame()
   {
 
-    UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
+    GameViewModel selectedItem = gameListTable.getSelectionModel().getSelectedItem();
 
     boolean remove = confirmation();
 
     if (remove)
     {
-      User user = new User(selectedItem.getFirstNameProperty().get(),
+      Game game = new Game(selectedItem.getFirstNameProperty().get(),
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), true);
 
       model.removeUser(user);
       //viewModel.remove(user);
-      userListTable.getSelectionModel().clearSelection();
+      gameListTable.getSelectionModel().clearSelection();
 
     }
 
@@ -90,9 +92,9 @@ public class ShowAllGamesViewController
 
   private boolean confirmation()
   {
-    int index = userListTable.getSelectionModel().getSelectedIndex();
-    UserViewModel selectedItem = userListTable.getItems().get(index);
-    if (index < 0 || index >= userListTable.getItems().size())
+    int index = gameListTable.getSelectionModel().getSelectedIndex();
+    GameViewModel selectedItem = gameListTable.getItems().get(index);
+    if (index < 0 || index >= gameListTable.getItems().size())
     {
       return false;
     }
