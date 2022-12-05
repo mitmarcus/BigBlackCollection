@@ -16,7 +16,9 @@ public interface BBCmodel
   ArrayList<User> getMemberList();
   ArrayList<User> getGuestList();
   void addGuest(User guest);
-
+  int getEventListSize();
+  Event getEvent(int i);
+  void removeEvent(Event event);
 
   //MEMBERS AND GUESTS CODE
 

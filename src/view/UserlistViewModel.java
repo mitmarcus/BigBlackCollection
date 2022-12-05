@@ -23,7 +23,7 @@ public class UserlistViewModel
   }
 
 
-  public ObservableList<UserViewModel> update()  //Code For MemberTable
+  public ObservableList<UserViewModel> update()  //Code For Member Table
   {
     ArrayList<User> users = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
