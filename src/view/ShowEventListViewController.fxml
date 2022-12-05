@@ -59,10 +59,10 @@
             </VBox>
             <TableView id="EventListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
-                  <TableColumn prefWidth="200.0" text="Event" />
-                  <TableColumn prefWidth="170.0" text="Place" />
-                  <TableColumn prefWidth="120.0" text="Date" />
-                  <TableColumn prefWidth="190.0" text="Description" />
+                  <TableColumn fx:id = "eventName" prefWidth="200.0" text="Event" />
+                  <TableColumn fx:id = "eventPlace" prefWidth="170.0" text="Place" />
+                  <TableColumn fx:id = "eventDate" prefWidth="120.0" text="Date" />
+                  <TableColumn fx:id = "eventDescription" prefWidth="190.0" text="Description" />
                </columns>
             </TableView>
          </children>
