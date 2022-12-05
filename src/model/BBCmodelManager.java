@@ -80,6 +80,7 @@ public class BBCmodelManager implements BBCmodel
     userList.setUser(user, user1);
   }
 
+
   @Override public int getUserListSize()
   {
     return userList.size();

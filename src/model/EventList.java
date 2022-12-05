@@ -25,7 +25,7 @@ public class EventList
     Event event1 = null;
     for(int i = 0; i<eventList.size(); i++)
     {
-      if(eventList.get(i) == event)
+      if(eventList.get(i).equals(event))
       {
         event1 = event;
       }
