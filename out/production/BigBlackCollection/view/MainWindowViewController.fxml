@@ -30,20 +30,12 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="260.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-<<<<<<< HEAD
                   <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showGamesWindow" text="Games" />
-=======
-                  <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showEventsWindow" text="Games" />
->>>>>>> b6a54f7a33d56c94a88051e461768766c6896073
                </children>
             </VBox>
             <VBox alignment="CENTER" layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                <children>
-<<<<<<< HEAD
                   <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showEventsWindow" text="Events" />
-=======
-                  <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showGamesWindow" text="Events" />
->>>>>>> b6a54f7a33d56c94a88051e461768766c6896073
                </children>
             </VBox>
             <VBox alignment="CENTER" layoutX="360.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">

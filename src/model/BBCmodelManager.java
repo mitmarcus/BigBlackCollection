@@ -46,7 +46,7 @@ public class BBCmodelManager implements BBCmodel
     userList.removeUser(user);
   }
 
-  @Override public void editMember(User user)
+  //@Override public void editMember(User user)
   {
 
   }
