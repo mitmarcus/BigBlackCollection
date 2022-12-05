@@ -1,6 +1,6 @@
 package view;
 
-import model.User;
+import model.Game;
 import model.BBCmodel;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
@@ -25,9 +25,9 @@ public class GameListViewModel
   }
 
 
-  public ObservableList<GameViewModel> update()  //Code For updating table of games
+  /*public ObservableList<GameViewModel> update()  //Code For updating table of games
   {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<Game> users = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
     {
       users.add(model.getUser(i));
@@ -57,5 +57,5 @@ public class GameListViewModel
   public void add(User user)
   {
     list.add(new UserViewModel(user));
-  }
+  }*/
 }

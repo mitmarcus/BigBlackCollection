@@ -51,7 +51,7 @@ public class ShowAllGamesViewController
 
   public void reset()
   {
-    viewModel.update();
+    //viewModel.update();
   }
 
   @FXML private void goBack()
@@ -76,7 +76,7 @@ public class ShowAllGamesViewController
           selectedItem.getPhoneProperty().get(), true);
 
       model.removeUser(user);
-      viewModel.remove(user);
+      //viewModel.remove(user);
       userListTable.getSelectionModel().clearSelection();
 
     }

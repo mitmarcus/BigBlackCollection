@@ -52,6 +52,7 @@ public class MainWindowViewController
 
   @FXML private void showGamesWindow()
   {
+    viewHandler.openView("games");
   }
   @FXML private void showReservationsWindow()
   {
