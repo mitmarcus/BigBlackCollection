@@ -48,6 +48,7 @@ public class MainWindowViewController
 
   @FXML private void showEventsWindow()
   {
+    viewHandler.openView("events");
   }
 
   @FXML private void showGamesWindow()

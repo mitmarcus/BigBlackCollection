@@ -24,6 +24,8 @@ public class ViewHandler
 
   private EditMemberViewController editMemberViewController;
 
+  private ShowEventListViewController showEventListViewController;
+
 
   public ViewHandler(BBCmodel model)
   {
@@ -63,6 +65,9 @@ public class ViewHandler
         break;
       case "addGame" :
         root = loadAddGameViewController("AddNewGameViewController.fxml");
+        break;
+      case "events" :
+        root = loadShowEventListViewController("ShowEventListViewController.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -305,5 +310,29 @@ public class ViewHandler
       addNewGameViewController.reset();
     }
     return addNewGameViewController.getRoot();
+  }
+
+  private Region loadShowEventListViewController(String fxmlFile)
+  {
+    if(showEventListViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        showEventListViewController = loader.getController();
+        showEventListViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      showEventListViewController.reset();
+    }
+    return showEventListViewController.getRoot();
   }
 }
