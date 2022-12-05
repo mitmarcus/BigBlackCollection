@@ -108,4 +108,11 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(guest);
   }
 
+
+
+  //MEMBERS AND GUEST CODE
+
+
+
+
 }

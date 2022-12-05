@@ -17,4 +17,9 @@ public interface BBCmodel
   ArrayList<User> getGuestList();
   void addGuest(User guest);
 
+
+  //MEMBERS AND GUESTS CODE
+
+
+
 }
