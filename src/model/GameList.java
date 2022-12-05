@@ -13,7 +13,7 @@ public class GameList
 
   public void addGame(Game game)
   {
-    addGame(game);
+    games.add(game);
   }
   public void removeGame(Game game)
   {
@@ -30,6 +30,26 @@ public class GameList
       }
     }
     return gamesByUser;
+  }
+
+  public int getGamesListSize()
+  {
+    return games.size();
+  }
+  public Game getGame(Game game)
+  {
+    for (int i = 0; i<games.size(); i++)
+    {
+      if (games.get(i).equals(game))
+      {
+        return game;
+      }
+    }
+    return null;
+  }
+  public Game getGameByIndex(int index)
+  {
+    return games.get(index);
   }
 
 }

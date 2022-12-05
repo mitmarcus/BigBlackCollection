@@ -20,6 +20,7 @@ public class ViewHandler
   private AddGuestViewController addGuestViewController;
   private ShowGuestsListViewController showGuestsListViewController;
   private ShowAllGamesViewController  showAllGamesViewController;
+  private AddNewGameViewController addNewGameViewController;
 
   private EditMemberViewController editMemberViewController;
 
@@ -59,6 +60,9 @@ public class ViewHandler
         break;
       case "editMember" :
         root = loadEditMemberViewController("EditMemberViewController.fxml");
+        break;
+      case "addGame" :
+        root = loadAddGameViewController("AddNewGameViewController.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -277,5 +281,29 @@ public class ViewHandler
       editMemberViewController.reset();
     }
     return editMemberViewController.getRoot();
+  }
+
+  private Region loadAddGameViewController(String fxmlFile)
+  {
+    if(addNewGameViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addNewGameViewController = loader.getController();
+        addNewGameViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      addNewGameViewController.reset();
+    }
+    return addNewGameViewController.getRoot();
   }
 }

@@ -1,13 +1,11 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
-import model.BBCmodel;
-import model.Game;
+import javafx.scene.layout.Region;
+import model.*;
 
 import java.util.Optional;
 
@@ -37,12 +35,17 @@ public class ShowAllGamesViewController
     this.root = root;
     this.viewModel = new GameListViewModel(model);
 
-   /* fullNameColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getFullNameProperty());
-    phoneNumberColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getPhoneProperty());
-    userListTable.setItems(viewModel.getList());
-    viewModel.update();*/
+   nameColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getGameNamePropertyProperty());
+    ownerColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getOwnerPropertyProperty());
+    ratingColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getRatingPropertyProperty());
+    playersColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getNoOfPlayersPropertyProperty());
+
+    gameListTable.setItems(viewModel.getList());
+    viewModel.update();
 
 
   }
@@ -53,7 +56,7 @@ public class ShowAllGamesViewController
 
   public void reset()
   {
-    //viewModel.update();
+    viewModel.update();
   }
 
   @FXML private void goBack()
@@ -73,11 +76,13 @@ public class ShowAllGamesViewController
 
     if (remove)
     {
-      Game game = new Game(selectedItem.getFirstNameProperty().get(),
-          selectedItem.getLastNameProperty().get(),
-          selectedItem.getPhoneProperty().get(), true);
+      Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
+          selectedItem.getNoOfPlayersPropertyProperty().get(),
+          new GameRating(
+              (Integer) selectedItem.getRatingPropertyProperty().get(),0), new User(
+          (String) selectedItem.getOwnerPropertyProperty().get(), null, 0, true));
 
-      model.removeUser(user);
+      model.removeGame(game);
       //viewModel.remove(user);
       gameListTable.getSelectionModel().clearSelection();
 
@@ -101,8 +106,8 @@ public class ShowAllGamesViewController
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmation");
     alert.setHeaderText(
-        "Removing user {" + selectedItem.getFullNameProperty().get() + ": "
-            + selectedItem.getPhoneProperty().get() + "}");
+        "Removing Game {" + selectedItem.getGameNamePropertyProperty().get() +
+            "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
 

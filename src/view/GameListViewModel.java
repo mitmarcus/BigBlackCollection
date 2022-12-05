@@ -19,34 +19,32 @@ public class GameListViewModel
     list = FXCollections.observableArrayList();
   }
 
-  public ObservableList<GameViewModel> getList()
-  {
-    return list;
-  }
 
 
-  /*public ObservableList<GameViewModel> update()  //Code For updating table of games
+
+  public ObservableList<GameViewModel> update()  //Code For updating table of games
   {
-    ArrayList<Game> users = new ArrayList<>();
-    for (int i = 0; i <model.getUserListSize(); i++)
+    ArrayList<Game> games = new ArrayList<>();
+    for (int i = 0; i <model.getGameListSize(); i++)
     {
-      users.add(model.getUser(i));
+      games.add(model.getGameByIndex(i));
     }
     list.clear();
-    for (int j = 0; j< users.size(); j++)
+    for (int j = 0; j< games.size(); j++)
     {
-      list.add(new UserViewModel(users.get(j)));
+      list.add(new GameViewModel(games.get(j)));
     }
     return list;
   }
 
 
 
-  public void remove(User user)
+  public void remove(Game game)
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if (list.get(i).getFullNameProperty().get().equals(user.getFullName()) && (Long)list.get(i).getPhoneProperty().get()== user.getPhoneNumber())
+      if (list.get(i).getGameNamePropertyProperty().get().equals(game.getNameOfGame()) && list.get(i).getOwnerPropertyProperty().get().equals(game.getOwner())
+       && list.get(i).getRatingPropertyProperty().get().equals(game.getGameRating()) && list.get(i).getNoOfPlayersPropertyProperty().get() == game.getNoOfPlayers())
       {
         list.remove(i);
         break;
@@ -54,8 +52,13 @@ public class GameListViewModel
     }
   }
 
-  public void add(User user)
+  public void add(Game game)
   {
-    list.add(new UserViewModel(user));
-  }*/
+    list.add(new GameViewModel(game));
+  }
+
+  public ObservableList<GameViewModel> getList()
+  {
+    return list;
+  }
 }

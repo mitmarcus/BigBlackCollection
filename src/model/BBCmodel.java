@@ -22,6 +22,19 @@ public interface BBCmodel
 
   //MEMBERS AND GUESTS CODE
 
+  //CODE FOR GAME
+
+   void addGame (Game game);
+   void editGame();
+   Game getGame(Game game);
+   int getGameListSize();
+  void removeGame(Game game);
+  Game getGameByIndex(int index);
+
+  //CODE FOR GAME
+
+
+
 
 
 }

@@ -5,7 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<<<<<<< Updated upstream:out/production/BigBlackCollection/view/ShowEventListViewController.fxml
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ShowEventListViewController">
+=======
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> Stashed changes:out/production/BigBlackCollection/view/ShowEventsListViewController.fxml
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
          <children>

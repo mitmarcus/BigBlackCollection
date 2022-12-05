@@ -4,13 +4,16 @@ import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
 {
-  private UserList userList;
-  private UserList guestList;
+  private UserList userList; //MEMBERS LIST
+  private UserList guestList; //GUEST LIST
+
+  private GameList gameList; //GAME LIST
 
   public BBCmodelManager()
   {
     userList = new UserList();
     guestList = new UserList();
+    gameList = new GameList();
     createDummyData();
   }
   public void createDummyData()
@@ -106,6 +109,41 @@ public class BBCmodelManager implements BBCmodel
 
 
   //MEMBERS AND GUEST CODE
+
+
+  //GAMES CODE
+
+  @Override public void addGame(Game game)
+  {
+    gameList.addGame(game);
+  }
+
+  @Override public void editGame()
+  {
+
+  }
+
+  @Override public Game getGame(Game game)
+  {
+    return gameList.getGame(game);
+  }
+
+  @Override public Game getGameByIndex(int index)
+  {
+    return gameList.getGameByIndex(index);
+  }
+
+  @Override public int getGameListSize()
+  {
+    return gameList.getGamesListSize();
+  }
+
+  @Override public void removeGame(Game game)
+  {
+    gameList.removeGame(game);
+  }
+
+
 
 
 

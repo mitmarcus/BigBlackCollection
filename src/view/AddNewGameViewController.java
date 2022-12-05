@@ -5,15 +5,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Game;
+import model.GameRating;
+import model.User;
 
 public class AddNewGameViewController
 {
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;
-  @FXML private TextField firstNameText;
-  @FXML private TextField lastNameText;
-  @FXML private TextField phoneText;
+  @FXML private TextField nameTextField;
+  @FXML private TextField playersTextField;
+  @FXML private TextField ownerTextField;
 
 
 
@@ -39,9 +41,9 @@ public class AddNewGameViewController
 
   public void reset()
   {
-    this.firstNameText.setText("");
-    this.lastNameText.setText("");
-    this.phoneText.setText("");
+    this.nameTextField.setText("");
+    this.playersTextField.setText("");
+    this.ownerTextField.setText("");
   }
 
   @FXML private void returnButtonPressed()
@@ -50,10 +52,11 @@ public class AddNewGameViewController
   }
   @FXML private void addGame()
   {
-    User user = new User(firstNameText.getText(), lastNameText.getText(),
-        Long.parseLong(phoneText.getText()), true);
-    model.addUser(user);
-    viewHandler.openView("member");
+    User user1 = new User(ownerTextField.getText(), "zezoca",0, false);
+    GameRating gameRating = new GameRating(0,0);
+    Game game= new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), gameRating, user1);
+    model.addGame(game);
+    viewHandler.openView("games");
 
 
   }
