@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public interface BBCmodel
 {
+  //MEMBERS AND GUESTS CODE
   void addUser(User user);
   void removeUser(User user);
   void editMember(User user, User user1);
@@ -20,18 +21,16 @@ public interface BBCmodel
   Event getEvent(int i);
   void removeEvent(Event event);
 
-  //MEMBERS AND GUESTS CODE
-
   //CODE FOR GAME
-
-   void addGame (Game game);
-   void editGame();
-   Game getGame(Game game);
-   int getGameListSize();
+  void addGame (Game game);
+  void editGame();
+  Game getGame(Game game);
+  int getGameListSize();
   void removeGame(Game game);
   Game getGameByIndex(int index);
 
-  //CODE FOR GAME
+  //CODE FOR EVENT
+
 
 
 

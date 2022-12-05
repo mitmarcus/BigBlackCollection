@@ -20,14 +20,12 @@ public class User {
 
   public String getFirstName()
   {
-    String first = getFullName().split(" ")[0];
-    return first;
+    return firstName +"";
   }
 
   public String getLastName()
   {
-    String last = getFullName().split(" ")[1];
-    return last;
+    return lastName +"";
   }
 
   public String getFullName()
@@ -60,8 +58,9 @@ public class User {
     this.phoneNumber = phoneNumber;
   }
 
-//  public String toString()
-//  {
-//
-//  }
+  //should we?
+  public void setMember(boolean isMember)
+  {
+    this.isMember = isMember;
+  }
 }
