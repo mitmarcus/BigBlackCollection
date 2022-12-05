@@ -1,3 +1,5 @@
+package main;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.BBCmodel;
@@ -10,6 +12,8 @@ public class MyApplication extends Application
   {
     BBCmodel model = new BBCmodelManager();
     ViewHandler view = new ViewHandler(model);
+    primaryStage.setTitle("BBC");
+    primaryStage.setResizable(false);
     view.start(primaryStage);
   }
 }
