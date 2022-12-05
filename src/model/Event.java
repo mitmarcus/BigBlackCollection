@@ -9,7 +9,7 @@ public class Event {
   private MyDate myDate;
   private ArrayList<User> participants;
 
-  public Event(String title, String location, String description, Object myDate, ArrayList<User> participants)
+  public Event(String title, String location, String description, MyDate myDate, ArrayList<User> participants)
   {
     setTitle(title);
     setLocation(location);
@@ -77,8 +77,4 @@ public class Event {
     this.description = description;
   }
 
-//  public String toString()
-//  {
-//
-//  }
 }

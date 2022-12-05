@@ -106,7 +106,20 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(guest);
   }
 
+  @Override public int getEventListSize()
+  {
+    return 0;
+  }
 
+  @Override public Event getEvent(int i)
+  {
+    return null;
+  }
+
+  @Override public void removeEvent(Event event)
+  {
+
+  }
 
   //MEMBERS AND GUEST CODE
 
