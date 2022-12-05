@@ -1,164 +1,261 @@
 package model;
 
-import java.util.ArrayList;
+import utils.MyFileHandler;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class BBCmodelManager implements BBCmodel
 {
-  private UserList userList; //MEMBERS LIST
-  private UserList guestList; //GUEST LIST
+  private String userFile; //MEMBERS
+  private String eventFile; //EVENTS
+  private String gameFile; //GAMES
+  private String reservationFile; //RESERVATIONS
 
-  private GameList gameList; //GAME LIST
 
-  public BBCmodelManager()
+  public BBCmodelManager(String membersFile, String gamesFile, String eventFile, String reservationFile)
   {
-    userList = new UserList();
-    guestList = new UserList();
-    gameList = new GameList();
-    createDummyData();
-  }
-  public void createDummyData()
-  {
-
-      //DummyData for Members List
-      User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
-      User Jakub = new User("Jacub", "Kuka", 91696968, true);
-      User Marcus = new User("Marcus", "Mitela", 91696969, true);
-          userList.addUser(Ricardo);
-          userList.addUser(Jakub);
-          userList.addUser(Marcus);
-
-      //DummyData for Guest list sdasdsadsadasasdadsdas
-
-   /* User Filip = new User("Filip", "asdadw", 91757485, false);
-    User Duarte = new User("Jorge", "Duarte", 91696968, false);
-    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
-    guestList.addUser(Filip);
-    guestList.addUser(Duarte);
-    guestList.addUser(Stephen);*/
-
-
-
-  }
-  @Override public void addUser(User user)
-  {
-    userList.addUser(user);
+    this.userFile = membersFile;
+    this.gameFile = gamesFile;
+    this.eventFile = eventFile;
+    this.reservationFile = reservationFile;
   }
 
-  @Override public void removeUser(User user)
-  {
-    userList.removeUser(user);
-  }
 
-  @Override public void editMember(User user, User user1)
-  {
-    userList.setUser(user, user1);
-  }
 
-  @Override public User getUser(User user)
+  //USERS
+  public UserList getUsers()
   {
-    for (User user1 : userList.getUserlist())
+    UserList allUsers = new UserList();
+
+    try
     {
-      if (user1.equals(user))
-      {
-        return user;
-      }
+      allUsers = (UserList) MyFileHandler.readFromBinaryFile(userFile);
     }
-    return null;
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+
+    return allUsers;
   }
-  @Override public User getUser(int index)
+  public void saveUsers(UserList members)
   {
-    return userList.getUserByIndex(index);
+    try
+    {
+      MyFileHandler.writeToBinaryFile(userFile, members);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
-  @Override public User getGuest(User guest)
+  public void addUser(User user)
   {
-   return guestList.getGuest(guest);
+    UserList allMembers = getUsers();
+
+    allMembers.addUser(user);
+    saveUsers(allMembers);
   }
-  @Override public User getGuestByIndex(int index)
+  public void removeUser(User user)
   {
-    return guestList.getGuestByIndex(index);
+    UserList allMembers = getUsers();
+
+    allMembers.removeUser(user);
+    saveUsers(allMembers);
   }
 
 
-  @Override public int getUserListSize()
+  //GAMES
+  public GameList getAllGames()
   {
-    return userList.size();
+    GameList allGames = new GameList();
+
+    try
+    {
+      allGames = (GameList) MyFileHandler.readFromBinaryFile(gameFile);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+
+    return allGames;
   }
-  @Override public int getGuestListSize()
+  public void saveGames(GameList games)
   {
-    return guestList.size();
+    try
+    {
+      MyFileHandler.writeToBinaryFile(gameFile, games);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
-
-
-  @Override public ArrayList<User> getMemberList()
+  public void addGame(Game game)
   {
-    return userList.getMembersList();
-  }
+    GameList allGames = getAllGames();
 
-  @Override public ArrayList<User> getGuestList()
+    allGames.addGame(game);
+    saveGames(allGames);
+  }
+  public void removeGame(Game game)
   {
-    return null;
+    GameList allGames = getAllGames();
+
+    allGames.removeGame(game);
+    saveGames(allGames);
   }
 
 
-
-  @Override public void addGuest(User guest)
+  //EVENTS
+  public EventList getEvents()
   {
-    guestList.addGuest(guest);
-  }
+    EventList allEvents = new EventList();
 
-  @Override public int getEventListSize()
+    try
+    {
+      allEvents = (EventList) MyFileHandler.readFromBinaryFile(eventFile);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+
+    return allEvents;
+  }
+  public void saveEvents(EventList events)
   {
-    return 0;
+    try
+    {
+      MyFileHandler.writeToBinaryFile(eventFile, events);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
-
-  @Override public Event getEvent(int i)
+  public void addEvent(Event event)
   {
-    return null;
-  }
+    EventList allEvents = getEvents();
 
-  @Override public void removeEvent(Event event)
+    allEvents.addEvent(event);
+    saveEvents(allEvents);
+  }
+  public void removeEvent(Event event)
   {
+    EventList allEvents = getEvents();
 
+    allEvents.removeEvent(event);
+    saveEvents(allEvents);
   }
 
-  //MEMBERS AND GUEST CODE
 
-
-  //GAMES CODE
-
-  @Override public void addGame(Game game)
+  public GameReservationList getReservations()
   {
-    gameList.addGame(game);
+    GameReservationList allReservations = new GameReservationList();
+
+    try
+    {
+      allReservations = (GameReservationList) MyFileHandler.readFromBinaryFile(reservationFile);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+
+    return allReservations;
   }
 
-  @Override public void editGame()
+  public void saveReservations(GameReservationList reservations)
   {
-
+    try
+    {
+      MyFileHandler.writeToBinaryFile(reservationFile, reservations);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
 
-  @Override public Game getGame(Game game)
+  public void addGameReservation(GameReservation reservation)
   {
-    return gameList.getGame(game);
+    GameReservationList allReservations = getReservations();
+
+    allReservations.addGameReservation(reservation);
+    saveReservations(allReservations);
   }
 
-  @Override public Game getGameByIndex(int index)
+  public void removeGameReservation(GameReservation reservation)
   {
-    return gameList.getGameByIndex(index);
+    GameReservationList allReservations = getReservations();
+
+    allReservations.removeGameReservation(reservation);
+    saveReservations(allReservations);
   }
 
-  @Override public int getGameListSize()
-  {
-    return gameList.getGamesListSize();
+  //XML
+  @Override
+  public void saveToXML(String fileName, String data) {
+    try
+    {
+      MyFileHandler.writeToTextFile(fileName,data);
+    }
+    catch (FileNotFoundException error)
+    {
+      System.out.println("Can't save XML File, "+error.getMessage());
+    }
   }
-
-  @Override public void removeGame(Game game)
-  {
-    gameList.removeGame(game);
-  }
-
-
-
-
-
 
 }
+

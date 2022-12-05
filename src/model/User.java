@@ -1,21 +1,22 @@
 package model;
 
 public class User {
-
-  private boolean isMember;
   private String firstName;
   private String lastName;
   private long phoneNumber;
+  private boolean isMember = false;
 
 
-  public User(String firstName, String lastName, long phoneNumber, boolean isMember)
-  {
+  public User(String firstName, String lastName, long phoneNumber, boolean isMember) {
+    set(firstName, lastName, phoneNumber, isMember);
+  }
+
+  public void set(String firstName, String lastName, long phoneNumber, boolean isMember) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
     this.isMember = isMember;
   }
-
 
 
   public String getFirstName()
@@ -58,8 +59,7 @@ public class User {
     this.phoneNumber = phoneNumber;
   }
 
-  //should we?
-  public void setMember(boolean isMember)
+  public void setMemberStatus(boolean isMember)
   {
     this.isMember = isMember;
   }
