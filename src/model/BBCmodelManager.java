@@ -24,7 +24,7 @@ public class BBCmodelManager implements BBCmodel
           userList.addUser(Jakub);
           userList.addUser(Marcus);
 
-      //DummyData for Guest list
+      //DummyData for Guest list sdasdsadsadasasdadsdas
 
    /* User Filip = new User("Filip", "asdadw", 91757485, false);
     User Duarte = new User("Jorge", "Duarte", 91696968, false);
