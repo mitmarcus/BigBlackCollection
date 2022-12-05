@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.User;
+import model.Game;
 
 public class AddNewGameViewController
 {
@@ -48,7 +48,7 @@ public class AddNewGameViewController
   {
     viewHandler.openView("games");
   }
-  @FXML private void addMember()
+  @FXML private void addGame()
   {
     User user = new User(firstNameText.getText(), lastNameText.getText(),
         Long.parseLong(phoneText.getText()), true);

@@ -45,6 +45,7 @@ public class EditMemberViewController
     this.firstNameText.setText("");
     this.lastNameText.setText("");
     this.phoneText.setText("");
+
   }
 
   @FXML private void returnButtonPressed()
