@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ShowEventListViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Return to main menu" />
+         </children>
+         <padding>
+            <Insets left="45.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="List of events">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets left="45.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="250.0" prefWidth="200.0">
+         <children>
+            <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
+               <children>
+                  <Button minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add new">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Remove">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Edit">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="82.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add participant">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="108.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Show participants" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </VBox>
+            <TableView id="EventListTable" prefHeight="230.0" prefWidth="680.0">
+               <columns>
+                  <TableColumn prefWidth="200.0" text="Event" />
+                  <TableColumn prefWidth="170.0" text="Place" />
+                  <TableColumn prefWidth="120.0" text="Date" />
+                  <TableColumn prefWidth="190.0" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -2,63 +2,43 @@ package model;
 
 import java.util.ArrayList;
 
-import utils.MyFileHandler;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-<<<<<<< Updated upstream
-public class BBCmodelManager implements BBCmodel {
-  private String userFile;
-  private String gameFile;
-  private String eventFile;
-  private String ReservationFile;
-  private String File;
-
-  public BBCmodelManager(String userFile) {
-    this.userFile = userFile;
-  }
-
-
-}
-
-  /*public UserList getAllUsers()
-=======
 public class BBCmodelManager implements BBCmodel
 {
-  UserList userList;
-  UserList guestList;
-  private String fileName;
+  private UserList userList; //MEMBERS LIST
+  private UserList guestList; //GUEST LIST
 
-  public BBCmodelManager(String fileName)
+  private GameList gameList; //GAME LIST
+
+  public BBCmodelManager()
   {
-    this.fileName = fileName;
+    userList = new UserList();
+    guestList = new UserList();
+    gameList = new GameList();
+    createDummyData();
   }
-
-  public UserList getAllUsers()
->>>>>>> Stashed changes
+  public void createDummyData()
   {
-    UserList userList = new UserList();
 
-    try
-    {
-      userList = (UserList) MyFileHandler.readFromBinaryFile(fileName);
-    }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File not found");
-    }
-    catch (IOException e)
-    {
-      System.out.println("IO Error reading file");
-    }
-    catch (ClassNotFoundException e)
-    {
-      System.out.println("Class Not Found");
-    }
-    return userList;
+      //DummyData for Members List
+      User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
+      User Jakub = new User("Jacub", "Kuka", 91696968, true);
+      User Marcus = new User("Marcus", "Mitela", 91696969, true);
+          userList.addUser(Ricardo);
+          userList.addUser(Jakub);
+          userList.addUser(Marcus);
+
+      //DummyData for Guest list sdasdsadsadasasdadsdas
+
+   /* User Filip = new User("Filip", "asdadw", 91757485, false);
+    User Duarte = new User("Jorge", "Duarte", 91696968, false);
+    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
+    guestList.addUser(Filip);
+    guestList.addUser(Duarte);
+    guestList.addUser(Stephen);*/
+
+
+
   }
-
   @Override public void addUser(User user)
   {
     userList.addUser(user);
@@ -69,9 +49,9 @@ public class BBCmodelManager implements BBCmodel
     userList.removeUser(user);
   }
 
-  //@Override public void editMember(User user)
+  @Override public void editMember(User user, User user1)
   {
-
+    userList.setUser(user, user1);
   }
 
   @Override public User getUser(User user)
@@ -96,11 +76,6 @@ public class BBCmodelManager implements BBCmodel
   @Override public User getGuestByIndex(int index)
   {
     return guestList.getGuestByIndex(index);
-  }
-
-  @Override public void editUser(User user, User user1)
-  {
-    userList.setUser(user, user1);
   }
 
 
@@ -131,20 +106,46 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(guest);
   }
 
-  //DummyData for Members List
-      /*User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
-      User Jakub = new User("Jacub", "Kuka", 91696968, true);
-      User Marcus = new User("Marcus", "Mitela", 91696969, true);
-          userList.addUser(Ricardo);
-          userList.addUser(Jakub);
-          userList.addUser(Marcus);
 
-      //DummyData for Guest list sdasdsadsadasasdadsdas
 
-   User Filip = new User("Filip", "asdadw", 91757485, false);
-    User Duarte = new User("Jorge", "Duarte", 91696968, false);
-    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
-    guestList.addUser(Filip);
-    guestList.addUser(Duarte);
-    guestList.addUser(Stephen);
-}*/
+  //MEMBERS AND GUEST CODE
+
+
+  //GAMES CODE
+
+  @Override public void addGame(Game game)
+  {
+    gameList.addGame(game);
+  }
+
+  @Override public void editGame()
+  {
+
+  }
+
+  @Override public Game getGame(Game game)
+  {
+    return gameList.getGame(game);
+  }
+
+  @Override public Game getGameByIndex(int index)
+  {
+    return gameList.getGameByIndex(index);
+  }
+
+  @Override public int getGameListSize()
+  {
+    return gameList.getGamesListSize();
+  }
+
+  @Override public void removeGame(Game game)
+  {
+    gameList.removeGame(game);
+  }
+
+
+
+
+
+
+}

@@ -9,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ShowAllGamesViewController">
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Return to main menu" />
+            <Button onAction="#goBack" mnemonicParsing="false" text="Return to main menu" />
          </children>
          <padding>
             <Insets left="45.0" />
@@ -21,7 +21,7 @@
       </HBox>
       <HBox alignment="CENTER" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="List of events">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="List of Games">
                <font>
                   <Font size="25.0" />
                </font>
@@ -33,40 +33,34 @@
       </HBox>
       <HBox prefHeight="250.0" prefWidth="200.0">
          <children>
-            <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
+            <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="120.0">
                <children>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add new">
+                  <Button onAction="#addGame" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Add new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Remove">
+                  <Button onAction="#removeGame" layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Remove">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Edit">
+                  <Button onAction="#editGame" layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Edit">
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="82.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add participant">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button layoutX="20.0" layoutY="108.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Show participants" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <TableView prefHeight="230.0" prefWidth="680.0">
+            <TableView fx:id="gameListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
-                  <TableColumn prefWidth="200.0" text="Event" />
-                  <TableColumn prefWidth="170.0" text="Place" />
-                  <TableColumn prefWidth="120.0" text="Date" />
-                  <TableColumn prefWidth="190.0" text="Description" />
+                  <TableColumn fx:id="nameColumn" prefWidth="120.0" text="Name" />
+                  <TableColumn fx:id="ownerColumn" prefWidth="129.60003662109375" text="Owner" />
+                  <TableColumn fx:id="ratingColumn" prefWidth="123.20001220703125" text="Rating" />
+                  <TableColumn fx:id="playersColumn" prefWidth="131.99990844726562" text="Players" />
                </columns>
             </TableView>
          </children>
