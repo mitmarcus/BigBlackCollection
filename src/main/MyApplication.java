@@ -11,7 +11,10 @@ public class MyApplication extends Application
   public void start(Stage primaryStage)
   {
     BBCmodel model = new BBCmodelManager("users.bin");
+
     ViewHandler view = new ViewHandler(model);
+    primaryStage.setTitle("BBC");
+    primaryStage.setResizable(false);
     view.start(primaryStage);
   }
 }

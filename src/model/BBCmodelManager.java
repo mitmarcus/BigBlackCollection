@@ -7,6 +7,7 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+<<<<<<< Updated upstream
 public class BBCmodelManager implements BBCmodel {
   private String userFile;
   private String gameFile;
@@ -22,6 +23,20 @@ public class BBCmodelManager implements BBCmodel {
 }
 
   /*public UserList getAllUsers()
+=======
+public class BBCmodelManager implements BBCmodel
+{
+  UserList userList;
+  UserList guestList;
+  private String fileName;
+
+  public BBCmodelManager(String fileName)
+  {
+    this.fileName = fileName;
+  }
+
+  public UserList getAllUsers()
+>>>>>>> Stashed changes
   {
     UserList userList = new UserList();
 
