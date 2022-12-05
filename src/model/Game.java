@@ -22,21 +22,19 @@ public class Game implements Serializable
   {
     return nameOfGame;
   }
-
-  public User getOwner()
-  {
-    return owner;
-  }
-
   public GameRating getGameRating()
   {
     return gameRating;
   }
-
+  public User getOwner()
+  {
+    return owner;
+  }
   public int getNoOfPlayers()
   {
     return noOfPlayers;
   }
+
 
   public void setGameRating(GameRating gameRating)
   {

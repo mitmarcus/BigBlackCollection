@@ -1,27 +1,25 @@
 package model;
 import java.io.Serializable;
-import java.util.ArrayList;
+
 
 public class GameRating implements Serializable
 {
   private int rating;
-  private int noOfPeople;
+  private int noOfPeopleRated;
 
-  public GameRating(int rating, int noOfPeople)
+  public GameRating()
   {
     this.rating = 0;
-    this.noOfPeople = noOfPeople;
+    this.noOfPeopleRated = 0;
   }
   public void addRating(int rating)
   {
-    if(rating > 0 && rating <=5){
-    this.rating += rating;
-    noOfPeople++;}
+    if(rating > 0 && rating <=5){ this.rating += rating; noOfPeopleRated++; }
   }
 
   public double getRatingAverage()
   {
-    return (double)rating/noOfPeople;
+    return (double)rating/noOfPeopleRated;
   }
 
 }

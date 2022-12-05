@@ -1,12 +1,12 @@
 package model;
 
-public class MyDate
+public class Date
 {
   private int day;
   private int month;
   private int year;
 
-  public MyDate(int day, int month, int year)
+  public Date(int day, int month, int year)
   {
     set(day, month, year);
   }
@@ -33,7 +33,7 @@ public class MyDate
     return year;
   }
 
-  public int daysBetween(MyDate other) //ricardo pls change on class diagram to myDate other from MyDate myDate - filip
+  public int daysBetween(Date other) //ricardo pls change on class diagram to myDate other from Date myDate - filip
   {
     int days = 0;
 
@@ -54,15 +54,10 @@ public class MyDate
     return days;
   }
 
-  public MyDate copy()
+  public Date copy()
   {
-    MyDate other = new MyDate(day, month, year);
+    Date other = new Date(day, month, year);
 
     return other;
   }
-
-//  public String toString()
-//  {
-//
-//  }
 }

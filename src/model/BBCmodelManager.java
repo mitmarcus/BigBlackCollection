@@ -7,15 +7,21 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class BBCmodelManager implements BBCmodel
-{
-  private String fileName;
+public class BBCmodelManager implements BBCmodel {
+  private String userFile;
+  private String gameFile;
+  private String eventFile;
+  private String ReservationFile;
+  private String File;
 
-  public BBCmodelManager(String fileName)
-  {
-    this.fileName = fileName;
+  public BBCmodelManager(String userFile) {
+    this.userFile = userFile;
   }
-  public UserList getAllUsers()
+
+
+}
+
+  /*public UserList getAllUsers()
   {
     UserList userList = new UserList();
 
@@ -125,5 +131,5 @@ public class BBCmodelManager implements BBCmodel
     User Stephen = new User("Stephen", "oasdasi", 91696969, false);
     guestList.addUser(Filip);
     guestList.addUser(Duarte);
-    guestList.addUser(Stephen);*/
-}
+    guestList.addUser(Stephen);
+}*/

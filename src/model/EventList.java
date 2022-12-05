@@ -11,6 +11,7 @@ public class EventList implements Serializable
   {
     eventList = new ArrayList<Event>();
   }
+
   public void addEvent(Event event)
   {
     addEvent(event);

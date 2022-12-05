@@ -4,16 +4,16 @@ import java.util.ArrayList;
 //mark
 
 public class UserList implements Serializable {
-    private ArrayList<User> userList;
+    private ArrayList<User> memberList;
     private ArrayList<User> guestList;
 
     public UserList() {
-        userList = new ArrayList<User>();
+        memberList = new ArrayList<User>();
         guestList = new ArrayList<User>();
     }
 
-    public void addUser(User user) {
-        userList.add(user);
+    public void addMember(User user) {
+        memberList.add(user);
     }
     public  void addGuest(User guest)
     {
@@ -21,13 +21,13 @@ public class UserList implements Serializable {
     }
 
     public void removeUser(User user) {
-        userList.remove(user);
+        memberList.remove(user);
     }
     public void removeGuest(User guest) {guestList.remove(guest);
     }
 
     public User getUser(User user){
-        for (User u : userList) {
+        for (User u : memberList) {
             if (u == user) {
                 return u;
             }
@@ -45,18 +45,18 @@ public class UserList implements Serializable {
         }
         return null;
     }
+
     public User getUserByIndex(int index)
     {
-       return userList.get(index);
+       return memberList.get(index);
     }
-
     public User getGuestByIndex(int index)
     {
         return guestList.get(index);
     }
 
-    public int size() {
-        return userList.size();
+    public int memberSize() {
+        return memberList.size();
     }
     public int guestSize()
     {
@@ -64,16 +64,15 @@ public class UserList implements Serializable {
     }
 
     public long getUserPhone(User user){
-        for (User u : userList) {
+        for (User u : memberList) {
             if (u == user) {
                 return u.getPhoneNumber();
             }
         }
         return 0;
     }
-
     public long getUserByPhone(long phoneNumber){
-        for (User u : userList) {
+        for (User u : memberList) {
             if (u.getPhoneNumber() == phoneNumber) {
                 return u.getPhoneNumber();
             }
@@ -82,28 +81,32 @@ public class UserList implements Serializable {
     }
 
     public ArrayList<User> getMembersList() {
-        ArrayList<User> members = new ArrayList<User>();
-        for (User u : userList) {
+        ArrayList<User> members = new ArrayList<>();
+        for (User u : memberList) {
             if (u.isMember()) {members.add(u);}
             }
         return members;
     }
-
     public ArrayList<User> getGuestList() {
         ArrayList<User> guests = new ArrayList<>();
-        for (User u : userList) {
+        for (User u : memberList) {
             if (!u.isMember()) {guests.add(u);}
             }
         return guests;
     }
 
-    public ArrayList<User> getUserlist()
+    // ??? shouldnt this be it??
+    public ArrayList<User> getUserList()
     {
-        return userList;
+        return memberList;
+    }
+    public ArrayList<User> getGuestsList()
+    {
+        return guestList;
     }
 
     //TODO: no idea if it works
-    public void setUser(User user, User user1)
+    /*public void setUser(User user, User user1)
     {
         for (int i = 0 ; i < userList.size(); i++)
         {
@@ -111,6 +114,5 @@ public class UserList implements Serializable {
             {
                 user1 = userList.get(i);
             }
-        }
+        }*/
     }
-}

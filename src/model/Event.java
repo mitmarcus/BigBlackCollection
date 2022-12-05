@@ -7,15 +7,15 @@ public class Event implements Serializable {
   private String title;
   private String location;
   private String description;
-  private MyDate myDate;
+  private Date date;
   private ArrayList<User> participants;
 
-  public Event(String title, String location, String description, MyDate myDate, ArrayList<User> participants)
+  public Event(String title, String location, String description, Date date, ArrayList<User> participants)
   {
     setTitle(title);
     setLocation(location);
     setDescription(description);
-    setDate(myDate);
+    setDate(date);
   }
 
   public void addParticipant(User participant)
@@ -38,9 +38,9 @@ public class Event implements Serializable {
     return list;
   }
 
-  public MyDate getDate()
+  public Date getDate()
   {
-    return myDate;
+    return date;
   }
 
   public String getLocation()
@@ -58,9 +58,9 @@ public class Event implements Serializable {
     return description;
   }
 
-  public void setDate(MyDate myDate)
+  public void setDate(Date date)
   {
-    this.myDate = myDate.copy();
+    this.date = date.copy();
   }
 
   public void setLocation(String location)
