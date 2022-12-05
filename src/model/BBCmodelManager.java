@@ -2,40 +2,42 @@ package model;
 
 import java.util.ArrayList;
 
+import utils.MyFileHandler;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class BBCmodelManager implements BBCmodel
 {
-  private UserList userList;
-  private UserList guestList;
+  private String fileName;
 
-  public BBCmodelManager()
+  public BBCmodelManager(String fileName)
   {
-    userList = new UserList();
-    guestList = new UserList();
-    createDummyData();
+    this.fileName = fileName;
   }
-  public void createDummyData()
+  public UserList getAllUsers()
   {
+    UserList userList = new UserList();
 
-      //DummyData for Members List
-      User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
-      User Jakub = new User("Jacub", "Kuka", 91696968, true);
-      User Marcus = new User("Marcus", "Mitela", 91696969, true);
-          userList.addUser(Ricardo);
-          userList.addUser(Jakub);
-          userList.addUser(Marcus);
-
-      //DummyData for Guest list sdasdsadsadasasdadsdas
-
-   /* User Filip = new User("Filip", "asdadw", 91757485, false);
-    User Duarte = new User("Jorge", "Duarte", 91696968, false);
-    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
-    guestList.addUser(Filip);
-    guestList.addUser(Duarte);
-    guestList.addUser(Stephen);*/
-
-
-
+    try
+    {
+      userList = (UserList) MyFileHandler.readFromBinaryFile(fileName);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+    }
+    return userList;
   }
+
   @Override public void addUser(User user)
   {
     userList.addUser(user);
@@ -108,4 +110,20 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(guest);
   }
 
+  //DummyData for Members List
+      /*User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
+      User Jakub = new User("Jacub", "Kuka", 91696968, true);
+      User Marcus = new User("Marcus", "Mitela", 91696969, true);
+          userList.addUser(Ricardo);
+          userList.addUser(Jakub);
+          userList.addUser(Marcus);
+
+      //DummyData for Guest list sdasdsadsadasasdadsdas
+
+   User Filip = new User("Filip", "asdadw", 91757485, false);
+    User Duarte = new User("Jorge", "Duarte", 91696968, false);
+    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
+    guestList.addUser(Filip);
+    guestList.addUser(Duarte);
+    guestList.addUser(Stephen);*/
 }

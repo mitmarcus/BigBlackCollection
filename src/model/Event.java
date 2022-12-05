@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Event {
+public class Event implements Serializable {
 
   private String title;
   private String location;

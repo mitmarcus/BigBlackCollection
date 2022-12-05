@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import main.MyApplication;
 
 public class Main
 {

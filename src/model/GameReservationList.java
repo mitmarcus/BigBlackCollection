@@ -1,8 +1,9 @@
 package model;
+import java.io.Serializable;
 import java.util.ArrayList;
 //mark
 
-public class GameReservationList {
+public class GameReservationList implements Serializable {
     private Game game;
     private User user;
     private ArrayList<GameReservation> reservations;

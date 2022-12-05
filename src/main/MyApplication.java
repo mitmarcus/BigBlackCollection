@@ -1,3 +1,5 @@
+package main;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.BBCmodel;
@@ -8,7 +10,7 @@ public class MyApplication extends Application
 {
   public void start(Stage primaryStage)
   {
-    BBCmodel model = new BBCmodelManager();
+    BBCmodel model = new BBCmodelManager("users.bin");
     ViewHandler view = new ViewHandler(model);
     view.start(primaryStage);
   }

@@ -1,7 +1,8 @@
 package model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GameRating
+public class GameRating implements Serializable
 {
   private int rating;
   private int noOfPeople;

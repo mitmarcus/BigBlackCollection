@@ -1,0 +1,3 @@
+Ricardo,Fernandes,91757485,true
+Jacub,Kuka,91696968,true
+Marcus,Mitelea,91696969,true

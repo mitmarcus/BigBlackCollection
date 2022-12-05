@@ -1,7 +1,9 @@
 package model;
 //mark
 
-public class GameReservation {
+import java.io.Serializable;
+
+public class GameReservation implements Serializable {
   private User user;
   private Game game;
   private MyDate fromDate;
