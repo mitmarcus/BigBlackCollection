@@ -70,7 +70,7 @@ public class ViewHandler
         root = loadShowEventListViewController("ShowEventListViewController.fxml");
         break;
       case "eventParticipants" :
-        root = loadShowEventParticipantsViewController("ShowEventParticipantsViewController");
+        root = loadShowEventParticipantsViewController("ShowEventParticipantsViewController.fxml");
         break;
     }
     currentScene.setRoot(root);
