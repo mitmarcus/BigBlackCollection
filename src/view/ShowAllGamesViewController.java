@@ -77,9 +77,7 @@ public class ShowAllGamesViewController
     if (remove)
     {
       Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-          selectedItem.getNoOfPlayersPropertyProperty().get(),
-          new GameRating(
-              (Integer) selectedItem.getRatingPropertyProperty().get(),0), new User(
+          selectedItem.getNoOfPlayersPropertyProperty().get(),new User(
           (String) selectedItem.getOwnerPropertyProperty().get(), null, 0, true));
 
       model.removeGame(game);

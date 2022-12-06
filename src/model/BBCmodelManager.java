@@ -13,10 +13,10 @@ public class BBCmodelManager implements BBCmodel
   private String reservationFile; //RESERVATIONS
 
 
-  public BBCmodelManager(String membersFile, String gamesFile, String eventFile, String reservationFile)
+  public BBCmodelManager()
   {
-    this.userFile = membersFile;
-    this.gameFile = gamesFile;
+   /* this.userFile = membersFile;
+    this.gameFile = gamesFile; */
     this.eventFile = eventFile;
     this.reservationFile = reservationFile;
   }
@@ -187,6 +187,10 @@ public class BBCmodelManager implements BBCmodel
     saveEvents(allEvents);
   }
 
+  @Override public int getEventListSize()
+  {
+    return 0;
+  }
 
   public GameReservationList getReservations()
   {
@@ -255,6 +259,26 @@ public class BBCmodelManager implements BBCmodel
     {
       System.out.println("Can't save XML File, "+error.getMessage());
     }
+  }
+
+  @Override public Event getEvent(int i)
+  {
+    return null;
+  }
+
+  @Override public void addGuest(User user)
+  {
+
+  }
+
+  @Override public int getGameListSize()
+  {
+    return 0;
+  }
+
+  @Override public Game getGameByIndex(int i)
+  {
+    return null;
   }
 
 }

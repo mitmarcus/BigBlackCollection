@@ -28,7 +28,7 @@ public class GuestListViewModel
   public ObservableList<GuestViewModel> update()  //Code For guesttable
   {
     ArrayList<User> users = new ArrayList<>();
-    for (int i = 0; i <model.getGuestListSize(); i++)
+    for (int i = 0; i <model.getUsers().getGuestList().size(); i++)
     {
       users.add(model.getGuestByIndex(i));
     }

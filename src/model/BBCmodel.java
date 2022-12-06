@@ -25,4 +25,7 @@ public interface BBCmodel
   void saveToXML(String fileName, String data);
 
   Event getEvent(int i);
+  void addGuest(User user);
+  int getGameListSize();
+  Game getGameByIndex(int i);
 }

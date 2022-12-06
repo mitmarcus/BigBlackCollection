@@ -9,7 +9,7 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
 import model.EventList;
-import model.MyDate;
+import model.Date;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -77,7 +77,7 @@ public class ShowEventListViewController
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
           selectedItem.getEventDescriptionProperty().get(),
-          (MyDate) selectedItem.getEventDateProperty().get(), new ArrayList<>());
+          (Date) selectedItem.getEventDateProperty().get(), new ArrayList<>());
 
       model.removeEvent(event);
       viewModel.remove(event);
