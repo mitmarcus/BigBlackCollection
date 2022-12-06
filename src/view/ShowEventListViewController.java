@@ -8,7 +8,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
-import model.EventList;
 import model.MyDate;
 
 import java.util.ArrayList;
@@ -64,6 +63,10 @@ public class ShowEventListViewController
   @FXML private void addNewEvent()
   {
     viewHandler.openView("addEvent");
+  }
+  @FXML private void showParticipants()
+  {
+    viewHandler.openView("eventParticipants");
   }
   @FXML private void removeEvent()
   {
