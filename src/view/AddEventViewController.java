@@ -15,8 +15,6 @@ public class AddEventViewController
   @FXML private TextField lastNameText;
   @FXML private TextField phoneText;
 
-
-
   public AddEventViewController(){
     // Called by FXMLLoader
   }
@@ -48,8 +46,9 @@ public class AddEventViewController
    @FXML private void addParticipant()
   {
     User user = new User(firstNameText.getText(), lastNameText.getText(),
-        Long.parseLong(phoneText.getText()),true );
+        Long.parseLong(phoneText.getText()));
     model.addParticipant(user);
+    viewHandler.openView("events");
 
   }
 

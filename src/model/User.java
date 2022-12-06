@@ -10,8 +10,17 @@ public class User {
 
   public User(String firstName, String lastName, long phoneNumber, boolean isMember)
   {
-
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
     this.isMember = isMember;
+  }
+
+  public User(String firstName, String lastName, long phoneNumber)
+  {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
   }
 
   public String getFirstName()

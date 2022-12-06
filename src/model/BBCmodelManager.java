@@ -151,6 +151,11 @@ public class BBCmodelManager implements BBCmodel
 
   }
 
+  @Override public ArrayList<User> getParticipants()
+  {
+    return null;
+  }
+
   @Override public int getGameListSize()
   {
     return gameList.getGamesListSize();

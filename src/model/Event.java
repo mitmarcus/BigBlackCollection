@@ -27,6 +27,11 @@ public class Event {
     participants.remove(participant);
   }
 
+  public ArrayList<User> getParticipants()
+  {
+    return participants;
+  }
+
   public String getListOfParticipants()
   {
     String list = "";

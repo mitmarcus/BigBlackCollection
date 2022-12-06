@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
+import model.User;
 
 public class ShowEventParticipantsViewController
 {
@@ -15,6 +16,11 @@ public class ShowEventParticipantsViewController
   private BBCmodel model;
   private ViewHandler viewHandler;
   private EventParticipantsViewModel viewModel;
+
+  @FXML private TableView<EventParticipantsViewModel> participantListTable;
+  @FXML private TableColumn<UserViewModel, String> nameColumn;
+  @FXML private TableColumn<UserViewModel, Number> phoneColumn;
+  @FXML private TableColumn<UserViewModel, String> statusColumn;
 
 
   public ShowEventParticipantsViewController()
@@ -27,6 +33,14 @@ public class ShowEventParticipantsViewController
     this.viewHandler = viewHandler;
     this.root = root;
     this.viewModel = new EventParticipantsViewModel(model);
+
+    nameColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getFullNameProperty());
+    phoneColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getPhoneProperty());
+    statusColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getStatusProperty().asString());
+    participantListTable.setItems(viewModel.getList());
   }
   public Region getRoot()
   {

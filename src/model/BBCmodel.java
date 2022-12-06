@@ -32,7 +32,10 @@ public interface BBCmodel
   Game getGameByIndex(int index);
   void addParticipant(User user);
 
+
   //CODE FOR GAME
+
+  ArrayList<User> getParticipants();
 
 
 

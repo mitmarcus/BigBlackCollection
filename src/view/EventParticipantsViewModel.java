@@ -25,15 +25,15 @@ public class EventParticipantsViewModel
 
   public ObservableList<EventParticipantsViewModel> update() //Code for event Table
   {
-    ArrayList<Event> events = new ArrayList<>();
+    ArrayList<Event> participants = new ArrayList<>();
     for (int i = 0; i <model.getEventListSize(); i++)
     {
-      events.add(model.getEvent(i));
+      participants.add(model.getEvent(i));
     }
     list.clear();
-    for (int j = 0; j< events.size(); j++)
+    for (int j = 0; j< participants.size(); j++)
     {
-      list.add(new EventParticipantsViewModel((BBCmodel) events.get(j)));
+      list.add(new EventParticipantsViewModel((BBCmodel) participants.get(j)));
     }
     return list;
   }
