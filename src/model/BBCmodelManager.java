@@ -263,7 +263,10 @@ public class BBCmodelManager implements BBCmodel
 
   @Override public Event getEvent(int i)
   {
-    return null;
+    for(int i = 0; i< getEventListSize(); i++)
+    {
+      if(getEvents(i) ==)
+    }
   }
 
   @Override public void addGuest(User user)
@@ -271,15 +274,6 @@ public class BBCmodelManager implements BBCmodel
 
   }
 
-  @Override public int getGameListSize()
-  {
-    return 0;
-  }
-
-  @Override public Game getGameByIndex(int i)
-  {
-    return null;
-  }
 
 }
 
