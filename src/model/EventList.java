@@ -10,28 +10,22 @@ public class EventList
   {
     eventList = new ArrayList<Event>();
   }
+
   public void addEvent(Event event)
   {
-    addEvent(event);
+    eventList.add(event);
   }
 
-  public void remove(Event event)
+  public void removeEvent(Event event)
   {
-    remove(event);
+    eventList.remove(event);
   }
 
-  public Event getEvent(Event event)
+  public Event getEventByIndex(int index)
   {
-    Event event1 = null;
-    for(int i = 0; i<eventList.size(); i++)
-    {
-      if(eventList.get(i).equals(event))
-      {
-        event1 = event;
-      }
-    }
-    return event1;
+    if (index >= 0 && index < eventList.size())
+      return eventList.get(index);
+    else
+      return null;
   }
-
-
 }

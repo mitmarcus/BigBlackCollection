@@ -1,15 +1,17 @@
 package model;
 
 public class User {
-
-  private boolean isMember;
   private String firstName;
   private String lastName;
   private long phoneNumber;
+  private boolean isMember = false;
 
 
-  public User(String firstName, String lastName, long phoneNumber, boolean isMember)
-  {
+  public User(String firstName, String lastName, long phoneNumber, boolean isMember) {
+    set(firstName, lastName, phoneNumber, isMember);
+  }
+
+  public void set(String firstName, String lastName, long phoneNumber, boolean isMember) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
@@ -17,17 +19,14 @@ public class User {
   }
 
 
-
   public String getFirstName()
   {
-    String first = getFullName().split(" ")[0];
-    return first;
+    return firstName +"";
   }
 
   public String getLastName()
   {
-    String last = getFullName().split(" ")[1];
-    return last;
+    return lastName +"";
   }
 
   public String getFullName()
@@ -60,8 +59,8 @@ public class User {
     this.phoneNumber = phoneNumber;
   }
 
-//  public String toString()
-//  {
-//
-//  }
+  public void setMemberStatus(boolean isMember)
+  {
+    this.isMember = isMember;
+  }
 }

@@ -17,11 +17,12 @@ public class GameList
   }
   public void removeGame(Game game)
   {
-    removeGame(game);
+    games.remove(game);
   }
+
   public ArrayList<Game> getGamesByOwner(User user)
   {
-    ArrayList<Game> gamesByUser = new ArrayList<Game>();
+    ArrayList<Game> gamesByUser = new ArrayList<>();
     for(int i = 0; i<games.size(); i++)
     {
       if(games.get(i).getOwner() == (user))
@@ -32,24 +33,12 @@ public class GameList
     return gamesByUser;
   }
 
-  public int getGamesListSize()
-  {
-    return games.size();
-  }
-  public Game getGame(Game game)
-  {
-    for (int i = 0; i<games.size(); i++)
-    {
-      if (games.get(i).equals(game))
-      {
-        return game;
-      }
-    }
-    return null;
-  }
   public Game getGameByIndex(int index)
   {
-    return games.get(index);
+    if (index >= 0 && index < games.size())
+      return games.get(index);
+    else
+      return null;
   }
 
 }

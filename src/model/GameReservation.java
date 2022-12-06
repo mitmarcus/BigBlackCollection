@@ -2,15 +2,15 @@ package model;
 //mark
 
 public class GameReservation {
-  private User user;
   private Game game;
-  private MyDate fromDate;
-  private MyDate toDate;
-  public GameReservation(Game game, MyDate fromDate, MyDate toDate, User user) {
+  private Date fromDate;
+  private Date toDate;
+  private User user;
+  public GameReservation(Game game, Date fromDate, Date toDate, User user) {
     set(game, fromDate, toDate, user);
   }
 
-  public void set(Game game, MyDate fromDate, MyDate toDate, User user) {
+  public void set(Game game, Date fromDate, Date toDate, User user) {
     this.game = game;
     this.fromDate = fromDate;
     this.toDate = toDate;
@@ -25,11 +25,16 @@ public class GameReservation {
     return game;
   }
 
-  public MyDate getFromDate() {
+  public Date getFromDate() {
     return fromDate;
   }
 
-  public MyDate getToDate() {
+  public Date getToDate() {
     return toDate;
+  }
+
+  public String toString()
+  {
+    return fromDate + " - "+toDate;
   }
 }
