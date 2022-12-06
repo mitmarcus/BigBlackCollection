@@ -9,7 +9,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Return to main menu" />
+            <Button mnemonicParsing="false" onAction="#returnButtonPressed" text="Return to main menu" />
          </children>
          <padding>
             <Insets left="45.0" />

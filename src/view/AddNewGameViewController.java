@@ -53,6 +53,7 @@ public class AddNewGameViewController
   @FXML private void addGame()
   {
     User user1 = new User(ownerTextField.getText(), "zezoca",0, false);
+
     GameRating gameRating = new GameRating(0,0);
     Game game= new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), gameRating, user1);
     model.addGame(game);
