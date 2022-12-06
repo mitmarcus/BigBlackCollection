@@ -12,6 +12,8 @@ public class EventViewModel
   private ObjectProperty eventDateProperty;
   private StringProperty eventDescriptionProperty;
 
+
+
   public EventViewModel(Event event)
   {
     eventNameProperty = new SimpleStringProperty(event.getTitle());

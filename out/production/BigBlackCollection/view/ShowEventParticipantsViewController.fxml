@@ -33,9 +33,9 @@
     </HBox>
     <TableView prefHeight="310.0" prefWidth="357.0">
         <columns>
-            <TableColumn prefWidth="131.99993896484375" text="Name" />
-            <TableColumn prefWidth="112.800048828125" text="Phone" />
-            <TableColumn prefWidth="115.20001220703125" text="Member/Guest" />
+            <TableColumn fx:id="nameColumn" prefWidth="131.99993896484375" text="Name" />
+            <TableColumn fx:id="phoneColumn" prefWidth="112.800048828125" text="Phone" />
+            <TableColumn fx:id="statusColumn" prefWidth="115.20001220703125" text="Member/Guest" />
         </columns>
     </TableView>
 

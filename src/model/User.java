@@ -16,7 +16,12 @@ public class User {
     this.isMember = isMember;
   }
 
-
+  public User(String firstName, String lastName, long phoneNumber)
+  {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+  }
 
   public String getFirstName()
   {
