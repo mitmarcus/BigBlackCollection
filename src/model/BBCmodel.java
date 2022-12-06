@@ -20,11 +20,9 @@ public interface BBCmodel
   void saveEvents(EventList events);
   void addEvent(Event event);
   void removeEvent(Event event);
-
+  int getEventListSize();
   //XML
   void saveToXML(String fileName, String data);
 
-
-
-
+  Event getEvent(int i);
 }
