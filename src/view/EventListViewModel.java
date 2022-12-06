@@ -31,7 +31,7 @@ public class EventListViewModel
     list.clear();
     for (int j = 0; j< events.size(); j++)
     {
-      list.add(new EventViewModel(events.get(j)));
+      list.add(new EventViewModel(events.get(j))); // I HAVE TO CHANGE THIS
     }
     return list;
   }
