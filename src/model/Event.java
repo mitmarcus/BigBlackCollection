@@ -6,15 +6,16 @@ public class Event {
   private String title;
   private String location;
   private String description;
-  private MyDate myDate;
+  private Date date;
   private ArrayList<User> participants;
+  private Game game;
 
-  public Event(String title, String location, String description, MyDate myDate, ArrayList<User> participants)
+  public Event(String title, String location, String description, Date date, ArrayList<User> participants)
   {
     setTitle(title);
     setLocation(location);
     setDescription(description);
-    setDate(myDate);
+    setDate(date);
   }
 
   public void addParticipant(User participant)
@@ -30,51 +31,46 @@ public class Event {
   public String getListOfParticipants()
   {
     String list = "";
-    for(int i = 0; i<participants.size(); i++)
-    {
-      list += participants.get(i).getFirstName() + " " + participants.get(i).getLastName() + ", ";
+    if (participants != null) {
+      for (int i = 0; i < participants.size(); i++) {
+        list += participants.get(i).getFirstName() + " " + participants.get(i).getLastName() + ", ";
+      }
     }
     return list;
   }
 
-  public MyDate getDate()
+  public ArrayList<User> getMembersArray()
   {
-    return myDate;
+    return participants;
   }
 
-  public String getLocation()
+  public void setDate(Date date)
   {
-    return location;
+    this.date = date;
   }
-
-  public String getTitle()
-  {
-    return title;
-  }
-
-  public String getDescription()
-  {
-    return description;
-  }
-
-  public void setDate(MyDate myDate)
-  {
-    this.myDate = myDate.copy();
-  }
-
   public void setLocation(String location)
   {
     this.location = location;
   }
-
   public void setTitle(String title)
   {
     this.title = title;
   }
-
   public void setDescription(String description)
   {
     this.description = description;
   }
 
+  public String getDescription() {
+    return description;
+  }
+  public String getLocation() {
+    return location;
+  }
+  public String getTitle() {
+    return title;
+  }
+  public Date getDate() {
+    return date;
+  }
 }

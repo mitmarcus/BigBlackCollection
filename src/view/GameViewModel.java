@@ -13,8 +13,7 @@ public class GameViewModel
   public GameViewModel(Game game)
   {
     gameNameProperty = new SimpleStringProperty(game.getNameOfGame());
-    noOfPlayersProperty = new SimpleIntegerProperty(game.getNoOfPlayers());
-    ratingProperty = new SimpleObjectProperty(game.getGameRating());
+    noOfPlayersProperty = new SimpleIntegerProperty(game.getMaxPlayers());
     ownerProperty = new SimpleObjectProperty(game.getOwner());
   }
 

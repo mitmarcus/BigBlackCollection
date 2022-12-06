@@ -1,71 +1,73 @@
 package model;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 public class Game
 {
   private String nameOfGame;
-  private int noOfPlayers;
-  private String gameType;
-  private GameRating gameRating;
+  private int maxPlayers;
   private User owner;
-
-  public Game(String nameOfGame, int noOfPlayers, GameRating gameRating, User owner)
+  private ArrayList<Integer> gameRating;
+  public Game(String nameOfGame, int maxPlayers, User owner)
   {
     this.nameOfGame = nameOfGame;
-    this.noOfPlayers = noOfPlayers;
-    this.gameRating = gameRating;
+    this.maxPlayers = maxPlayers;
     this.owner = owner;
+    this.gameRating = new ArrayList<Integer>();
   }
 
   public String getNameOfGame()
   {
     return nameOfGame;
   }
-
   public User getOwner()
   {
     return owner;
   }
-
-  public GameRating getGameRating()
+  public int getMaxPlayers()
   {
-    return gameRating;
-  }
-
-  public int getNoOfPlayers()
-  {
-    return noOfPlayers;
-  }
-
-  public void setGameRating(GameRating gameRating)
-  {
-    this.gameRating = gameRating;
+    return maxPlayers;
   }
 
   public void setNameOfGame(String nameOfGame)
   {
     this.nameOfGame = nameOfGame;
   }
-
   public void setOwner(User owner)
   {
     this.owner = owner;
   }
-
-  public void setNoOfPlayers(int noOfPlayers)
+  public void setMaxPlayers(int noOfPlayers)
   {
-    this.noOfPlayers = noOfPlayers;
+    this.maxPlayers = noOfPlayers;
   }
 
-  public String getGameType()
+
+  //Rating
+  public void addGameRating(int rating)
   {
-    return gameType;
+    this.gameRating.add(rating);
+  }
+  public String getRating()
+  {
+    if (gameRating == null)
+      return "0";
+
+    int sum = 0;
+    for (int i = 0; i < gameRating.size(); i++)
+    {
+      sum += gameRating.get(i);
+    }
+    double m = (double) sum / gameRating.size();
+
+    DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
+    return String.valueOf(decimalFormat.format(m));
   }
 
-  public void setGameType(String gameType)
-  {
-    this.gameType = gameType;
-  }
 
+  //misc
   public boolean gameBelongsToAssociation(Game game)
   {
     if(owner == null)
@@ -78,9 +80,5 @@ public class Game
     }
   }
 
-  public void setGameRating()
-  {
-      this.gameRating = gameRating;
-  }
 }
 
