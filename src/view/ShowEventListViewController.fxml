@@ -31,7 +31,7 @@
          <children>
             <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
                <children>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add new">
+                  <Button minWidth="-Infinity" onAction="#addNewEvent" mnemonicParsing="false" prefWidth="120.0" text="Add new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
