@@ -41,8 +41,6 @@ public class ShowMembersListViewController
         cellData -> cellData.getValue().getPhoneProperty());
     userListTable.setItems(viewModel.getList());
     viewModel.update();
-
-
   }
   public Region getRoot()
   {
@@ -78,10 +76,7 @@ public class ShowMembersListViewController
       model.removeUser(user);
       viewModel.remove(user);
       userListTable.getSelectionModel().clearSelection();
-
     }
-
-
   }
   @FXML private void editMember()
   {
@@ -105,6 +100,4 @@ public class ShowMembersListViewController
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
 
   }
-
-
 }
