@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import java.util.ArrayList;
 
-public class UserlistViewModel
+public class UserlistViewModel  //
 {
   private ObservableList<UserViewModel> list;
 

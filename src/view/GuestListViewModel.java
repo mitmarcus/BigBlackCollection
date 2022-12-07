@@ -7,7 +7,7 @@ import model.User;
 
 import java.util.ArrayList;
 
-public class GuestListViewModel
+public class GuestListViewModel  //
 {
   private ObservableList<GuestViewModel> list;
 

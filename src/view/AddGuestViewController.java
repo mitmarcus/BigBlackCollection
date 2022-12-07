@@ -6,7 +6,7 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.User;
 
-public class AddGuestViewController
+public class AddGuestViewController    //
 {
   private Region root;
   private BBCmodel model;

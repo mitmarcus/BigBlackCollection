@@ -1,7 +1,7 @@
 package view;
 import javafx.beans.property.*;
 import model.Game;
-public class GameViewModel
+public class GameViewModel //
 {
 
   private StringProperty gameNameProperty;

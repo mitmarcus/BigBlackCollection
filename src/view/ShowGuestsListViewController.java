@@ -11,7 +11,7 @@ import model.User;
 
 import java.util.Optional;
 
-public class ShowGuestsListViewController
+public class ShowGuestsListViewController //
 
 {
 

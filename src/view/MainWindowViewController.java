@@ -8,7 +8,7 @@ import model.BBCmodel;
 
 import java.util.Optional;
 
-public class MainWindowViewController
+public class MainWindowViewController  //
 {
   private Region root;
   private BBCmodel model;

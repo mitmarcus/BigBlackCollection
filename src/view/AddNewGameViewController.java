@@ -8,7 +8,7 @@ import model.Game;
 import model.GameRating;
 import model.User;
 
-public class AddNewGameViewController
+public class AddNewGameViewController //
 {
   private Region root;
   private BBCmodel model;

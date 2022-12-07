@@ -7,7 +7,7 @@ import javafx.collections.FXCollections;
 import java.util.ArrayList;
 import java.util.ArrayList;
 
-public class GameListViewModel
+public class GameListViewModel  //
 {
   private ObservableList<GameViewModel> list;
 

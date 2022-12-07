@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.User;
 
-public class GuestViewModel
+public class GuestViewModel   //
   {
   private StringProperty firstNameProperty;
   private StringProperty lastNameProperty;

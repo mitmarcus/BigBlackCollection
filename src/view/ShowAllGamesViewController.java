@@ -9,7 +9,7 @@ import model.*;
 
 import java.util.Optional;
 
-public class ShowAllGamesViewController
+public class ShowAllGamesViewController //
 {
 
   private Region root;

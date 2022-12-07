@@ -3,7 +3,7 @@ package view;
 import javafx.beans.property.*;
 import model.User;
 
-public class UserViewModel
+public class UserViewModel  //
   {
   private StringProperty firstNameProperty;
   private StringProperty lastNameProperty;
