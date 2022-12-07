@@ -9,7 +9,7 @@ import model.BBCmodel;
 import model.User;
 import model.UserList;
 
-public class AddMemberViewController
+public class AddMemberViewController //
   {
     private Region root;
     private BBCmodel model;

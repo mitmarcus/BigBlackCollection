@@ -13,21 +13,21 @@ public class ViewHandler
   private Scene currentScene;
   private Stage primaryStage;
   private BBCmodel model;
-  private MainWindowViewController mainWindowViewController;
-  private UserViewController userViewController;
-  private ShowMembersListViewController showMembersListViewController;
-  private AddMemberViewController addMemberViewController;
-  private AddGuestViewController addGuestViewController;
-  private ShowGuestsListViewController showGuestsListViewController;
-  private ShowAllGamesViewController  showAllGamesViewController;
-  private AddNewGameViewController addNewGameViewController;
+  private MainWindowViewController mainWindowViewController; //
+  private UserViewController userViewController;//
+  private ShowMembersListViewController showMembersListViewController; //
+  private AddMemberViewController addMemberViewController; //
+  private AddGuestViewController addGuestViewController; //
+  private ShowGuestsListViewController showGuestsListViewController; //
+  private ShowAllGamesViewController  showAllGamesViewController; //
+  private AddNewGameViewController addNewGameViewController; //
 
-  private EditMemberViewController editMemberViewController;
+  private EditMemberViewController editMemberViewController; //
 
-  private ShowEventListViewController showEventListViewController;
+  private ShowEventListViewController showEventListViewController; //
 
-  private ShowEventParticipantsViewController showEventParticipantsViewController;
-  private AddEventViewController addEventViewController;
+  private ShowEventParticipantsViewController showEventParticipantsViewController; //
+  private AddEventViewController addEventViewController; //
   public ViewHandler(BBCmodel model)
   {
     this.model = model;

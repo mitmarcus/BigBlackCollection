@@ -7,7 +7,7 @@ import model.Event;
 
 import java.util.ArrayList;
 
-public class EventListViewModel
+public class EventListViewModel  //
 {
   private ObservableList<EventViewModel> list;
   private BBCmodel model;

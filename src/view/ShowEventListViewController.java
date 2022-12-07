@@ -13,7 +13,7 @@ import model.MyDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class ShowEventListViewController
+public class ShowEventListViewController  //
 {
   private Region root;
   private BBCmodel model;

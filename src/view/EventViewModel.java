@@ -5,7 +5,7 @@ import javafx.scene.control.DatePicker;
 import model.Event;
 import model.MyDate;
 
-public class EventViewModel
+public class EventViewModel  //
 {
   private StringProperty eventNameProperty;
   private StringProperty eventPlaceProperty;

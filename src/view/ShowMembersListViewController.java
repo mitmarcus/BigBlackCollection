@@ -12,7 +12,7 @@ import model.User;
 import model.UserList;
 
 
-public class ShowMembersListViewController
+public class ShowMembersListViewController //
 {
   private Region root;
   private BBCmodel model;
