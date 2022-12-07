@@ -20,7 +20,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Participant" wrappingWidth="173.9951171875">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Event" wrappingWidth="173.9951171875">
                     <font>
                         <Font size="25.0" />
                     </font>
