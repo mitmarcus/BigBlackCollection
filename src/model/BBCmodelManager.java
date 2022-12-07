@@ -15,8 +15,8 @@ public class BBCmodelManager implements BBCmodel
 
   public BBCmodelManager()
   {
-   /* this.userFile = membersFile;
-    this.gameFile = gamesFile; */
+    this.userFile = userFile;
+    this.gameFile = gameFile;
     this.eventFile = eventFile;
     this.reservationFile = reservationFile;
   }
@@ -261,19 +261,24 @@ public class BBCmodelManager implements BBCmodel
     }
   }
 
-  @Override public Event getEvent(int i)
-  {
-    for(int i = 0; i< getEventListSize(); i++)
-    {
-      if(getEvents(i) ==)
-    }
+  @Override
+  public Event getEvent(int i) {
+    return null;
   }
 
-  @Override public void addGuest(User user)
-  {
+  @Override
+  public void addGuest(User user) {
 
   }
 
+  @Override
+  public int getGameListSize() {
+    return 0;
+  }
 
+  @Override
+  public Game getGameByIndex(int i) {
+    return null;
+  }
 }
 

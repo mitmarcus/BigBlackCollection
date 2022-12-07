@@ -31,12 +31,12 @@
          <children>
             <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
                <children>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add new">
+                  <Button minWidth="-Infinity" onAction="#addNewEvent" mnemonicParsing="false" prefWidth="120.0" text="Add new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Remove">
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" onAction="#removeEvent" mnemonicParsing="false" prefWidth="120.0" text="Remove">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
