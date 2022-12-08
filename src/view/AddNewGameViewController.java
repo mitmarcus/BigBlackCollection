@@ -7,6 +7,7 @@ import model.BBCmodel;
 import model.Game;
 import model.GameRating;
 import model.User;
+import model.UserList;
 
 public class AddNewGameViewController //
 {
@@ -52,12 +53,28 @@ public class AddNewGameViewController //
   }
   @FXML private void addGame()
   {
-    User user1 = new User(ownerTextField.getText(), "zezoca",0, false);
+    for (int i = 0; i < model.getUserListSize(); i ++)
+    {
+      if (model.getUser(i).getFirstName().equals(ownerTextField.getText()))
+      {
+        
+        break;
+      }
+      Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), new GameRating(0, 0), model.getUser(i));
+      model.addGame(game);
+      System.out.println(model.getGameByIndex(i));
+      viewHandler.openView("games");
+    }
+
+
+
+
+    /*User user1 = new User(ownerTextField.getText(), "zezoca",0, false);
 
     GameRating gameRating = new GameRating(0,0);
     Game game= new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), gameRating, user1);
     model.addGame(game);
-    viewHandler.openView("games");
+    viewHandler.openView("games");*/
 
 
   }

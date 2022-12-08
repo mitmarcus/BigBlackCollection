@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ReservationGUI">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goBack" text="Return to main menu" />
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reservations" textAlignment="CENTER" wrappingWidth="210.732421875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="439.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="382.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Add">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="341.0" prefWidth="333.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="341.0" prefWidth="396.0" spacing="5.0">
+                                       <children>
+                                          <Label text="Member:" />
+                                          <ComboBox fx:id="addReservationMember" prefWidth="150.0" />
+                                          <Label text="Game:" />
+                                          <ComboBox fx:id="addReservationGame" prefWidth="150.0" />
+                                          <Label text="Start date:" />
+                                          <DatePicker fx:id="addReservationSDate" />
+                                          <Label text="End date:" />
+                                          <DatePicker fx:id="addReservationEDate" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="341.0" prefWidth="275.0">
+                                 <children>
+                                    <Button fx:id="addReservationConfirm" mnemonicParsing="false"  prefHeight="25.0" prefWidth="168.0" text="Add reservation" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                </Tab>
+                <Tab text="Manage">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="341.0" prefWidth="218.0">
+                                 <children>
+                                    <ComboBox fx:id="reservationsListTab"  prefWidth="150.0" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="341.0" prefWidth="168.0">
+                                 <children>
+                                    <Label text="Member:" />
+                                    <Label fx:id="manageReservationsMember" text="(null)" />
+                                    <Label text="Game:" />
+                                    <Label fx:id="manageReservationsSDate" text="(null)" />
+                                    <Label text="Start date:" />
+                                    <Label fx:id="manageReservationsGame" text="(null)" />
+                                    <Label text="End date" />
+                                    <Label fx:id="manageReservationsEDate" text="(null)" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="341.0" prefWidth="209.0">
+                                 <children>
+                                    <Button fx:id="manageReservationsEnd" mnemonicParsing="false"  text="End reservation" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
