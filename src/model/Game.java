@@ -1,18 +1,23 @@
 package model;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 public class Game
 {
   private String nameOfGame;
   private int noOfPlayers;
   private String gameType;
-  private GameRating gameRating;
+
   private User owner;
 
-  public Game(String nameOfGame, int noOfPlayers, GameRating gameRating, User owner)
+  private ArrayList<Integer> rating;
+
+  public Game(String nameOfGame, int noOfPlayers , User owner)
   {
     this.nameOfGame = nameOfGame;
     this.noOfPlayers = noOfPlayers;
-    this.gameRating = gameRating;
+    rating = new ArrayList<Integer>();
     this.owner = owner;
   }
 
@@ -26,20 +31,14 @@ public class Game
     return owner;
   }
 
-  public GameRating getGameRating()
-  {
-    return gameRating;
-  }
+
 
   public int getNoOfPlayers()
   {
     return noOfPlayers;
   }
 
-  public void setGameRating(GameRating gameRating)
-  {
-    this.gameRating = gameRating;
-  }
+
 
   public void setNameOfGame(String nameOfGame)
   {
@@ -56,15 +55,29 @@ public class Game
     this.noOfPlayers = noOfPlayers;
   }
 
-  public String getGameType()
+  public void addRating(int rating)
   {
-    return gameType;
+    this.rating.add(rating);
   }
 
-  public void setGameType(String gameType)
+  public String getRating()
   {
-    this.gameType = gameType;
+    if (rating == null)
+      return "0";
+
+    int sum = 0;
+    for (int i = 0; i < rating.size(); i++)
+    {
+      sum += rating.get(i);
+    }
+    double m = (double) sum / rating.size();
+
+    DecimalFormat df = new DecimalFormat("0.00");
+
+    return String.valueOf(df.format(m));
   }
+
+
 
   public boolean gameBelongsToAssociation(Game game)
   {
@@ -78,9 +91,7 @@ public class Game
     }
   }
 
-  public void setGameRating()
-  {
-      this.gameRating = gameRating;
-  }
+
+
 }
 
