@@ -39,7 +39,7 @@ public class ShowEventParticipantsViewController
     phoneColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
     statusColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getStatusProperty().asString());
+        cellData -> cellData.getValue().getStatusProperty());
     participantListTable.setItems(viewModel.getList());
   }
   public Region getRoot()

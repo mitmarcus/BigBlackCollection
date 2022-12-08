@@ -27,7 +27,7 @@ public class ViewHandler
   private ShowEventListViewController showEventListViewController; //
 
   private ShowEventParticipantsViewController showEventParticipantsViewController; //
-  private AddEventViewController addEventViewController; //
+  private CreateAnEventViewController CreateAnEventViewController; //
   public ViewHandler(BBCmodel model)
   {
     this.model = model;
@@ -74,8 +74,9 @@ public class ViewHandler
         root = loadShowEventParticipantsViewController("ShowEventParticipantsViewController.fxml");
         break;
       case "addEvent" :
-        root = loadAddEventViewController("AddEventViewController.fxml");
+        root = loadCreateAnEventViewController("CreateAnEventViewController.fxml");
         break;
+
     }
     currentScene.setRoot(root);
     String title = "";
@@ -366,9 +367,9 @@ public class ViewHandler
     }
     return showEventParticipantsViewController.getRoot();
   }
-  private Region loadAddEventViewController(String fxmlFile)
+  private Region loadCreateAnEventViewController(String fxmlFile)
   {
-    if(addEventViewController == null)
+    if(CreateAnEventViewController == null)
 
 
       try
@@ -376,8 +377,8 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        addEventViewController = loader.getController();
-        addEventViewController.init(this, model, root);
+        CreateAnEventViewController = loader.getController();
+        CreateAnEventViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -385,8 +386,8 @@ public class ViewHandler
       }
     else
     {
-      addEventViewController.reset();
+      CreateAnEventViewController.reset();
     }
-    return addEventViewController.getRoot();
+    return CreateAnEventViewController.getRoot();
   }
 }

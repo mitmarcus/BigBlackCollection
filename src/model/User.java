@@ -50,6 +50,17 @@ public class User {
     return isMember;
   }
 
+  public String getStatus()
+  {
+    if(isMember)
+    {
+      return "Member";
+    }
+    else {
+      return "Guest";
+    }
+  }
+
   public void setFirstName(String firstName)
   {
     this.firstName = firstName;

@@ -21,8 +21,6 @@ public class UserlistViewModel  //
   {
     return list;
   }
-
-
   public ObservableList<UserViewModel> update()  //Code For Member Table
   {
     ArrayList<User> users = new ArrayList<>();

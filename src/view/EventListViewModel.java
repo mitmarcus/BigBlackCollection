@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
 import model.Event;
+import model.EventList;
 
 import java.util.ArrayList;
 

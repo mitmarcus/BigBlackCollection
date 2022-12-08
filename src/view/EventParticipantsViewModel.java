@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
 import model.Event;
+import model.User;
 
 import java.util.ArrayList;
 
@@ -25,10 +26,10 @@ public class EventParticipantsViewModel
 
   public ObservableList<EventParticipantsViewModel> update() //Code for event Table
   {
-    ArrayList<Event> participants = new ArrayList<>();
-    for (int i = 0; i <model.getEventListSize(); i++)
+    ArrayList<User> participants = new ArrayList<>();
+    for (int i = 0; i <model.getParticipantList().size(); i++)
     {
-      participants.add(model.getEvent(i));
+      participants.add(model.getParticipants(i));
     }
     list.clear();
     for (int j = 0; j< participants.size(); j++)

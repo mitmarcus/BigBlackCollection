@@ -57,7 +57,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <TableView id="EventListTable" prefHeight="230.0" prefWidth="680.0">
+            <TableView id="eventListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
                   <TableColumn fx:id = "eventName" prefWidth="200.0" text="Event" />
                   <TableColumn fx:id = "eventPlace" prefWidth="170.0" text="Place" />

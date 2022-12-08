@@ -9,11 +9,17 @@ public class BBCmodelManager implements BBCmodel
 
   private GameList gameList; //GAME LIST
 
+  private EventList eventList;
+  private UserList participantsList;
+
   public BBCmodelManager()
   {
     userList = new UserList();
     guestList = new UserList();
     gameList = new GameList();
+    eventList = new EventList();
+    participantsList = new UserList();
+
     createDummyData();
   }
   public void createDummyData()
@@ -35,6 +41,14 @@ public class BBCmodelManager implements BBCmodel
     guestList.addUser(Filip);
     guestList.addUser(Duarte);
     guestList.addUser(Stephen);*/
+
+    MyDate d1 = new MyDate(23,02,2003);
+    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" , d1);
+    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , d1);
+    eventList.addEvent(e1);
+    eventList.addEvent(e2);
+
+
 
 
 
@@ -151,9 +165,24 @@ public class BBCmodelManager implements BBCmodel
 
   }
 
-  @Override public ArrayList<User> getParticipants()
+  @Override public ArrayList<User> getParticipantList()
   {
     return null;
+  }
+
+  @Override public User getParticipants(int i)
+  {
+    return null;
+  }
+
+  @Override public void addEvent(Event event)
+  {
+
+  }
+
+  @Override public UserList getParticipantsList()
+  {
+    return participantsList;
   }
 
   @Override public int getGameListSize()

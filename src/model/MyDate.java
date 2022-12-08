@@ -61,6 +61,11 @@ public class MyDate
     return other;
   }
 
+  public String toString()
+  {
+    return day + "/" + month + "/" + year;
+  }
+
 //  public String toString()
 //  {
 //

@@ -7,37 +7,39 @@ public class Event {
   private String location;
   private String description;
   private MyDate myDate;
-  private ArrayList<User> participants;
+  private ArrayList<User> participantList;
 
-  public Event(String title, String location, String description, MyDate myDate, ArrayList<User> participants)
+  public Event(String title, String location, String description, MyDate myDate)
   {
-    setTitle(title);
-    setLocation(location);
-    setDescription(description);
-    setDate(myDate);
+    this.title = title;
+    this.location = location;
+    this.description = description;
+    this.myDate = myDate;
+    participantList = new ArrayList<>();
   }
+
 
   public void addParticipant(User participant)
   {
-    participants.add(participant);
+    participantList.add(participant);
   }
 
   public void removeParticipant(User participant)
   {
-    participants.remove(participant);
+    participantList.remove(participant);
   }
 
   public ArrayList<User> getParticipants()
   {
-    return participants;
+    return participantList;
   }
 
   public String getListOfParticipants()
   {
     String list = "";
-    for(int i = 0; i<participants.size(); i++)
+    for(int i = 0; i<participantList.size(); i++)
     {
-      list += participants.get(i).getFirstName() + " " + participants.get(i).getLastName() + ", ";
+      list += participantList.get(i).getFirstName() + " " + participantList.get(i).getLastName() + ", ";
     }
     return list;
   }
