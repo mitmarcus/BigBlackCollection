@@ -51,7 +51,6 @@ public class AddParticipantViewController //
   {
     UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
 
-    StringProperty name = selectedItem.getFullNameProperty();
   }
 
 

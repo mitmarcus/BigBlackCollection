@@ -23,15 +23,15 @@ public class EventList
 
   public Event getEvent(Event event)
   {
-    Event event1 = null;
-    for(int i = 0; i<eventList.size(); i++)
+    Event a = null;
+    for(int i = 0; i<eventList.size();i++)
     {
-      if(eventList.get(i).equals(event))
+      if (event == eventList.get(i))
       {
-        event1 = event;
+        a = eventList.get(i);
       }
     }
-    return event1;
+    return a;
   }
   public int getEventListSize()
   {

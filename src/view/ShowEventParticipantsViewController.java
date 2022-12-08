@@ -9,6 +9,7 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
 import model.User;
+import model.UserList;
 
 public class ShowEventParticipantsViewController
 {

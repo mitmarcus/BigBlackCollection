@@ -78,8 +78,7 @@ public class ShowEventListViewController  //
     {
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
-          selectedItem.getEventDescriptionProperty().get(),
-          (LocalDate) selectedItem.getEventDateProperty().get());
+          selectedItem.getEventDescriptionProperty().get());
 
 
       model.removeEvent(event);

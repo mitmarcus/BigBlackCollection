@@ -16,9 +16,15 @@ public class Event {
     this.location = location;
     this.description = description;
     this.date = date;
-    participantList = new ArrayList<>();
+    participantList = new ArrayList<User>();
   }
 
+  public Event(String title, String location, String description)
+  {
+    setTitle(title);
+    setLocation(location);
+    setDescription(description);
+  }
 
   public void addParticipant(User participant)
   {
