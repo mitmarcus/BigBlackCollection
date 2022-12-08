@@ -28,6 +28,7 @@ public class ViewHandler
 
   private ShowEventParticipantsViewController showEventParticipantsViewController; //
   private CreateAnEventViewController CreateAnEventViewController; //
+  private AddParticipantViewController addParticipantViewController;
   public ViewHandler(BBCmodel model)
   {
     this.model = model;
@@ -75,6 +76,9 @@ public class ViewHandler
         break;
       case "createAnEvent" :
         root = loadCreateAnEventViewController("CreateAnEventViewController.fxml");
+        break;
+      case "addParticipant" :
+        root = loadAddParticipantViewController("AddParticipantViewController.fxml");
         break;
 
     }
@@ -389,5 +393,29 @@ public class ViewHandler
       CreateAnEventViewController.reset();
     }
     return CreateAnEventViewController.getRoot();
+  }
+
+  private Region loadAddParticipantViewController(String fxmlFile)
+  {
+    if(addParticipantViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addParticipantViewController = loader.getController();
+        addParticipantViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      addParticipantViewController.reset();
+    }
+    return addParticipantViewController.getRoot();
   }
 }

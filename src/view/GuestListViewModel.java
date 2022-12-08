@@ -50,6 +50,7 @@ public class GuestListViewModel  //
       if (list.get(i).getFullNameProperty().get().equals(user.getFullName()) && (Long)list.get(i).getPhoneProperty().get()== user.getPhoneNumber())
       {
         list.remove(i);
+
         break;
       }
     }

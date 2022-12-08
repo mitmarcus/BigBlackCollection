@@ -46,11 +46,6 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="82.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add participant">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Button>
                   <Button layoutX="20.0" layoutY="108.0" minWidth="-Infinity" onAction="#showParticipants"  mnemonicParsing="false" prefWidth="120.0" text="Show participants" />
                </children>
                <padding>

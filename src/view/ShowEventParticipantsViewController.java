@@ -55,4 +55,9 @@ public class ShowEventParticipantsViewController
 {
   viewHandler.openView("events");
 }
+
+@FXML void addParticipant()
+{
+  viewHandler.openView("addParticipant");
+}
 }
