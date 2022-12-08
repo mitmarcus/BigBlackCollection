@@ -79,13 +79,12 @@ public class ShowEventListViewController  //
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
           selectedItem.getEventDescriptionProperty().get(),
-          (LocalDate) selectedItem.getEventDateProperty().get());
+          selectedItem.getEventDateProperty().get());
 
 
       model.removeEvent(event);
       viewModel.remove(event);
       eventListTable.getSelectionModel().clearSelection();
-      System.out.println("sadasdas");
 
 
     }
@@ -102,10 +101,9 @@ public class ShowEventListViewController  //
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmation");
     alert.setHeaderText(
-        "Removing event {" + selectedItem.getEventNameProperty().get() + "}");
+        "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
-
 
   }
 }
