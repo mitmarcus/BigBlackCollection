@@ -1,15 +1,15 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
-import model.MyDate;
-import model.User;
-import org.w3c.dom.Text;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 
 public class CreateAnEventViewController //
 {
@@ -18,8 +18,8 @@ public class CreateAnEventViewController //
   private ViewHandler viewHandler;
   @FXML private TextField eventNameText;
   @FXML private TextField eventLocationText;
-  @FXML private MyDate eventDateText;
-  @FXML private TextField eventDescriptionText;
+  @FXML private DatePicker eventDateText;
+  @FXML private TextArea eventDescriptionText;
 
   public CreateAnEventViewController()
   {
@@ -44,7 +44,6 @@ public class CreateAnEventViewController //
   {
     this.eventNameText.setText("");
     this.eventLocationText.setText("");
-    this.eventDateText.set(0, 0, 0);
     this.eventDescriptionText.setText((""));
   }
 
@@ -53,10 +52,11 @@ public class CreateAnEventViewController //
     viewHandler.openView("events");
   }
 
+
    @FXML private void createEvent()
   {
     Event event = new Event(eventNameText.getText(), eventLocationText.getText(), eventDescriptionText.getText(),
-        eventDateText.getDate;
+        eventDateText.getValue());
     model.addEvent(event);
     viewHandler.openView("events");
   }

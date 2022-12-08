@@ -73,7 +73,7 @@ public class ViewHandler
       case "eventParticipants" :
         root = loadShowEventParticipantsViewController("ShowEventParticipantsViewController.fxml");
         break;
-      case "addEvent" :
+      case "createAnEvent" :
         root = loadCreateAnEventViewController("CreateAnEventViewController.fxml");
         break;
 

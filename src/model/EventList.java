@@ -16,9 +16,9 @@ public class EventList
   }
 
 
-  public void remove(Event event)
+  public void removeEvent(Event event)
   {
-    remove(event);
+    eventList.remove(event);
   }
 
   public Event getEvent(Event event)
@@ -32,6 +32,15 @@ public class EventList
       }
     }
     return event1;
+  }
+  public int getEventListSize()
+  {
+    return eventList.size();
+  }
+
+  public Event getEventByIndex(int index)
+  {
+    return eventList.get(index);
   }
 
 

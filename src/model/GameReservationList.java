@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.ArrayList;
 //mark
 
@@ -6,7 +7,7 @@ public class GameReservationList {
     private Game game;
     private User user;
     private ArrayList<GameReservation> reservations;
-    private MyDate date;
+    private LocalDate date;
     public GameReservationList(Game game) {
         this.game = game;
         reservations = new ArrayList<GameReservation>();
@@ -24,7 +25,7 @@ public class GameReservationList {
         return reservations.get(index);
     }
 
-    public MyDate getBorrowDateForAGame(Game game) {
+    public LocalDate getBorrowDateForAGame(Game game) {
         for (GameReservation reservation : reservations) {
             if (reservation.getGame() == game) {
                 return reservation.getFromDate();
@@ -33,7 +34,7 @@ public class GameReservationList {
         return null;
     }
 
-    public MyDate getReturnDateForAGame(Game game) {
+    public LocalDate getReturnDateForAGame(Game game) {
         for (GameReservation reservation : reservations) {
             if (reservation.getGame() == game) {
                 return reservation.getToDate();
@@ -59,7 +60,7 @@ public class GameReservationList {
         reservations.remove(reservation);
     }
 
-    public void editGameReservation(GameReservation reservation, Game game, MyDate fromDate, MyDate toDate, User user) {
+    public void editGameReservation(GameReservation reservation, Game game, LocalDate fromDate, LocalDate toDate, User user) {
         reservation.set(game, fromDate, toDate, user);
     }
 }

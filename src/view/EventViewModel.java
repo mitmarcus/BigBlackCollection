@@ -1,9 +1,7 @@
 package view;
 
 import javafx.beans.property.*;
-import javafx.scene.control.DatePicker;
 import model.Event;
-import model.MyDate;
 
 public class EventViewModel  //
 {
