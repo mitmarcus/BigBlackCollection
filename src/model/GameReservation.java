@@ -19,7 +19,7 @@ public class GameReservation {
     this.user = user;
   }
 
-  public User getMember() {
+  public User lentTo() {
     return user;
   }
 
@@ -33,24 +33,5 @@ public class GameReservation {
 
     public LocalDate getToDate() {
     return toDate;
-  }
-
-  public boolean equals(Object obj)
-  {
-    if (obj == null || getClass() != obj.getClass())
-    {
-      return false;
-    }
-
-    GameReservation other = (GameReservation) obj;
-
-    return user.equals(other.user) && game.equals(other.game)
-            && fromDate.equals(other.fromDate) && toDate.equals(
-            other.toDate);
-  }
-
-  public String toString()
-  {
-    return fromDate + " - "+ toDate;
   }
 }
