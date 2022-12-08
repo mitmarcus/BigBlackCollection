@@ -53,11 +53,11 @@ public class CreateAnEventViewController //
     viewHandler.openView("events");
   }
 
-  /* @FXML private void createEvent()
+   @FXML private void createEvent()
   {
     Event event = new Event(eventNameText.getText(), eventLocationText.getText(), eventDescriptionText.getText(),
         eventDateText.getDate;
     model.addEvent(event);
-    viewHandler.openView("event");
-  }*/
+    viewHandler.openView("events");
+  }
 }
