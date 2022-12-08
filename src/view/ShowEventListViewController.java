@@ -7,7 +7,6 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
 
-import java.time.LocalDate;
 import java.util.Optional;
 
 public class ShowEventListViewController  //
@@ -65,6 +64,7 @@ public class ShowEventListViewController  //
   }
   @FXML private void showParticipants()
   {
+    EventViewModel selectedItem = eventListTable.getSelectionModel().getSelectedItem();
     viewHandler.openView("eventParticipants");
   }
   @FXML private void removeEvent()
@@ -103,6 +103,5 @@ public class ShowEventListViewController  //
         "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
-
   }
 }

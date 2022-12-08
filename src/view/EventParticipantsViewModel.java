@@ -3,14 +3,13 @@ package view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
-import model.Event;
 import model.User;
 
 import java.util.ArrayList;
 
 public class EventParticipantsViewModel
 {
-  private ObservableList<EventParticipantsViewModel> list;
+  private ObservableList<UserViewModel> list;
   private BBCmodel model;
 
   public EventParticipantsViewModel(BBCmodel model)
@@ -19,22 +18,22 @@ public class EventParticipantsViewModel
     list = FXCollections.observableArrayList();
   }
 
-  public ObservableList<EventParticipantsViewModel> getList()
+  public ObservableList<UserViewModel> getList()
   {
     return list;
   }
 
-  public ObservableList<EventParticipantsViewModel> update() //Code for event Table
+  public ObservableList<UserViewModel> update()  //Code For Member Table
   {
-    ArrayList<User> participants = new ArrayList<>();
-    for (int i = 0; i <model.getParticipantList().size(); i++)
+    ArrayList<User> users = new ArrayList<>();
+    for (int i = 0; i <model.getUserListSize(); i++)
     {
-      participants.add(model.getParticipants(i));
+      users.add(model.getUser(i));
     }
     list.clear();
-    for (int j = 0; j< participants.size(); j++)
+    for (int j = 0; j< users.size(); j++)
     {
-      list.add(new EventParticipantsViewModel((BBCmodel) participants.get(j)));
+      list.add(new UserViewModel(users.get(j)));
     }
     return list;
   }

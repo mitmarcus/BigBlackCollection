@@ -1,6 +1,5 @@
 package model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
@@ -44,10 +43,10 @@ public class BBCmodelManager implements BBCmodel
     guestList.addUser(Stephen);*/
 
 
-    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
+     /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
     Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
     eventList.addEvent(e1);
-    eventList.addEvent(e2);
+    eventList.addEvent(e2); */
 
 
 
