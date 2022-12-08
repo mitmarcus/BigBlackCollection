@@ -55,15 +55,19 @@ public class AddNewGameViewController //
   {
     for (int i = 0; i < model.getUserListSize(); i ++)
     {
-      if (model.getUser(i).getFirstName().equals(ownerTextField.getText()))
+      if (model.getUser(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
       {
-        
+        User user1 = model.getUser(i);
+        Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), new GameRating(0, 0), user1 );
+        model.addGame(game);
+        System.out.println(model.getUser(i));
+        viewHandler.openView("games");
         break;
       }
-      Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), new GameRating(0, 0), model.getUser(i));
-      model.addGame(game);
-      System.out.println(model.getGameByIndex(i));
-      viewHandler.openView("games");
+
+
+
+
     }
 
 

@@ -77,7 +77,7 @@ public class ReservationGUI
     private TextField addReservationEMinute;
     @FXML
     private Button addReservationConfirm;
-   
+
 
 
     // manageReservations
