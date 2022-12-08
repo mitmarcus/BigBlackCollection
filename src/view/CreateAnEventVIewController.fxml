@@ -15,7 +15,7 @@ fx:controller="view.CreateAnEventViewController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Return to Events" />
+            <Button onAction="#returnButtonPressed" mnemonicParsing="false" text="Return to Events" />
          </children>
          <padding>
             <Insets left="45.0" />
