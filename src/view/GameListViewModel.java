@@ -44,7 +44,7 @@ public class GameListViewModel  //
     for (int i = 0; i <list.size(); i++)
     {
       if (list.get(i).getGameNamePropertyProperty().get().equals(game.getNameOfGame()) && list.get(i).getOwnerPropertyProperty().get().equals(game.getOwner())
-       && list.get(i).getRatingPropertyProperty().get().equals(game.getGameRating()) && list.get(i).getNoOfPlayersPropertyProperty().get() == game.getNoOfPlayers())
+       &&  list.get(i).getNoOfPlayersPropertyProperty().get() == game.getNoOfPlayers())
       {
         list.remove(i);
         break;

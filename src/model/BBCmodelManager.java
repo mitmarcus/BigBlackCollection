@@ -165,6 +165,16 @@ public class BBCmodelManager implements BBCmodel
     return gameList.getGameByIndex(index);
   }
 
+  @Override public int getGameListSize()
+  {
+    return gameList.getGamesListSize();
+  }
+
+  @Override public void removeGame(Game game)
+  {
+    gameList.removeGame(game);
+  }
+
   @Override public void addParticipant(User user)
   {
 
@@ -187,15 +197,7 @@ public class BBCmodelManager implements BBCmodel
     return participantsList;
   }
 
-  @Override public int getGameListSize()
-  {
-    return gameList.getGamesListSize();
-  }
 
-  @Override public void removeGame(Game game)
-  {
-    gameList.removeGame(game);
-  }
 
 
 
