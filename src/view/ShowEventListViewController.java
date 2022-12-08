@@ -1,16 +1,13 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
-import model.MyDate;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class ShowEventListViewController  //
@@ -23,7 +20,7 @@ public class ShowEventListViewController  //
   @FXML private TableView<EventViewModel> eventListTable;
   @FXML private TableColumn<EventViewModel, String> eventName;
   @FXML private TableColumn<EventViewModel, String> eventPlace;
-  @FXML private TableColumn<EventViewModel, MyDate> eventDate;
+  @FXML private TableColumn<EventViewModel, DatePicker> eventDate;
   @FXML private TableColumn<EventViewModel, String> eventDescription;
 
   public ShowEventListViewController()
@@ -62,9 +59,9 @@ public class ShowEventListViewController  //
   {
     viewHandler.openView("main");
   }
-  @FXML private void addNewEvent()
+  @FXML private void createAnEvent()
   {
-    viewHandler.openView("addEvent");
+    viewHandler.openView("createAnEvent");
   }
   @FXML private void showParticipants()
   {
@@ -82,11 +79,13 @@ public class ShowEventListViewController  //
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
           selectedItem.getEventDescriptionProperty().get(),
-          (MyDate) selectedItem.getEventDateProperty().get());
+          selectedItem.getEventDateProperty().get());
+
 
       model.removeEvent(event);
       viewModel.remove(event);
       eventListTable.getSelectionModel().clearSelection();
+
 
     }
   }
@@ -102,8 +101,7 @@ public class ShowEventListViewController  //
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmation");
     alert.setHeaderText(
-        "Removing event {" + selectedItem.getEventNameProperty().get() + ": "
-            + selectedItem.getEventDateProperty().get() + "}");
+        "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
 

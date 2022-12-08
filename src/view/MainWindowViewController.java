@@ -57,7 +57,7 @@ public class MainWindowViewController  //
   }
   @FXML private void showReservationsWindow()
   {
-    viewHandler.openView("reservation");
+
   }
 
 

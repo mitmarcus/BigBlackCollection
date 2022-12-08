@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
@@ -42,9 +43,9 @@ public class BBCmodelManager implements BBCmodel
     guestList.addUser(Duarte);
     guestList.addUser(Stephen);*/
 
-    MyDate d1 = new MyDate(23,02,2003);
-    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" , d1);
-    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , d1);
+
+    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
+    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
     eventList.addEvent(e1);
     eventList.addEvent(e2);
 
@@ -122,17 +123,21 @@ public class BBCmodelManager implements BBCmodel
 
   @Override public int getEventListSize()
   {
-    return 0;
+    return eventList.getEventListSize();
   }
 
-  @Override public Event getEvent(int i)
+  @Override public Event getEvent(int index)
   {
-    return null;
+    return eventList.getEventByIndex(index);
   }
 
   @Override public void removeEvent(Event event)
   {
-
+    eventList.removeEvent(event);
+  }
+  @Override public void addEvent(Event event)
+  {
+    eventList.addEvent(event);
   }
 
   //MEMBERS AND GUEST CODE
@@ -175,10 +180,7 @@ public class BBCmodelManager implements BBCmodel
     return null;
   }
 
-  @Override public void addEvent(Event event)
-  {
 
-  }
 
   @Override public UserList getParticipantsList()
   {

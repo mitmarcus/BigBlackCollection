@@ -44,7 +44,7 @@ fx:controller="view.CreateAnEventViewController">
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <DatePicker  promptText="Date of the event" />
+                  <DatePicker fx:id="eventDateText" promptText="Date of the event" />
                </children>
                <HBox.margin>
                   <Insets right="10.0" />
@@ -52,14 +52,14 @@ fx:controller="view.CreateAnEventViewController">
             </VBox>
             <VBox prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextArea  prefHeight="180.0" prefWidth="200.0" promptText="Description of the event" />
+                  <TextArea fx:id="eventDescriptionText" prefHeight="180.0" prefWidth="200.0" promptText="Description of the event" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="70.0" prefHeight="70.0" prefWidth="170.0">
          <children>
-            <Button mnemonicParsing="false" text="Create" />
+            <Button mnemonicParsing="false" onAction="#createEvent" text="Create" />
          </children>
       </HBox>
    </children>
