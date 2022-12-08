@@ -57,7 +57,7 @@ public class AddNewGameViewController //
     {
       if (model.getUser(i).getFirstName().equals(ownerTextField.getText()))
       {
-        model.getUser(i) =
+        
         break;
       }
       Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()), new GameRating(0, 0), model.getUser(i));

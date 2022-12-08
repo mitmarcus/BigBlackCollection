@@ -56,7 +56,7 @@ public class CreateAnEventViewController //
    @FXML private void createEvent()
   {
     /*Event event = new Event(eventNameText.getText(), eventLocationText.getText(), eventDescriptionText.getText(),
-        eventDateText.getDate);
+        eventDateText.get);
     model.addEvent(event);*/
     viewHandler.openView("events");
   }

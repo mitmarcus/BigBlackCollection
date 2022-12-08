@@ -54,7 +54,7 @@
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="341.0" prefWidth="275.0">
                                  <children>
-                                    <Button fx:id="addReservationConfirm" mnemonicParsing="false" onAction="#handleActions" prefHeight="25.0" prefWidth="168.0" text="Add reservation" />
+                                    <Button fx:id="addReservationConfirm" mnemonicParsing="false"  prefHeight="25.0" prefWidth="168.0" text="Add reservation" />
                                  </children>
                               </VBox>
                            </children>
@@ -67,7 +67,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="341.0" prefWidth="218.0">
                                  <children>
-                                    <ComboBox fx:id="reservationsListTab" onAction="#handleActions" prefWidth="150.0" />
+                                    <ComboBox fx:id="reservationsListTab"  prefWidth="150.0" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="341.0" prefWidth="168.0">
@@ -84,7 +84,7 @@
                               </VBox>
                               <VBox alignment="CENTER" prefHeight="341.0" prefWidth="209.0">
                                  <children>
-                                    <Button fx:id="manageReservationsEnd" mnemonicParsing="false" onAction="#handleActions" text="End reservation" />
+                                    <Button fx:id="manageReservationsEnd" mnemonicParsing="false"  text="End reservation" />
                                  </children>
                               </VBox>
                            </children>

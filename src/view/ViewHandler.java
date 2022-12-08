@@ -28,6 +28,7 @@ public class ViewHandler
 
   private ShowEventParticipantsViewController showEventParticipantsViewController; //
   private CreateAnEventViewController CreateAnEventViewController; //
+  private ReservationGUI  reservationGUI;
   public ViewHandler(BBCmodel model)
   {
     this.model = model;
@@ -75,6 +76,9 @@ public class ViewHandler
         break;
       case "addEvent" :
         root = loadCreateAnEventViewController("CreateAnEventViewController.fxml");
+        break;
+      case "reservation" :
+        root = loadReservationGUI("ReservationGUI.fxml");
         break;
 
     }
@@ -389,5 +393,29 @@ public class ViewHandler
       CreateAnEventViewController.reset();
     }
     return CreateAnEventViewController.getRoot();
+  }
+
+  private Region loadReservationGUI(String fxmlFile)
+  {
+    if(reservationGUI == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        reservationGUI = loader.getController();
+        reservationGUI.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      reservationGUI.reset();
+    }
+    return reservationGUI.getRoot();
   }
 }
