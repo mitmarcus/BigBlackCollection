@@ -17,7 +17,7 @@ public class GameReservation {
     this.user = user;
   }
 
-  public User lentTo() {
+  public User getMember() {
     return user;
   }
 
@@ -31,5 +31,24 @@ public class GameReservation {
 
   public MyDate getToDate() {
     return toDate;
+  }
+
+  public boolean equals(Object obj)
+  {
+    if (obj == null || getClass() != obj.getClass())
+    {
+      return false;
+    }
+
+    GameReservation other = (GameReservation) obj;
+
+    return user.equals(other.user) && game.equals(other.game)
+            && fromDate.equals(other.fromDate) && toDate.equals(
+            other.toDate);
+  }
+
+  public String toString()
+  {
+    return fromDate + " - "+ toDate;
   }
 }
