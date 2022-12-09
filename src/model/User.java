@@ -76,8 +76,13 @@ public class User {
     this.phoneNumber = phoneNumber;
   }
 
-//  public String toString()
-//  {
-//
-//  }
+  @Override public boolean equals(Object obj)
+  {
+    if (obj == null || obj.getClass()!=getClass())
+    {
+      return false;
+    }
+    User other = (User)obj;
+    return firstName.equals(other.firstName) && lastName.equals(other.lastName) && phoneNumber==other.phoneNumber && isMember == other.isMember;
+  }
 }

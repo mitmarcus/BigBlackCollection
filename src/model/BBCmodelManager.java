@@ -33,14 +33,14 @@ public class BBCmodelManager implements BBCmodel
           userList.addUser(Jakub);
           userList.addUser(Marcus);
 
-      //DummyData for Guest list sdasdsadsadasasdadsdas
+      //DummyData for Guest list
 
-   /* User Filip = new User("Filip", "asdadw", 91757485, false);
+    User Filip = new User("Filip", "asdadw", 91757485, false);
     User Duarte = new User("Jorge", "Duarte", 91696968, false);
     User Stephen = new User("Stephen", "oasdasi", 91696969, false);
     guestList.addUser(Filip);
     guestList.addUser(Duarte);
-    guestList.addUser(Stephen);*/
+    guestList.addUser(Stephen);
 
 
      /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
@@ -102,7 +102,7 @@ public class BBCmodelManager implements BBCmodel
   }
   @Override public int getGuestListSize()
   {
-    return guestList.size();
+    return guestList.guestSize();
   }
 
 

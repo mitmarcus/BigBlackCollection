@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowViewController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo_300x300.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="20.0" top="70.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="350.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showUsersWindow" text="Users" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="260.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showGamesWindow" text="Games" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="34.0" layoutY="122.0" mnemonicParsing="false" onAction="#showEventsWindow" text="Events" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="360.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showReservationsWindow" text="Reservations" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

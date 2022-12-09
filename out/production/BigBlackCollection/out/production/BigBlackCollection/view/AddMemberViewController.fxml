@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddMemberViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#returnButtonPressed" text="Return to main menu" />
+         </children>
+         <padding>
+            <Insets left="45.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add member">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="110.0" prefWidth="200.0">
+         <children>
+            <TextField prefHeight="26.0" prefWidth="130.0" promptText="First Name" fx:id="firstNameText">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField prefHeight="26.0" prefWidth="112.0" promptText="Last Name" fx:id="lastNameText">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField alignment="CENTER" layoutX="231.0" layoutY="52.0" prefHeight="26.0" prefWidth="113.0" promptText="Phone number" fx:id="phoneText">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></TextField>
+            <Button onAction="#addMember" mnemonicParsing="false" text="Add member" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" prefHeight="110.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets right="5.0" />
+         </VBox.margin></HBox>
+   </children>
+</VBox>
