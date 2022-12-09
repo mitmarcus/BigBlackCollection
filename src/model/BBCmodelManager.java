@@ -10,6 +10,7 @@ public class BBCmodelManager implements BBCmodel
   private GameList gameList; //GAME LIST
 
   private EventList eventList;
+  private GameReservationList reservationList;
   private UserList participantsList;
 
   public BBCmodelManager()
@@ -17,6 +18,7 @@ public class BBCmodelManager implements BBCmodel
     userList = new UserList();
     guestList = new UserList();
     gameList = new GameList();
+    reservationList = new GameReservationList();
     eventList = new EventList();
     participantsList = new UserList();
 
@@ -147,6 +149,26 @@ public class BBCmodelManager implements BBCmodel
     eventList.addEvent(event);
   }
 
+  @Override
+  public int getReservationListSize() {
+    return reservationList.getReservationListSize();
+  }
+
+  @Override
+  public GameReservation getReservation(int i) {
+    return reservationList.getReservationByIndex(index);
+  }
+
+  @Override
+  public void addReservation(GameReservation reservation) {
+    reservation.addReservation(reservation);
+  }
+
+
+  @Override public void removeReservation(GameReservation reservation)
+  {
+    reservationList.removeReservation(reservation);
+  }
   //MEMBERS AND GUEST CODE
 
 

@@ -45,7 +45,7 @@
                   </Button>
                </children>
             </VBox>
-            <TableView fx:id="ReservationListTable" prefHeight="230.0" prefWidth="680.0">
+            <TableView fx:id="reservationListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
                   <TableColumn fx:id="borrower" prefWidth="200.0" text="Borrower" />
                   <TableColumn fx:id="game" prefWidth="206.0" text="Game" />
