@@ -40,7 +40,7 @@ public class ShowMembersListViewController //
     phoneNumberColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
     userListTable.setItems(viewModel.getList());
-    viewModel.update();
+    reset();
   }
   public Region getRoot()
   {
@@ -49,7 +49,7 @@ public class ShowMembersListViewController //
 
   public void reset()
   {
-    viewModel.update();
+    userListTable.setItems(viewModel.update());
   }
 
   @FXML private void goBack()
@@ -76,6 +76,7 @@ public class ShowMembersListViewController //
       model.removeUser(user);
       viewModel.remove(user);
       userListTable.getSelectionModel().clearSelection();
+
     }
   }
   @FXML private void editMember()

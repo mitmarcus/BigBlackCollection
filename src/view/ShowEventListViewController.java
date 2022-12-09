@@ -1,16 +1,12 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
-import model.MyDate;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class ShowEventListViewController  //
@@ -20,10 +16,10 @@ public class ShowEventListViewController  //
   private ViewHandler viewHandler;
   private EventListViewModel viewModel;
 
-  @FXML private TableView<EventViewModel> EventListTable;
+  @FXML private TableView<EventViewModel> eventListTable;
   @FXML private TableColumn<EventViewModel, String> eventName;
   @FXML private TableColumn<EventViewModel, String> eventPlace;
-  @FXML private TableColumn<EventViewModel, Number> eventDate;
+  @FXML private TableColumn<EventViewModel, DatePicker> eventDate;
   @FXML private TableColumn<EventViewModel, String> eventDescription;
 
   public ShowEventListViewController()
@@ -46,6 +42,8 @@ public class ShowEventListViewController  //
         cellData -> cellData.getValue().getEventDateProperty());
     eventDescription.setCellValueFactory(
         cellData -> cellData.getValue().getEventDescriptionProperty());
+    eventListTable.setItems(viewModel.getList());
+    viewModel.update();
   }
 
   public Region getRoot()
@@ -60,18 +58,19 @@ public class ShowEventListViewController  //
   {
     viewHandler.openView("main");
   }
-  @FXML private void addNewEvent()
+  @FXML private void createAnEvent()
   {
-    viewHandler.openView("addEvent");
+    viewHandler.openView("createAnEvent");
   }
   @FXML private void showParticipants()
   {
+    EventViewModel selectedItem = eventListTable.getSelectionModel().getSelectedItem();
     viewHandler.openView("eventParticipants");
   }
   @FXML private void removeEvent()
   {
 
-   EventViewModel selectedItem = EventListTable.getSelectionModel().getSelectedItem();
+   EventViewModel selectedItem = eventListTable.getSelectionModel().getSelectedItem();
 
     boolean remove = confirmation();
 
@@ -79,31 +78,30 @@ public class ShowEventListViewController  //
     {
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
-          selectedItem.getEventDescriptionProperty().get(),
-          (MyDate) selectedItem.getEventDateProperty().get(), new ArrayList<>());
+          selectedItem.getEventDescriptionProperty().get());
+
 
       model.removeEvent(event);
       viewModel.remove(event);
-      EventListTable.getSelectionModel().clearSelection();
+      eventListTable.getSelectionModel().clearSelection();
+
 
     }
   }
 
   private boolean confirmation()
   {
-    int index = EventListTable.getSelectionModel().getSelectedIndex();
-    EventViewModel selectedItem = EventListTable.getItems().get(index);
-    if (index < 0 || index >= EventListTable.getItems().size())
+    int index = eventListTable.getSelectionModel().getSelectedIndex();
+    EventViewModel selectedItem = eventListTable.getItems().get(index);
+    if (index < 0 || index >= eventListTable.getItems().size())
     {
       return false;
     }
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmation");
     alert.setHeaderText(
-        "Removing event {" + selectedItem.getEventNameProperty().get() + ": "
-            + selectedItem.getEventDateProperty().get() + "}");
+        "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
-
   }
 }

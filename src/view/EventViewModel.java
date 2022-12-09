@@ -1,15 +1,15 @@
 package view;
 
 import javafx.beans.property.*;
-import javafx.scene.control.DatePicker;
 import model.Event;
-import model.MyDate;
+
+import java.time.LocalDate;
 
 public class EventViewModel  //
 {
   private StringProperty eventNameProperty;
   private StringProperty eventPlaceProperty;
-  private ObjectProperty eventDateProperty;
+  private ObjectProperty<LocalDate> eventDateProperty;
   private StringProperty eventDescriptionProperty;
 
 

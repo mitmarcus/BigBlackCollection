@@ -10,7 +10,7 @@ public class UserViewModel  //
   private LongProperty phoneProperty;
   private StringProperty fullNameProperty;
 
-  private BooleanProperty statusProperty;
+  private StringProperty statusProperty;
 
 
 
@@ -20,7 +20,7 @@ public class UserViewModel  //
   lastNameProperty = new SimpleStringProperty(user.getLastName());
   phoneProperty = new SimpleLongProperty(user.getPhoneNumber());
   fullNameProperty = new SimpleStringProperty(user.getFirstName() +" " + user.getLastName());
-    statusProperty = new SimpleBooleanProperty(user.isMember());
+    statusProperty = new SimpleStringProperty(user.getStatus());
   }
 
 
@@ -41,6 +41,6 @@ public class UserViewModel  //
     return fullNameProperty;
   }
 
-  public BooleanProperty getStatusProperty(){return statusProperty;}
+  public StringProperty getStatusProperty(){return statusProperty;}
 
 }

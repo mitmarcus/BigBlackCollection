@@ -1,14 +1,10 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.Event;
-import model.User;
 
 public class ShowEventParticipantsViewController
 {
@@ -17,7 +13,7 @@ public class ShowEventParticipantsViewController
   private ViewHandler viewHandler;
   private EventParticipantsViewModel viewModel;
 
-  @FXML private TableView<EventParticipantsViewModel> participantListTable;
+  @FXML private TableView<UserViewModel> participantListTable;
   @FXML private TableColumn<UserViewModel, String> nameColumn;
   @FXML private TableColumn<UserViewModel, Number> phoneColumn;
   @FXML private TableColumn<UserViewModel, String> statusColumn;
@@ -39,7 +35,7 @@ public class ShowEventParticipantsViewController
     phoneColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
     statusColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getStatusProperty().asString());
+        cellData -> cellData.getValue().getStatusProperty());
     participantListTable.setItems(viewModel.getList());
   }
   public Region getRoot()
@@ -54,5 +50,10 @@ public class ShowEventParticipantsViewController
   @FXML private void goBack()
 {
   viewHandler.openView("events");
+}
+
+@FXML void addParticipant()
+{
+  viewHandler.openView("addParticipant");
 }
 }

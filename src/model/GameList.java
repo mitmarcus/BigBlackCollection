@@ -17,7 +17,7 @@ public class GameList
   }
   public void removeGame(Game game)
   {
-    removeGame(game);
+    games.remove(game);
   }
   public ArrayList<Game> getGamesByOwner(User user)
   {

@@ -76,15 +76,21 @@ public class ShowAllGamesViewController //
 
     if (remove)
     {
-      Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-          selectedItem.getNoOfPlayersPropertyProperty().get(),
-          new GameRating(
-              (Integer) selectedItem.getRatingPropertyProperty().get(),0), new User(
-          (String) selectedItem.getOwnerPropertyProperty().get(), null, 0, true));
+      for (int i = 0 ; i < model.getUserListSize() ; i++)
+      {
+        if (model.getUser(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
+        {
+          Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
+              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i));
+          model.removeGame(game);
+          gameListTable.getSelectionModel().clearSelection();
+          System.out.println("working");
+        }
 
-      model.removeGame(game);
-      //viewModel.remove(user);
-      gameListTable.getSelectionModel().clearSelection();
+
+        //viewModel.remove(user);
+
+      }
 
     }
 

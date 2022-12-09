@@ -31,6 +31,12 @@
             </Text>
         </children>
     </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button onAction="#addParticipant" mnemonicParsing="false" text="Add Participant" />
+         <Button mnemonicParsing="false" text="Remove Participant" />
+      </children>
+   </HBox>
     <TableView prefHeight="310.0" prefWidth="357.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="131.99993896484375" text="Name" />

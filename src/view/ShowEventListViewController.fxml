@@ -31,22 +31,17 @@
          <children>
             <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
                <children>
-                  <Button minWidth="-Infinity" onAction="#addNewEvent" mnemonicParsing="false" prefWidth="120.0" text="Add new">
+                  <Button minWidth="-Infinity" onAction="#createAnEvent" mnemonicParsing="false" prefWidth="120.0" text="Create new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Remove">
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" onAction="#removeEvent" mnemonicParsing="false" prefWidth="120.0" text="Remove">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
                   <Button layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Edit">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button layoutX="20.0" layoutY="82.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="120.0" text="Add participant">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -57,7 +52,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <TableView id="EventListTable" prefHeight="230.0" prefWidth="680.0">
+            <TableView fx:id="eventListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
                   <TableColumn fx:id = "eventName" prefWidth="200.0" text="Event" />
                   <TableColumn fx:id = "eventPlace" prefWidth="170.0" text="Place" />

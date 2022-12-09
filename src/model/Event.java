@@ -1,4 +1,7 @@
 package model;
+import model.User;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Event {
@@ -6,15 +9,23 @@ public class Event {
   private String title;
   private String location;
   private String description;
-  private MyDate myDate;
-  private ArrayList<User> participants;
+  private LocalDate date;
+  private ArrayList<User> participantList;
 
-  public Event(String title, String location, String description, MyDate myDate, ArrayList<User> participants)
+  public Event(String title, String location, String description, LocalDate date)
+  {
+    this.title = title;
+    this.location = location;
+    this.description = description;
+    this.date = date;
+    participantList = new ArrayList<User>();
+  }
+
+  public Event(String title, String location, String description)
   {
     setTitle(title);
     setLocation(location);
     setDescription(description);
-    setDate(myDate);
   }
 
   //Jakub test for utils
@@ -23,32 +34,32 @@ public class Event {
 
 	public void addParticipant(User participant)
   {
-    participants.add(participant);
+    participantList.add(participant);
   }
 
   public void removeParticipant(User participant)
   {
-    participants.remove(participant);
+    participantList.remove(participant);
   }
 
   public ArrayList<User> getParticipants()
   {
-    return participants;
+    return participantList;
   }
 
   public String getListOfParticipants()
   {
     String list = "";
-    for(int i = 0; i<participants.size(); i++)
+    for(int i = 0; i<participantList.size(); i++)
     {
-      list += participants.get(i).getFirstName() + " " + participants.get(i).getLastName() + ", ";
+      list += participantList.get(i).getFirstName() + " " + participantList.get(i).getLastName() + ", ";
     }
     return list;
   }
 
-  public MyDate getDate()
+  public LocalDate getDate()
   {
-    return myDate;
+    return date;
   }
 
   public String getLocation()
@@ -66,10 +77,9 @@ public class Event {
     return description;
   }
 
-  public void setDate(MyDate myDate)
+  public void setDate(LocalDate date)
   {
-    this.myDate = myDate.copy();
-  }
+    this.date = date;}
 
   public void setLocation(String location)
   {

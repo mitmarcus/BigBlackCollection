@@ -9,11 +9,17 @@ public class BBCmodelManager implements BBCmodel
 
   private GameList gameList; //GAME LIST
 
+  private EventList eventList;
+  private UserList participantsList;
+
   public BBCmodelManager()
   {
     userList = new UserList();
     guestList = new UserList();
     gameList = new GameList();
+    eventList = new EventList();
+    participantsList = new UserList();
+
     createDummyData();
   }
   public void createDummyData()
@@ -35,6 +41,17 @@ public class BBCmodelManager implements BBCmodel
     guestList.addUser(Filip);
     guestList.addUser(Duarte);
     guestList.addUser(Stephen);*/
+
+
+     /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
+    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
+    eventList.addEvent(e1);
+    eventList.addEvent(e2); */
+
+
+
+
+
 
 
 
@@ -108,17 +125,21 @@ public class BBCmodelManager implements BBCmodel
 
   @Override public int getEventListSize()
   {
-    return 0;
+    return eventList.getEventListSize();
   }
 
-  @Override public Event getEvent(int i)
+  @Override public Event getEvent(int index)
   {
-    return null;
+    return eventList.getEventByIndex(index);
   }
 
   @Override public void removeEvent(Event event)
   {
-
+    eventList.removeEvent(event);
+  }
+  @Override public void addEvent(Event event)
+  {
+    eventList.addEvent(event);
   }
 
   //MEMBERS AND GUEST CODE
@@ -146,16 +167,6 @@ public class BBCmodelManager implements BBCmodel
     return gameList.getGameByIndex(index);
   }
 
-  @Override public void addParticipant(User user)
-  {
-
-  }
-
-  @Override public ArrayList<User> getParticipants()
-  {
-    return null;
-  }
-
   @Override public int getGameListSize()
   {
     return gameList.getGamesListSize();
@@ -165,6 +176,30 @@ public class BBCmodelManager implements BBCmodel
   {
     gameList.removeGame(game);
   }
+
+  @Override public void addParticipant(User user)
+  {
+
+  }
+
+  @Override public ArrayList<User> getParticipantList()
+  {
+    return null;
+  }
+
+  @Override public User getParticipants(int i)
+  {
+    return null;
+  }
+
+
+
+  @Override public UserList getParticipantsList()
+  {
+    return participantsList;
+  }
+
+
 
 
 

@@ -18,9 +18,9 @@ public class User {
 
   public User(String firstName, String lastName, long phoneNumber)
   {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.phoneNumber = phoneNumber;
+    setFirstName(firstName);
+    setLastName(lastName);
+    setPhoneNumber(phoneNumber);
   }
 
   public String getFirstName()
@@ -48,6 +48,17 @@ public class User {
   public boolean isMember()
   {
     return isMember;
+  }
+
+  public String getStatus()
+  {
+    if(isMember)
+    {
+      return "Member";
+    }
+    else {
+      return "Guest";
+    }
   }
 
   public void setFirstName(String firstName)

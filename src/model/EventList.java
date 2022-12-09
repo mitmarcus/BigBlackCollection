@@ -5,45 +5,42 @@ import java.util.ArrayList;
 public class EventList
 {
   private ArrayList<Event> eventList;
-  private ArrayList<User> participantList;
 
   public EventList()
   {
     eventList = new ArrayList<Event>();
-    participantList = new ArrayList<>();
   }
   public void addEvent(Event event)
   {
-    addEvent(event);
+    eventList.add(event);
   }
 
-  public void addParticipant(Event event, User user)
-  {
-    for (int i = 0; i< eventList.size();i++)
-    {
-      if (event == eventList.get(i))
-      {
-        participantList.add(user);
-      }
-    }
-  }
 
-  public void remove(Event event)
+  public void removeEvent(Event event)
   {
-    remove(event);
+    eventList.remove(event);
   }
 
   public Event getEvent(Event event)
   {
-    Event event1 = null;
-    for(int i = 0; i<eventList.size(); i++)
+    Event a = null;
+    for(int i = 0; i<eventList.size();i++)
     {
-      if(eventList.get(i).equals(event))
+      if (event == eventList.get(i))
       {
-        event1 = event;
+        a = eventList.get(i);
       }
     }
-    return event1;
+    return a;
+  }
+  public int getEventListSize()
+  {
+    return eventList.size();
+  }
+
+  public Event getEventByIndex(int index)
+  {
+    return eventList.get(index);
   }
 
 
