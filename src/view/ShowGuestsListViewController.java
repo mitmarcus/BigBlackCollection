@@ -41,7 +41,7 @@ public class ShowGuestsListViewController //
     phoneNumberColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
     userListTable.setItems(viewModel.getList());
-      viewModel.update();
+      reset();
 
   }
 
@@ -52,7 +52,7 @@ public class ShowGuestsListViewController //
 
   public void reset()
   {
-    viewModel.update();
+    userListTable.setItems(viewModel.update());
   }
 
   @FXML private void goBack()
@@ -78,7 +78,7 @@ public class ShowGuestsListViewController //
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), false);
 
-      model.removeUser(user);
+      model.removeGuest(user);
       viewModel.remove(user);
       userListTable.getSelectionModel().clearSelection();
 

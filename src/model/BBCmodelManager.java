@@ -38,9 +38,11 @@ public class BBCmodelManager implements BBCmodel
     User Filip = new User("Filip", "asdadw", 91757485, false);
     User Duarte = new User("Jorge", "Duarte", 91696968, false);
     User Stephen = new User("Stephen", "oasdasi", 91696969, false);
-    guestList.addUser(Filip);
-    guestList.addUser(Duarte);
-    guestList.addUser(Stephen);
+    guestList.addGuest(Filip);
+    guestList.addGuest(Duarte);
+    guestList.addGuest(Stephen);
+    System.out.println(guestList.size()
+    );
 
 
      /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
@@ -60,11 +62,17 @@ public class BBCmodelManager implements BBCmodel
   {
     userList.addUser(user);
   }
+  @Override public void addGuest(User guest)
+  {
+    guestList.addGuest(guest);
+  }
 
   @Override public void removeUser(User user)
   {
     userList.removeUser(user);
   }
+
+  @Override public void removeGuest(User guest){guestList.removeGuest(guest);}
 
   @Override public void editMember(User user, User user1)
   {
@@ -118,10 +126,7 @@ public class BBCmodelManager implements BBCmodel
 
 
 
-  @Override public void addGuest(User guest)
-  {
-    guestList.addGuest(guest);
-  }
+
 
   @Override public int getEventListSize()
   {
