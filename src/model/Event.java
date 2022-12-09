@@ -17,7 +17,11 @@ public class Event {
     setDate(myDate);
   }
 
-  public void addParticipant(User participant)
+  //Jakub test for utils
+	public Event(String test_title, String horsens, String description, int i, int i1) {
+	}
+
+	public void addParticipant(User participant)
   {
     participants.add(participant);
   }
