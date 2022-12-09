@@ -26,5 +26,4 @@
 //		events2 = parser.fromJson("ListOfEvents.json", Event.class);
 //
 //	}
-//
 //}
