@@ -80,7 +80,12 @@ public class ViewHandler
       case "addParticipant" :
         root = loadAddParticipantViewController("AddParticipantViewController.fxml");
         break;
-
+      case "reservations" :
+        root = loadShowReservationViewController("ShowReservationListViewController.fxml");
+        break;
+      case "CreateReservation" :
+        root = loadCreateAReservationViewController("CreateAReservationViewController.fxml");
+        break;
     }
     currentScene.setRoot(root);
     String title = "";
@@ -417,5 +422,52 @@ public class ViewHandler
       addParticipantViewController.reset();
     }
     return addParticipantViewController.getRoot();
+  }
+
+  private Region loadShowReservationViewController(String fxmlFile)
+  {
+    if(showEventParticipantsViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        showEventParticipantsViewController = loader.getController();
+        showEventParticipantsViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      showEventParticipantsViewController.reset();
+    }
+    return showEventParticipantsViewController.getRoot();
+  }
+  private Region loadCreateAReservationViewController(String fxmlFile)
+  {
+    if(CreateAnEventViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        CreateAnEventViewController = loader.getController();
+        CreateAnEventViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      CreateAnEventViewController.reset();
+    }
+    return CreateAnEventViewController.getRoot();
   }
 }

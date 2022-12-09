@@ -7,10 +7,7 @@ public class Game
 {
   private String nameOfGame;
   private int noOfPlayers;
-  private String gameType;
-
   private User owner;
-
   private ArrayList<Integer> rating;
 
   public Game(String nameOfGame, int noOfPlayers , User owner)

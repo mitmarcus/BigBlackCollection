@@ -29,10 +29,10 @@ public class EventListViewModel  //
       events.add(model.getEvent(i));
     }
     list.clear();
-    for (int j = 0; j< events.size(); j++)
-    {
-      list.add(new EventViewModel(events.get(j))); // I HAVE TO CHANGE THIS
-    }
+//    for (int j = 0; j< events.size(); j++)
+//    {
+//      list.add(new EventViewModel(events.get(j))); // I HAVE TO CHANGE THIS
+//    }
     return list;
   }
 

@@ -4,14 +4,27 @@ import java.util.ArrayList;
 //mark
 
 public class GameReservationList {
-    private Game game;
-    private User user;
     private ArrayList<GameReservation> reservations;
-    private LocalDate date;
-    public GameReservationList(Game game) {
-        this.game = game;
+    public GameReservationList() {
         reservations = new ArrayList<GameReservation>();
     }
+
+    public void addReservation(GameReservation reservation)
+    {
+        reservations.add(reservation);
+    }
+
+    public void removeReservation(GameReservation reservation)
+    {
+        reservations.remove(reservation);
+    }
+
+    public ArrayList<GameReservation> getReservations()
+    {
+        return reservations;
+    }
+
+
     public GameReservation getGameReservation(Game game) {
         for (GameReservation reservation : reservations) {
             if (reservation.getGame() == game) {
@@ -50,17 +63,5 @@ public class GameReservationList {
             }
         }
         return null;
-    }
-
-    public void addGameReservation(GameReservation reservation) {
-        reservations.add(reservation);
-    }
-
-    public void removeGameReservation(GameReservation reservation) {
-        reservations.remove(reservation);
-    }
-
-    public void editGameReservation(GameReservation reservation, Game game, LocalDate fromDate, LocalDate toDate, User user) {
-        reservation.set(game, fromDate, toDate, user);
     }
 }

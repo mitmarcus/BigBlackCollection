@@ -8,7 +8,7 @@ public class GameReservation {
   private Game game;
   private LocalDate fromDate;
   private LocalDate toDate;
-  public GameReservation(Game game, LocalDate fromDate, LocalDate toDate, User user) {
+  public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
     set(game, fromDate, toDate, user);
   }
 

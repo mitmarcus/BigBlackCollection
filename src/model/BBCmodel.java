@@ -40,4 +40,10 @@ public interface BBCmodel
   ArrayList<User> getParticipantList();
   User getParticipants(int i);
   void addEvent(Event event);
+
+
+  //CODE FOR RESERVATION
+  int getReservationListSize();
+  GameReservation getReservation(int i);
+  void addReservation(GameReservation reservation);
 }
