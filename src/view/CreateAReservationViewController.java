@@ -49,14 +49,14 @@ public class CreateAReservationViewController
 
     @FXML private void returnButtonPressed()
     {
-        viewHandler.openView("reservation");
+        viewHandler.openView("reservations");
     }
 
-//    @FXML private void createReservation()
-//    {
-//        GameReservation reservation = new GameReservation(reservationGame.getText(), reservationDateFrom.getValue(),
-//                reservationDateTo.getValue());
-//        model.addReservation(reservation);
-//        viewHandler.openView("events");
-//    }
+    @FXML private void createAReservation()
+    {
+        GameReservation reservation = new GameReservation(reservationBorrower.getText(), reservationGame.getText(), reservationDateFrom.getValue(),
+                reservationDateTo.getValue());
+        model.addReservation(reservation);
+        viewHandler.openView("reservations");
+    }
 }

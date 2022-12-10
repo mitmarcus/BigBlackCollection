@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" minHeight="40.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#goBack" text="Go back">
+            <Button mnemonicParsing="false" onAction="#returnButtonPressed" text="Go back">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -53,7 +53,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#createReservation" text="Create" />
+                  <Button mnemonicParsing="false" onAction="#createAReservation" text="Create" />
                </children>
             </VBox>
          </children>

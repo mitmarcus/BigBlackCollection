@@ -33,7 +33,7 @@
          <children>
             <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="0.0" prefWidth="140.0">
                <children>
-                  <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#addReservation" prefWidth="120.0" text="Add">
+                  <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#createAReservation" prefWidth="120.0" text="Add">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
