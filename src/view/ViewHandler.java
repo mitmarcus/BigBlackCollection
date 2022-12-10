@@ -29,6 +29,10 @@ public class ViewHandler
   private ShowEventParticipantsViewController showEventParticipantsViewController; //
   private CreateAnEventViewController CreateAnEventViewController; //
   private AddParticipantViewController addParticipantViewController;
+
+  private ShowReservationViewController showReservationViewController; //
+  private CreateAReservationViewController createAReservationViewController;
+
   public ViewHandler(BBCmodel model)
   {
     this.model = model;
@@ -83,7 +87,7 @@ public class ViewHandler
       case "reservations" :
         root = loadShowReservationViewController("ShowReservationListViewController.fxml");
         break;
-      case "CreateReservation" :
+      case "createReservation" :
         root = loadCreateAReservationViewController("CreateAReservationViewController.fxml");
         break;
     }
@@ -426,7 +430,7 @@ public class ViewHandler
 
   private Region loadShowReservationViewController(String fxmlFile)
   {
-    if(showEventParticipantsViewController == null)
+    if(showReservationViewController == null)
 
 
       try
@@ -434,8 +438,6 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        showEventParticipantsViewController = loader.getController();
-        showEventParticipantsViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -443,13 +445,13 @@ public class ViewHandler
       }
     else
     {
-      showEventParticipantsViewController.reset();
+      showReservationViewController.reset();
     }
-    return showEventParticipantsViewController.getRoot();
+    return showReservationViewController.getRoot();
   }
   private Region loadCreateAReservationViewController(String fxmlFile)
   {
-    if(CreateAnEventViewController == null)
+    if(createAReservationViewController == null)
 
 
       try
@@ -457,8 +459,6 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        CreateAnEventViewController = loader.getController();
-        CreateAnEventViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -466,8 +466,8 @@ public class ViewHandler
       }
     else
     {
-      CreateAnEventViewController.reset();
+      createAReservationViewController.reset();
     }
-    return CreateAnEventViewController.getRoot();
+    return createAReservationViewController.getRoot();
   }
 }
