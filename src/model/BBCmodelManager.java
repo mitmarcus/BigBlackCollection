@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
@@ -51,6 +52,19 @@ public class BBCmodelManager implements BBCmodel
     Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
     eventList.addEvent(e1);
     eventList.addEvent(e2); */
+
+    LocalDate date1 =  LocalDate.parse("2022-12-26");
+    LocalDate date2 =  LocalDate.parse("2022-12-28");
+    LocalDate date3 =  LocalDate.parse("2022-12-30");
+
+
+
+    GameReservation game = new GameReservation("Ricardo", "checkers",date1 , date2);
+    GameReservation game1 = new GameReservation("Marcus", "Chess", date1, date3);
+    reservationList.addReservation(game);
+    reservationList.addReservation(game1);
+
+    //System.out.println(game);
 
 
 

@@ -4,16 +4,19 @@ package model;
 import java.time.LocalDate;
 
 public class GameReservation {
-//  private User user;
-//  private Game game;
+ // private User user;
+  //private Game game;
   private LocalDate fromDate;
   private LocalDate toDate;
 
   private String borrower;
   private String gameName;
-//  public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
-//    set(game, fromDate, toDate, user);
-//  }
+ /*public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
+    this.user = user;
+    this.game = game;
+    this.fromDate =  fromDate;
+    this.toDate =  toDate;*/
+
 
   public GameReservation(String borrower, String game, Object fromDate, Object toDate) {
     this.borrower = borrower;
