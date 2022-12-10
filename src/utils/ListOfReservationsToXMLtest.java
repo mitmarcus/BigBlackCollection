@@ -23,7 +23,7 @@
 //		File file1 = parser.toJson(events, "ListOfEvents.json");
 //		System.out.println("JSON file: " + file1.getAbsolutePath());
 //
-//		events2 = parser.fromJson("ListOfEvents.json", Event.class);
+//		events2 = parser.fromJson("ListOfEvents.xml", Event.class);
 //
 //	}
 //}

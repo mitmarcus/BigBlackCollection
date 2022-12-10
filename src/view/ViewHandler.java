@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import model.BBCmodel;
@@ -92,18 +93,15 @@ public class ViewHandler
         break;
     }
     currentScene.setRoot(root);
-    String title = "";
-    if (root.getUserData() != null)
-    {
-      title += root.getUserData();
-    }
-    primaryStage.setTitle(title);
+    primaryStage.setTitle("BBC");
+    primaryStage.getIcons().add(new Image("/view/Logo_300x300.png"));
     primaryStage.setScene(currentScene);
     primaryStage.setWidth(root.getPrefWidth());
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
     currentScene.setRoot(root);
     primaryStage.show();
+    primaryStage.setResizable(false);
   }
 
 
@@ -111,6 +109,8 @@ public class ViewHandler
   public void start(Stage primaryStage)
   {
     this.primaryStage = primaryStage;
+    primaryStage.setResizable(false);
+    primaryStage.setTitle("BBC");
     openView("main");
   }
   public void closeView()

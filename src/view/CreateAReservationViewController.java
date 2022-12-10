@@ -5,11 +5,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
-import model.BBCmodel;
-import model.Event;
-import model.GameReservation;
-import model.User;
-
+import model.*;
 
 public class CreateAReservationViewController
 {

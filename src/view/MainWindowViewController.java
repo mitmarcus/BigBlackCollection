@@ -1,8 +1,6 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 
@@ -15,25 +13,19 @@ public class MainWindowViewController  //
   private ViewHandler viewHandler;
 
 
-  public MainWindowViewController()
-  {
+  public MainWindowViewController() {
     // Called by FXMLLoader
   }
 
-  public void init(ViewHandler viewHandler, BBCmodel model, Region root)
-  {
+  public void init(ViewHandler viewHandler, BBCmodel model, Region root) {
     this.model = model;
     this.viewHandler = viewHandler;
     this.root = root;
 
-
-
     reset();
   }
 
-  public void reset()
-  {
-
+  public void reset() {
   }
 
   public Region getRoot()
@@ -45,12 +37,10 @@ public class MainWindowViewController  //
   {
     viewHandler.openView("users");
   }
-
   @FXML private void showEventsWindow()
   {
     viewHandler.openView("events");
   }
-
   @FXML private void showGamesWindow()
   {
     viewHandler.openView("games");

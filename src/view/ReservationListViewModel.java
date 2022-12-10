@@ -39,10 +39,7 @@ public class ReservationListViewModel {
     {
         for (int i = 0; i <list.size(); i++)
         {
-            if (list.get(i).getReservationBorrowerProperty().equals(reservation.lentTo()) &&
-                    list.get(i).getReservationGameProperty().equals(reservation.getGame()) &&
-                    list.get(i).getReservationDateFromProperty().equals(reservation.getFromDate()) &&
-                    list.get(i).getReservationDateToProperty().equals(reservation.getToDate()))
+            if (list.get(i).equals(reservation))
             {
                 list.remove(i);
                 break;
