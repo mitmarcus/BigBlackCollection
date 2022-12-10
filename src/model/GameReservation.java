@@ -4,16 +4,16 @@ package model;
 import java.time.LocalDate;
 
 public class GameReservation {
-  private User user;
-  private Game game;
+//  private User user;
+//  private Game game;
   private LocalDate fromDate;
   private LocalDate toDate;
 
   private String borrower;
   private String gameName;
-  public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
-    set(game, fromDate, toDate, user);
-  }
+//  public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
+//    set(game, fromDate, toDate, user);
+//  }
 
   public GameReservation(String borrower, String game, Object fromDate, Object toDate) {
     this.borrower = borrower;
@@ -22,19 +22,26 @@ public class GameReservation {
     this.toDate = (LocalDate) toDate;
   }
 
-  public void set(Game game, LocalDate fromDate, LocalDate toDate, User user) {
-    this.game = game;
-    this.fromDate = fromDate;
-    this.toDate = toDate;
-    this.user = user;
-  }
+//  public void set(Game game, LocalDate fromDate, LocalDate toDate, User user) {
+//    this.game = game;
+//    this.fromDate = fromDate;
+//    this.toDate = toDate;
+//    this.user = user;
+//  }
 
-  public User lentTo() {
+  /*public User lentTo() {
     return user;
-  }
+  }*/
 
-  public Game getGame() {
-    return game;
+  public String lentTo() {
+    return borrower;}
+
+//  public Game getGame() {
+//    return game;
+//  }
+
+   public String getGame() {
+    return gameName;
   }
 
   public LocalDate getFromDate() {
@@ -43,6 +50,14 @@ public class GameReservation {
 
   public LocalDate getToDate() {
     return toDate;
+  }
+
+  @Override public boolean equals(Object obj){
+    if ((obj == null) || (obj.getClass() != this.getClass())) {
+      return false;
+    }
+    GameReservation other = (GameReservation) obj;
+    return (borrower.equals(other.borrower) && gameName.equals(other.gameName) && fromDate.equals(other.fromDate) && toDate.equals(other.toDate));
   }
 
 }
