@@ -44,9 +44,6 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(Filip);
     guestList.addGuest(Duarte);
     guestList.addGuest(Stephen);
-    System.out.println(guestList.size()
-    );
-
 
      /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
     Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
