@@ -20,7 +20,7 @@ public class ReservationListViewModel {
     {
         return list;
     }
-    public ObservableList<ReservationViewModel> update() //Code for event Table
+    public ObservableList<ReservationViewModel> update()
     {
         ArrayList<GameReservation> reservation = new ArrayList<>();
         for (int i = 0; i <model.getReservationListSize(); i++)
@@ -30,7 +30,7 @@ public class ReservationListViewModel {
         list.clear();
 //        for (int j = 0; j< reservation.size(); j++)
 //        {
-//            list.add(new EventViewModel(reservation.get(j))); // I HAVE TO CHANGE THIS
+//            list.add(new ReservationViewModel(reservation.get(j)));
 //        }
         return list;
     }

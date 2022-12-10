@@ -85,9 +85,9 @@ public class ViewHandler
         root = loadAddParticipantViewController("AddParticipantViewController.fxml");
         break;
       case "reservations" :
-        root = loadShowReservationViewController("ShowReservationListViewController.fxml");
+        root = loadShowReservationViewController("ShowReservationViewController.fxml");
         break;
-      case "createReservation" :
+      case "createAReservation" :
         root = loadCreateAReservationViewController("CreateAReservationViewController.fxml");
         break;
     }
@@ -438,6 +438,8 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
+        showReservationViewController = loader.getController();
+        showReservationViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -459,6 +461,8 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
+        createAReservationViewController = loader.getController();
+        createAReservationViewController.init(this, model, root);
       }
       catch (Exception e)
       {
