@@ -22,7 +22,6 @@ public class TestVehicleList {
 		VehicleList list2 = parser.fromJson("Vehicle.json", VehicleList.class );
 
 		System.out.println("list2: ");
-
 		for (int i = 0; i < list2.size(); i++){
 			System.out.println(list2.get(i));
 		}
@@ -31,13 +30,9 @@ public class TestVehicleList {
 		System.out.println("XML file: " + file2.getAbsolutePath());
 
 		VehicleList list3 = parser.fromXml("Vehicle.xml", VehicleList.class);
-
 		System.out.println("list3: ");
-
 		for (int i = 0; i < list3.size(); i++){
 			System.out.println(list3.get(i));
 		}
-
-
 	}
 }

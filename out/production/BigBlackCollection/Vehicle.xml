@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VehicleList>
+  <size>2</size>
+  <list>
+    <manualGear>true</manualGear>
+    <engine>
+      <volume>2000</volume>
+      <horsePower>300</horsePower>
+      <type>Eng1</type>
+      <isDiesel>true</isDiesel>
+    </engine>
+    <model>7</model>
+    <make>BMW</make>
+  </list>
+  <list>
+    <manualGear>false</manualGear>
+    <engine>
+      <volume>300</volume>
+      <horsePower>100</horsePower>
+      <type>Eng32</type>
+      <isDiesel>true</isDiesel>
+    </engine>
+    <model>3</model>
+    <make>Mazda</make>
+  </list>
+</VehicleList>
