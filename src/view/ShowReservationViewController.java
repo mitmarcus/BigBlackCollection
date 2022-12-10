@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
+import model.GameReservation;
 
 import java.util.Optional;
 
@@ -13,7 +14,7 @@ public class ShowReservationViewController
     private Region root;
     private BBCmodel model;
     private ViewHandler viewHandler;
-    private EventListViewModel viewModel;
+    private ReservationListViewModel viewModel;
 
     @FXML private TableView<ReservationViewModel> reservationListTable;
     @FXML private TableColumn<ReservationViewModel, String> borrower;
@@ -34,13 +35,13 @@ public class ShowReservationViewController
         this.viewModel = new ReservationListViewModel(model);
 
         borrower.setCellValueFactory(
-                cellData -> cellData.getValue().getReservationNameProperty());
+                cellData -> cellData.getValue().getReservationBorrowerProperty());
         game.setCellValueFactory(
-                cellData -> cellData.getValue().getEventPlaceProperty());
+                cellData -> cellData.getValue().getReservationGameProperty());
         fromDate.setCellValueFactory(
-                cellData -> cellData.getValue().getEventDateProperty());
+                cellData -> cellData.getValue().getReservationDateFromProperty());
         toDate.setCellValueFactory(
-                cellData -> cellData.getValue().getEventDescriptionProperty());
+                cellData -> cellData.getValue().getReservationDateToProperty());
         reservationListTable.setItems(viewModel.getList());
         viewModel.update();
     }
@@ -70,13 +71,13 @@ public class ShowReservationViewController
 
         if (remove)
         {
-            Event event = new Event(selectedItem.getEventNameProperty().get(),
-                    selectedItem.getEventPlaceProperty().get(),
-                    selectedItem.getEventDescriptionProperty().get());
+            GameReservation reservation = new GameReservation(selectedItem.getReservationBorrowerProperty().get(),
+                    selectedItem.getReservationGameProperty().get(),
+                    selectedItem.getReservationDateFromProperty().get(), selectedItem.getReservationDateToProperty().get());
 
 
-            model.removeEvent(event);
-            viewModel.remove(event);
+            model.removeReservation(reservation);
+            viewModel.remove(reservation);
             reservationListTable.getSelectionModel().clearSelection();
 
 
@@ -87,7 +88,7 @@ public class ShowReservationViewController
     {
         int index;
         index = reservationListTable.getSelectionModel().getSelectedIndex();
-        EventViewModel selectedItem = reservationListTable.getItems().get(index);
+        ReservationViewModel selectedItem = reservationListTable.getItems().get(index);
         if (index < 0 || index >= reservationListTable.getItems().size())
         {
             return false;
@@ -95,7 +96,7 @@ public class ShowReservationViewController
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText(
-                "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
+                "Removing user {" + selectedItem.getReservationBorrowerProperty().get() + "}");
         Optional<ButtonType> result = alert.showAndWait();
         return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
     }

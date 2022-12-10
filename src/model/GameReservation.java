@@ -8,8 +8,18 @@ public class GameReservation {
   private Game game;
   private LocalDate fromDate;
   private LocalDate toDate;
+
+  private String borrower;
+  private String gameName;
   public GameReservation(User user, Game game, LocalDate fromDate, LocalDate toDate) {
     set(game, fromDate, toDate, user);
+  }
+
+  public GameReservation(String borrower, String game, Object fromDate, Object toDate) {
+    this.borrower = borrower;
+    this.gameName = game;
+    this.fromDate = (LocalDate) fromDate;
+    this.toDate = (LocalDate) toDate;
   }
 
   public void set(Game game, LocalDate fromDate, LocalDate toDate, User user) {
@@ -31,7 +41,9 @@ public class GameReservation {
     return fromDate;
   }
 
-    public LocalDate getToDate() {
+  public LocalDate getToDate() {
     return toDate;
   }
+
 }
+

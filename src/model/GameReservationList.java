@@ -4,29 +4,29 @@ import java.util.ArrayList;
 //mark
 
 public class GameReservationList {
-    private ArrayList<GameReservation> reservations;
+    private ArrayList<GameReservation> reservationList;
     public GameReservationList() {
-        reservations = new ArrayList<GameReservation>();
+        reservationList = new ArrayList<GameReservation>();
     }
 
     public void addReservation(GameReservation reservation)
     {
-        reservations.add(reservation);
+        reservationList.add(reservation);
     }
 
     public void removeReservation(GameReservation reservation)
     {
-        reservations.remove(reservation);
+        reservationList.remove(reservation);
     }
 
-    public ArrayList<GameReservation> getReservations()
+    public ArrayList<GameReservation> getReservationList()
     {
-        return reservations;
+        return reservationList;
     }
 
 
     public GameReservation getGameReservation(Game game) {
-        for (GameReservation reservation : reservations) {
+        for (GameReservation reservation : reservationList) {
             if (reservation.getGame() == game) {
                 return reservation;
             }
@@ -35,11 +35,11 @@ public class GameReservationList {
     }
 
     public GameReservation getGameReservationAtPosition(int index) {
-        return reservations.get(index);
+        return reservationList.get(index);
     }
 
     public LocalDate getBorrowDateForAGame(Game game) {
-        for (GameReservation reservation : reservations) {
+        for (GameReservation reservation : reservationList) {
             if (reservation.getGame() == game) {
                 return reservation.getFromDate();
             }
@@ -48,7 +48,7 @@ public class GameReservationList {
     }
 
     public LocalDate getReturnDateForAGame(Game game) {
-        for (GameReservation reservation : reservations) {
+        for (GameReservation reservation : reservationList) {
             if (reservation.getGame() == game) {
                 return reservation.getToDate();
             }
@@ -57,11 +57,20 @@ public class GameReservationList {
     }
 
     public User getGameLentTo(Game game) {
-        for (GameReservation reservation : reservations) {
+        for (GameReservation reservation : reservationList) {
             if (reservation.getGame() == game) {
                 return reservation.lentTo();
             }
         }
         return null;
+    }
+
+    public int getReservationListSize() {
+        return reservationList.size();
+    }
+
+    public GameReservation getReservationByIndex(int index)
+    {
+        return reservationList.get(index);
     }
 }

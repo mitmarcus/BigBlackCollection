@@ -46,4 +46,6 @@ public interface BBCmodel
   int getReservationListSize();
   GameReservation getReservation(int i);
   void addReservation(GameReservation reservation);
+
+  void removeReservation(GameReservation reservation);
 }

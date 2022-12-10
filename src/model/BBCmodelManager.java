@@ -155,13 +155,13 @@ public class BBCmodelManager implements BBCmodel
   }
 
   @Override
-  public GameReservation getReservation(int i) {
+  public GameReservation getReservation(int index) {
     return reservationList.getReservationByIndex(index);
   }
 
   @Override
   public void addReservation(GameReservation reservation) {
-    reservation.addReservation(reservation);
+    reservationList.addReservation(reservation);
   }
 
 

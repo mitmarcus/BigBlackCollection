@@ -1,6 +1,7 @@
 package view;
 
 import javafx.beans.property.*;
+import javafx.beans.value.ObservableValue;
 import model.GameReservation;
 
 import java.time.LocalDate;
@@ -33,4 +34,5 @@ public class ReservationViewModel {
     public ObjectProperty getReservationDateToProperty() {
         return reservationDateToProperty;
     }
+
 }
