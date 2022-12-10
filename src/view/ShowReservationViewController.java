@@ -43,7 +43,7 @@ public class ShowReservationViewController
         toDate.setCellValueFactory(
                 cellData -> cellData.getValue().getReservationDateToProperty());
         reservationListTable.setItems(viewModel.getList());
-        viewModel.update();
+        reset();
     }
 
     public Region getRoot()
@@ -51,7 +51,7 @@ public class ShowReservationViewController
         return root;
     }
     public void reset() {
-        viewModel.update();
+        reservationListTable.setItems(viewModel.update());
     }
 
     @FXML private void goBack()

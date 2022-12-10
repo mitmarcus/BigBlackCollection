@@ -28,10 +28,10 @@ public class ReservationListViewModel {
             reservation.add(model.getReservation(i));
         }
         list.clear();
-//        for (int j = 0; j< reservation.size(); j++)
-//        {
-//            list.add(new ReservationViewModel(reservation.get(j)));
-//        }
+        for (int j = 0; j< reservation.size(); j++)
+        {
+            list.add(new ReservationViewModel(reservation.get(j)));
+        }
         return list;
     }
 
