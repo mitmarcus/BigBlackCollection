@@ -1,7 +1,6 @@
 package utils;
 import parser.XmlJsonParser;
 import parser.ParserException;
-
 import java.io.File;
 
 public class TestVehicleList {
