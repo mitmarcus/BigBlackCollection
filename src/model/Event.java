@@ -32,7 +32,8 @@ public class Event {
 	public Event(String test_title, String horsens, String description, int i, int i1) {
 	}
 
-	public void addParticipant(User participant)
+
+  public void addParticipant(User participant)
   {
     participantList.add(participant);
   }
