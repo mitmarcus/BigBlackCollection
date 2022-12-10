@@ -57,8 +57,8 @@
             </VBox>
             <TableView fx:id="userListTable" prefHeight="230.0" prefWidth="600.0">
               <columns>
-                <TableColumn fx:id="fullNameColumn" prefWidth="300.0" text="NAME" />
-                <TableColumn fx:id="phoneNumberColumn" prefWidth="180.0" text="PHONE" />
+                <TableColumn fx:id="fullNameColumn" onEditCommit="#editName" prefWidth="300.0" text="NAME" />
+                <TableColumn fx:id="phoneNumberColumn" onEditCommit="#editPhoneNumber" prefWidth="180.0" text="PHONE" />
               </columns>
             </TableView>
          </children>

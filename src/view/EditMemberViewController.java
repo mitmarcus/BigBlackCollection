@@ -42,9 +42,9 @@ public class EditMemberViewController
 
   public void reset()
   {
-    this.firstNameText.setText("");
-    this.lastNameText.setText("");
-    this.phoneText.setText("");
+    this.firstNameText.getText();
+    this.lastNameText.getText();
+    this.phoneText.getText();
 
   }
 
