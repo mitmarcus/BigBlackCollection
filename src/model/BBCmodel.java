@@ -10,6 +10,7 @@ public interface BBCmodel
   void editMember(User user, User user1);
   User getUser(User user);
   User getUserByFullName(String fullName);
+  User getGuestByFullName(String fullName);
   User getUserByPhoneNumber(Long phoneNumber);
   User getUser(int index);
   User getGuest(User guest);

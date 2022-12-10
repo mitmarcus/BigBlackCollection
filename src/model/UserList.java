@@ -67,6 +67,18 @@ public class UserList {
         return guestList.get(index);
     }
 
+    public User getGuestByFullName(String fullName)
+    {
+        for (int i = 0 ; i< guestList.size(); i++)
+        {
+            if (guestList.get(i).getFullName().equals(fullName))
+            {
+                return guestList.get(i);
+            }
+        }
+        return null;
+    }
+
     public User getUserByFullName(String fullName)
     {
         for (int i = 0; i < userList.size(); i++)

@@ -109,6 +109,11 @@ public class BBCmodelManager implements BBCmodel
     return userList.getUserByFullName(fullName);
   }
 
+  @Override public User getGuestByFullName(String fullName)
+  {
+    return guestList.getGuestByFullName(fullName);
+  }
+
   @Override public User getUserByPhoneNumber(Long phoneNumber)
   {
     return userList.getUserByPhone(phoneNumber);
