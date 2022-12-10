@@ -71,6 +71,12 @@ public class User {
     this.lastName = lastName;
   }
 
+  public void setFullName(String fullname)
+  {
+    this.firstName = fullname.split(" ")[0];
+    this.lastName = fullname.split(" ")[1];
+  }
+
   public void setPhoneNumber(long phoneNumber)
   {
     this.phoneNumber = phoneNumber;

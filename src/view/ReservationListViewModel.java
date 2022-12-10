@@ -28,10 +28,10 @@ public class ReservationListViewModel {
             reservation.add(model.getReservation(i));
         }
         list.clear();
-//        for (int j = 0; j< reservation.size(); j++)
-//        {
-//            list.add(new ReservationViewModel(reservation.get(j)));
-//        }
+        for (int j = 0; j< reservation.size(); j++)
+        {
+            list.add(new ReservationViewModel(reservation.get(j)));
+        }
         return list;
     }
 
@@ -39,10 +39,7 @@ public class ReservationListViewModel {
     {
         for (int i = 0; i <list.size(); i++)
         {
-            if (list.get(i).getReservationBorrowerProperty().equals(reservation.lentTo()) &&
-                    list.get(i).getReservationGameProperty().equals(reservation.getGame()) &&
-                    list.get(i).getReservationDateFromProperty().equals(reservation.getFromDate()) &&
-                    list.get(i).getReservationDateToProperty().equals(reservation.getToDate()))
+            if (list.get(i).equals(reservation))
             {
                 list.remove(i);
                 break;

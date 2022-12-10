@@ -7,6 +7,7 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class ShowEventListViewController  //
@@ -76,15 +77,15 @@ public class ShowEventListViewController  //
 
     if (remove)
     {
-      Event event = new Event(selectedItem.getEventNameProperty().get(),
+      /*Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
-          selectedItem.getEventDescriptionProperty().get());
+          selectedItem.getEventDescriptionProperty().get(),
+          selectedItem.getEventDateProperty().get());
 
 
       model.removeEvent(event);
       viewModel.remove(event);
-      eventListTable.getSelectionModel().clearSelection();
-
+     */ eventListTable.getSelectionModel().clearSelection();
 
     }
   }

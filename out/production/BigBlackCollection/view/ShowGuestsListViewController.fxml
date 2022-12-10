@@ -13,7 +13,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Return to main menu" onAction="#goBack" />
+            <Button mnemonicParsing="false" onAction="#goBack" text="Return to main menu" />
          </children>
          <padding>
             <Insets left="45.0" />
@@ -35,17 +35,17 @@
          <children>
             <VBox prefHeight="0.0" prefWidth="100.0">
                <children>
-                  <Button onAction="#addNewMember" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Add new">
+                  <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewMember" prefWidth="100.0" text="Add new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button onAction="#removeMember" layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Remove">
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeMember" prefWidth="100.0" text="Remove">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button onAction="#editMember" layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Edit">
+                  <Button layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#editMember" prefWidth="100.0" text="Edit">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -57,8 +57,8 @@
             </VBox>
             <TableView fx:id="userListTable" prefHeight="230.0" prefWidth="600.0">
                <columns>
-                  <TableColumn fx:id="fullNameColumn" prefWidth="300.0" text="NAME" />
-                  <TableColumn fx:id="phoneNumberColumn" prefWidth="180.0" text="PHONE" />
+                  <TableColumn fx:id="fullNameColumn" onEditCommit="#editName" prefWidth="300.0" text="NAME" />
+                  <TableColumn fx:id="phoneNumberColumn" onEditCommit="#editPhoneNumber" prefWidth="180.0" text="PHONE" />
                </columns>
             </TableView>
          </children>

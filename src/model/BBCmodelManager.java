@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
@@ -43,14 +44,24 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(Filip);
     guestList.addGuest(Duarte);
     guestList.addGuest(Stephen);
-    System.out.println(guestList.size()
-    );
-
 
      /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
     Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
     eventList.addEvent(e1);
     eventList.addEvent(e2); */
+
+    LocalDate date1 =  LocalDate.parse("2022-12-26");
+    LocalDate date2 =  LocalDate.parse("2022-12-28");
+    LocalDate date3 =  LocalDate.parse("2022-12-30");
+
+
+
+    GameReservation game = new GameReservation("Ricardo", "checkers",date1 , date2);
+    GameReservation game1 = new GameReservation("Marcus", "Chess", date1, date3);
+    reservationList.addReservation(game);
+    reservationList.addReservation(game1);
+
+    //System.out.println(game);
 
 
 
@@ -91,6 +102,21 @@ public class BBCmodelManager implements BBCmodel
       }
     }
     return null;
+  }
+
+  @Override public User getUserByFullName(String fullName)
+  {
+    return userList.getUserByFullName(fullName);
+  }
+
+  @Override public User getGuestByFullName(String fullName)
+  {
+    return guestList.getGuestByFullName(fullName);
+  }
+
+  @Override public User getUserByPhoneNumber(Long phoneNumber)
+  {
+    return userList.getUserByPhone(phoneNumber);
   }
   @Override public User getUser(int index)
   {

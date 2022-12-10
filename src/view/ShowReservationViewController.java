@@ -20,7 +20,7 @@ public class ShowReservationViewController
     @FXML private TableColumn<ReservationViewModel, String> borrower;
     @FXML private TableColumn<ReservationViewModel, String> game;
     @FXML private TableColumn<ReservationViewModel, DatePicker> fromDate;
-    @FXML private TableColumn<ReservationViewModel, String> toDate;
+    @FXML private TableColumn<ReservationViewModel, DatePicker> toDate;
 
     public ShowReservationViewController()
     {
@@ -43,7 +43,7 @@ public class ShowReservationViewController
         toDate.setCellValueFactory(
                 cellData -> cellData.getValue().getReservationDateToProperty());
         reservationListTable.setItems(viewModel.getList());
-        viewModel.update();
+        reset();
     }
 
     public Region getRoot()
@@ -51,7 +51,7 @@ public class ShowReservationViewController
         return root;
     }
     public void reset() {
-        viewModel.update();
+        reservationListTable.setItems(viewModel.update());
     }
 
     @FXML private void goBack()
@@ -79,6 +79,7 @@ public class ShowReservationViewController
             model.removeReservation(reservation);
             viewModel.remove(reservation);
             reservationListTable.getSelectionModel().clearSelection();
+            viewModel.update();
 
 
         }

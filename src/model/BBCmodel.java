@@ -9,6 +9,9 @@ public interface BBCmodel
   void removeGuest(User guest);
   void editMember(User user, User user1);
   User getUser(User user);
+  User getUserByFullName(String fullName);
+  User getGuestByFullName(String fullName);
+  User getUserByPhoneNumber(Long phoneNumber);
   User getUser(int index);
   User getGuest(User guest);
   User getGuestByIndex(int index);

@@ -14,12 +14,12 @@ public class EventViewModel  //
 
 
 
-  public EventViewModel(Event reservation)
+  public EventViewModel(Event event)
   {
-    eventNameProperty = new SimpleStringProperty(reservation.getTitle());
-    eventPlaceProperty = new SimpleStringProperty(reservation.getLocation());
-    eventDateProperty = new SimpleObjectProperty(reservation.getDate());
-    eventDescriptionProperty = new SimpleStringProperty(reservation.getDescription());
+    eventNameProperty = new SimpleStringProperty(event.getTitle());
+    eventPlaceProperty = new SimpleStringProperty(event.getLocation());
+    eventDateProperty = new SimpleObjectProperty(event.getDate());
+    eventDescriptionProperty = new SimpleStringProperty(event.getDescription());
   }
 
   public StringProperty getEventNameProperty(){return eventNameProperty;}
