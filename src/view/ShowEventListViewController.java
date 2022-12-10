@@ -85,7 +85,6 @@ public class ShowEventListViewController  //
       viewModel.remove(event);
       eventListTable.getSelectionModel().clearSelection();
 
-
     }
   }
 
