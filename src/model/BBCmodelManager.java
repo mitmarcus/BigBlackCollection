@@ -103,6 +103,16 @@ public class BBCmodelManager implements BBCmodel
     }
     return null;
   }
+
+  @Override public User getUserByFullName(String fullName)
+  {
+    return userList.getUserByFullName(fullName);
+  }
+
+  @Override public User getUserByPhoneNumber(Long phoneNumber)
+  {
+    return userList.getUserByPhone(phoneNumber);
+  }
   @Override public User getUser(int index)
   {
     return userList.getUserByIndex(index);
