@@ -40,10 +40,7 @@ public class EventListViewModel  //
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if (list.get(i).getEventNameProperty().equals(event.getTitle()) &&
-          list.get(i).getEventPlaceProperty().equals(event.getLocation()) &&
-          list.get(i).getEventDateProperty().equals(event.getDate()) &&
-          list.get(i).getEventDescriptionProperty().equals(event.getDescription()))
+      if (list.get(i).equals(event))
       {
         list.remove(i);
         break;
