@@ -3,8 +3,10 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.Region;
+import javafx.util.converter.NumberStringConverter;
 import model.BBCmodel;
 import model.User;
 
@@ -35,13 +37,18 @@ public class ShowGuestsListViewController //
     this.root = root;
     this.viewModel = new GuestListViewModel(model);
 
+    userListTable.setEditable(true);
 
     fullNameColumn.setCellValueFactory(
         cellData -> cellData.getValue().getFullNameProperty());
+    fullNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
     phoneNumberColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
+    phoneNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+
     userListTable.setItems(viewModel.getList());
-      viewModel.update();
+      reset();
 
   }
 
@@ -52,7 +59,7 @@ public class ShowGuestsListViewController //
 
   public void reset()
   {
-    viewModel.update();
+    userListTable.setItems(viewModel.update());
   }
 
   @FXML private void goBack()
@@ -78,7 +85,7 @@ public class ShowGuestsListViewController //
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), false);
 
-      model.removeUser(user);
+      model.removeGuest(user);
       viewModel.remove(user);
       userListTable.getSelectionModel().clearSelection();
 
@@ -108,6 +115,20 @@ public class ShowGuestsListViewController //
             + selectedItem.getPhoneProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK));
+  }
+
+  public void editName(TableColumn.CellEditEvent<UserViewModel,String> userViewModelStringCellEditEvent)
+  {
+    GuestViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
+    User user1 = model.getGuestByFullName (user0.getFullNameProperty().get());
+    user1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
+  }
+
+  public void editPhoneNumber(TableColumn.CellEditEvent<UserViewModel,Number> userViewModelNumberCellEditEvent)
+  {
+    GuestViewModel user = userListTable.getSelectionModel().getSelectedItem();
+    User user1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
+    user1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }
 }
 

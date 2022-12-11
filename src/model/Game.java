@@ -7,10 +7,7 @@ public class Game
 {
   private String nameOfGame;
   private int noOfPlayers;
-  private String gameType;
-
   private User owner;
-
   private ArrayList<Integer> rating;
 
   public Game(String nameOfGame, int noOfPlayers , User owner)
@@ -60,10 +57,10 @@ public class Game
     this.rating.add(rating);
   }
 
-  public String getRating()
+  public int getRating()
   {
     if (rating == null)
-      return "0";
+      return 0;
 
     int sum = 0;
     for (int i = 0; i < rating.size(); i++)
@@ -74,7 +71,7 @@ public class Game
 
     DecimalFormat df = new DecimalFormat("0.00");
 
-    return String.valueOf(df.format(m));
+    return (int) m;
   }
 
 

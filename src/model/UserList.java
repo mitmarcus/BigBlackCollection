@@ -25,6 +25,18 @@ public class UserList {
     public void removeGuest(User guest) {guestList.remove(guest);
     }
 
+
+    public User getUserByPhone(Long phoneNumber)
+    {
+        for ( int i = 0 ; i< userList.size(); i++)
+        {
+            if (userList.get(i).getPhoneNumber() == phoneNumber)
+            {
+                return userList.get(i);
+            }
+        }
+        return null;
+    }
     public User getUser(User user){
         for (User u : userList) {
             if (u == user) {
@@ -44,6 +56,7 @@ public class UserList {
         }
         return null;
     }
+
     public User getUserByIndex(int index)
     {
        return userList.get(index);
@@ -52,6 +65,28 @@ public class UserList {
     public User getGuestByIndex(int index)
     {
         return guestList.get(index);
+    }
+
+    public User getGuestByFullName(String fullName)
+    {
+        for (int i = 0 ; i< guestList.size(); i++)
+        {
+            if (guestList.get(i).getFullName().equals(fullName))
+            {
+                return guestList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public User getUserByFullName(String fullName)
+    {
+        for (int i = 0; i < userList.size(); i++)
+        {
+            if (userList.get(i).getFullName().equals(fullName))
+                 return userList.get(i);
+        }
+        return null ;
     }
 
     public int size() {

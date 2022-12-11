@@ -44,7 +44,7 @@ public class ShowEventListViewController  //
     eventDescription.setCellValueFactory(
         cellData -> cellData.getValue().getEventDescriptionProperty());
     eventListTable.setItems(viewModel.getList());
-    viewModel.update();
+    reset();
   }
 
   public Region getRoot()
@@ -52,7 +52,7 @@ public class ShowEventListViewController  //
     return root;
   }
   public void reset() {
-    viewModel.update();
+    eventListTable.setItems(viewModel.update());
   }
 
   @FXML private void goBack()
@@ -65,6 +65,7 @@ public class ShowEventListViewController  //
   }
   @FXML private void showParticipants()
   {
+    EventViewModel selectedItem = eventListTable.getSelectionModel().getSelectedItem();
     viewHandler.openView("eventParticipants");
   }
   @FXML private void removeEvent()
@@ -78,13 +79,14 @@ public class ShowEventListViewController  //
     {
       Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
-          selectedItem.getEventDescriptionProperty().get());
+          selectedItem.getEventDescriptionProperty().get(),
+          selectedItem.getEventDateProperty().get());
 
 
       model.removeEvent(event);
       viewModel.remove(event);
       eventListTable.getSelectionModel().clearSelection();
-
+      viewModel.update();
 
     }
   }
@@ -103,6 +105,5 @@ public class ShowEventListViewController  //
         "Removing user {" + selectedItem.getEventNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
-
   }
 }

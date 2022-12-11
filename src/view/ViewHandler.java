@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import model.BBCmodel;
@@ -29,6 +30,10 @@ public class ViewHandler
   private ShowEventParticipantsViewController showEventParticipantsViewController; //
   private CreateAnEventViewController CreateAnEventViewController; //
   private AddParticipantViewController addParticipantViewController;
+
+  private ShowReservationViewController showReservationViewController; //
+  private CreateAReservationViewController createAReservationViewController;
+
   public ViewHandler(BBCmodel model)
   {
     this.model = model;
@@ -80,21 +85,23 @@ public class ViewHandler
       case "addParticipant" :
         root = loadAddParticipantViewController("AddParticipantViewController.fxml");
         break;
-
+      case "reservations" :
+        root = loadShowReservationViewController("ShowReservationViewController.fxml");
+        break;
+      case "createAReservation" :
+        root = loadCreateAReservationViewController("CreateAReservationViewController.fxml");
+        break;
     }
     currentScene.setRoot(root);
-    String title = "";
-    if (root.getUserData() != null)
-    {
-      title += root.getUserData();
-    }
-    primaryStage.setTitle(title);
+    primaryStage.setTitle("BBC");
+    primaryStage.getIcons().add(new Image("/view/Logo_300x300.png"));
     primaryStage.setScene(currentScene);
     primaryStage.setWidth(root.getPrefWidth());
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
     currentScene.setRoot(root);
     primaryStage.show();
+    primaryStage.setResizable(false);
   }
 
 
@@ -102,6 +109,8 @@ public class ViewHandler
   public void start(Stage primaryStage)
   {
     this.primaryStage = primaryStage;
+    primaryStage.setResizable(false);
+    primaryStage.setTitle("BBC");
     openView("main");
   }
   public void closeView()
@@ -417,5 +426,52 @@ public class ViewHandler
       addParticipantViewController.reset();
     }
     return addParticipantViewController.getRoot();
+  }
+
+  private Region loadShowReservationViewController(String fxmlFile)
+  {
+    if(showReservationViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        showReservationViewController = loader.getController();
+        showReservationViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      showReservationViewController.reset();
+    }
+    return showReservationViewController.getRoot();
+  }
+  private Region loadCreateAReservationViewController(String fxmlFile)
+  {
+    if(createAReservationViewController == null)
+
+
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        createAReservationViewController = loader.getController();
+        createAReservationViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    else
+    {
+      createAReservationViewController.reset();
+    }
+    return createAReservationViewController.getRoot();
   }
 }

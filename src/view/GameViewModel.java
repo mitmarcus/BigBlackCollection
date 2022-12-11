@@ -6,7 +6,7 @@ public class GameViewModel //
 
   private StringProperty gameNameProperty;
   private IntegerProperty noOfPlayersProperty;
-  private ObjectProperty ratingProperty;
+  private IntegerProperty ratingProperty;
   private ObjectProperty ownerProperty;
 
 
@@ -14,7 +14,7 @@ public class GameViewModel //
   {
     gameNameProperty = new SimpleStringProperty(game.getNameOfGame());
     noOfPlayersProperty = new SimpleIntegerProperty(game.getNoOfPlayers());
-    ratingProperty = new SimpleObjectProperty(game.getRating());
+    ratingProperty = new SimpleIntegerProperty(game.getRating());
     ownerProperty = new SimpleObjectProperty(game.getOwner().getFirstName());
   }
 
@@ -31,7 +31,7 @@ public class GameViewModel //
   }
 
 
-  public ObjectProperty getRatingPropertyProperty()
+  public IntegerProperty getRatingPropertyProperty()
   {
     return ratingProperty;
   }

@@ -37,7 +37,7 @@
          <Button mnemonicParsing="false" text="Remove Participant" />
       </children>
    </HBox>
-    <TableView prefHeight="310.0" prefWidth="357.0">
+    <TableView fx:id="participantListTable" prefHeight="310.0" prefWidth="357.0">
         <columns>
             <TableColumn fx:id="nameColumn" prefWidth="131.99993896484375" text="Name" />
             <TableColumn fx:id="phoneColumn" prefWidth="112.800048828125" text="Phone" />

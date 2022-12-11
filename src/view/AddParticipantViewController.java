@@ -13,6 +13,7 @@ public class AddParticipantViewController //
   private BBCmodel model;
   private ViewHandler viewHandler;
   private UserlistViewModel viewModel;
+
   @FXML private TableView<UserViewModel> userListTable;
   @FXML private TableColumn<UserViewModel, String> nameColumn;
 

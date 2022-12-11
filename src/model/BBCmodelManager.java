@@ -11,6 +11,7 @@ public class BBCmodelManager implements BBCmodel
   private GameList gameList; //GAME LIST
 
   private EventList eventList;
+  private GameReservationList reservationList;
   private UserList participantsList;
 
   public BBCmodelManager()
@@ -18,6 +19,7 @@ public class BBCmodelManager implements BBCmodel
     userList = new UserList();
     guestList = new UserList();
     gameList = new GameList();
+    reservationList = new GameReservationList();
     eventList = new EventList();
     participantsList = new UserList();
 
@@ -34,38 +36,71 @@ public class BBCmodelManager implements BBCmodel
           userList.addUser(Jakub);
           userList.addUser(Marcus);
 
-      //DummyData for Guest list sdasdsadsadasasdadsdas
+      //DummyData for Guest list
 
-   /* User Filip = new User("Filip", "asdadw", 91757485, false);
+    User Filip = new User("Filip", "asdadw", 91757485, false);
     User Duarte = new User("Jorge", "Duarte", 91696968, false);
     User Stephen = new User("Stephen", "oasdasi", 91696969, false);
-    guestList.addUser(Filip);
-    guestList.addUser(Duarte);
-    guestList.addUser(Stephen);*/
+    guestList.addGuest(Filip);
+    guestList.addGuest(Duarte);
+    guestList.addGuest(Stephen);
 
 
-    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
-    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
+
+      //DummyData for Events
+    LocalDate date11 =  LocalDate.parse("2022-12-26");
+    LocalDate date22 =  LocalDate.parse("2022-12-28");
+    LocalDate date33 =  LocalDate.parse("2022-12-30");
+
+    Event e1 = new Event("Chess Tournament", "VIA", "Tournament only Available for members" ,date11);
+    Event e2 = new Event("Checkers Tournament", "VIA", "Tournament only Available for members" , date22);
     eventList.addEvent(e1);
     eventList.addEvent(e2);
 
+    //DummyData for Games
+
+    Game g = new Game("Checkers", 2, Ricardo  );
+    Game h = new Game ("Chess", 2, Jakub);
+    gameList.addGame(g);
+    gameList.addGame(h);
+
+
+
+    //DummyData for GameReservations
+    LocalDate date1 =  LocalDate.parse("2022-12-26");
+    LocalDate date2 =  LocalDate.parse("2022-12-28");
+    LocalDate date3 =  LocalDate.parse("2022-12-30");
+
+    GameReservation game = new GameReservation("Ricardo", "Checkers",date1 , date2);
+    GameReservation game1 = new GameReservation("Marcus", "Chess", date1, date3);
+    reservationList.addReservation(game);
+    reservationList.addReservation(game1);
+
+    //System.out.println(game);
 
 
 
 
 
 
+    //MEMBERS AND GUEST CODE
 
   }
   @Override public void addUser(User user)
   {
     userList.addUser(user);
   }
+  @Override public void addGuest(User guest)
+  {
+    guestList.addGuest(guest);
+  }
 
   @Override public void removeUser(User user)
   {
     userList.removeUser(user);
   }
+
+  @Override public void removeGuest(User guest){guestList.removeGuest(guest);}
 
   @Override public void editMember(User user, User user1)
   {
@@ -82,6 +117,21 @@ public class BBCmodelManager implements BBCmodel
       }
     }
     return null;
+  }
+
+  @Override public User getUserByFullName(String fullName)
+  {
+    return userList.getUserByFullName(fullName);
+  }
+
+  @Override public User getGuestByFullName(String fullName)
+  {
+    return guestList.getGuestByFullName(fullName);
+  }
+
+  @Override public User getUserByPhoneNumber(Long phoneNumber)
+  {
+    return userList.getUserByPhone(phoneNumber);
   }
   @Override public User getUser(int index)
   {
@@ -103,7 +153,7 @@ public class BBCmodelManager implements BBCmodel
   }
   @Override public int getGuestListSize()
   {
-    return guestList.size();
+    return guestList.guestSize();
   }
 
 
@@ -119,10 +169,7 @@ public class BBCmodelManager implements BBCmodel
 
 
 
-  @Override public void addGuest(User guest)
-  {
-    guestList.addGuest(guest);
-  }
+//Event Code
 
   @Override public int getEventListSize()
   {
@@ -143,7 +190,33 @@ public class BBCmodelManager implements BBCmodel
     eventList.addEvent(event);
   }
 
-  //MEMBERS AND GUEST CODE
+
+
+  //Reservation code
+
+  @Override
+  public int getReservationListSize() {
+    return reservationList.getReservationListSize();
+  }
+
+  @Override
+  public GameReservation getReservation(int index) {
+    return reservationList.getReservationByIndex(index);
+  }
+
+  @Override
+  public void addReservation(GameReservation reservation) {
+    reservationList.addReservation(reservation);
+  }
+
+
+  @Override public void removeReservation(GameReservation reservation)
+  {
+    reservationList.removeReservation(reservation);
+  }
+
+
+
 
 
   //GAMES CODE
@@ -156,6 +229,16 @@ public class BBCmodelManager implements BBCmodel
   @Override public void editGame()
   {
 
+  }
+
+  @Override public Game getGameByName(String name)
+  {
+    return gameList.getGameByName(name);
+  }
+
+  @Override public Game getGameByOwner(String owner)
+  {
+    return gameList.getGameByOwner(owner);
   }
 
   @Override public Game getGame(Game game)

@@ -1,4 +1,6 @@
 package model;
+import model.User;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -10,12 +12,12 @@ public class Event {
   private LocalDate date;
   private ArrayList<User> participantList;
 
-  public Event(String title, String location, String description, LocalDate date)
+  public Event(String title, String location, String description, Object date)
   {
     this.title = title;
     this.location = location;
     this.description = description;
-    this.date = date;
+    this.date =  (LocalDate) date;
     participantList = new ArrayList<User>();
   }
 
@@ -25,6 +27,11 @@ public class Event {
     setLocation(location);
     setDescription(description);
   }
+
+  //Jakub test for utils
+	public Event(String test_title, String horsens, String description, int i, int i1) {
+	}
+
 
   public void addParticipant(User participant)
   {
@@ -71,9 +78,6 @@ public class Event {
     return description;
   }
 
-  public void setDate(LocalDate date)
-  {
-    this.date = date;}
 
   public void setLocation(String location)
   {
@@ -88,6 +92,14 @@ public class Event {
   public void setDescription(String description)
   {
     this.description = description;
+  }
+
+  @Override public boolean equals(Object obj){
+    if ((obj == null) || (obj.getClass() != this.getClass())) {
+      return false;
+    }
+    Event other = (Event) obj;
+    return (title.equals(other.title) && location.equals(other.location) && description.equals(other.description) && date.equals(other.date));
   }
 
 }

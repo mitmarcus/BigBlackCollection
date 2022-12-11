@@ -47,7 +47,8 @@ public class GuestListViewModel  //
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if (list.get(i).getFullNameProperty().get().equals(user.getFullName()) && (Long)list.get(i).getPhoneProperty().get()== user.getPhoneNumber())
+      if ((list.get(i).getFullNameProperty().get().equals(user.getFullName()) && Long.parseLong(
+        String.valueOf(list.get(i).getPhoneProperty().get()))== user.getPhoneNumber()))
       {
         list.remove(i);
 

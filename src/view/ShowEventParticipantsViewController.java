@@ -1,15 +1,10 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.Event;
-import model.User;
-import model.UserList;
 
 public class ShowEventParticipantsViewController
 {
@@ -18,7 +13,7 @@ public class ShowEventParticipantsViewController
   private ViewHandler viewHandler;
   private EventParticipantsViewModel viewModel;
 
-  @FXML private TableView<EventParticipantsViewModel> participantListTable;
+  @FXML private TableView<UserViewModel> participantListTable;
   @FXML private TableColumn<UserViewModel, String> nameColumn;
   @FXML private TableColumn<UserViewModel, Number> phoneColumn;
   @FXML private TableColumn<UserViewModel, String> statusColumn;

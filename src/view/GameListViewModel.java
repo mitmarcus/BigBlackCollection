@@ -19,9 +19,6 @@ public class GameListViewModel  //
     list = FXCollections.observableArrayList();
   }
 
-
-
-
   public ObservableList<GameViewModel> update()  //Code For updating table of games
   {
     ArrayList<Game> games = new ArrayList<>();

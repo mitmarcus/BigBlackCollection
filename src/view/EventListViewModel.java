@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
 import model.Event;
-import model.EventList;
 
 import java.util.ArrayList;
 
@@ -31,8 +30,8 @@ public class EventListViewModel  //
     }
     list.clear();
     for (int j = 0; j< events.size(); j++)
-    {
-      list.add(new EventViewModel(events.get(j))); // I HAVE TO CHANGE THIS
+   {
+     list.add(new EventViewModel(events.get(j)));
     }
     return list;
   }
@@ -41,10 +40,7 @@ public class EventListViewModel  //
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if (list.get(i).getEventNameProperty().equals(event.getTitle()) &&
-          list.get(i).getEventPlaceProperty().equals(event.getLocation()) &&
-          list.get(i).getEventDateProperty().equals(event.getDate()) &&
-          list.get(i).getEventDescriptionProperty().equals(event.getDescription()))
+      if (list.get(i).equals(event))
       {
         list.remove(i);
         break;

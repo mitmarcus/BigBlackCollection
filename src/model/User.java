@@ -71,13 +71,24 @@ public class User {
     this.lastName = lastName;
   }
 
+  public void setFullName(String fullname)
+  {
+    this.firstName = fullname.split(" ")[0];
+    this.lastName = fullname.split(" ")[1];
+  }
+
   public void setPhoneNumber(long phoneNumber)
   {
     this.phoneNumber = phoneNumber;
   }
 
-//  public String toString()
-//  {
-//
-//  }
+  @Override public boolean equals(Object obj)
+  {
+    if (obj == null || obj.getClass()!=getClass())
+    {
+      return false;
+    }
+    User other = (User)obj;
+    return firstName.equals(other.firstName) && lastName.equals(other.lastName) && phoneNumber==other.phoneNumber && isMember == other.isMember;
+  }
 }

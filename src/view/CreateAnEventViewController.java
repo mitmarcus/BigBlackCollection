@@ -8,9 +8,6 @@ import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Event;
 
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-
 public class CreateAnEventViewController //
 {
   private Region root;

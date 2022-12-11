@@ -15,7 +15,7 @@
             <Button onAction="#confirmAdd" mnemonicParsing="false" text="Add" />
          </children>
       </HBox>
-      <TableView prefHeight="408.0" prefWidth="246.0">
+      <TableView fx:id="userListTable" prefHeight="408.0" prefWidth="246.0">
         <columns>
           <TableColumn prefWidth="244.7999939084053" text="Users" />
         </columns>

@@ -6,8 +6,12 @@ public interface BBCmodel
 {
   void addUser(User user);
   void removeUser(User user);
+  void removeGuest(User guest);
   void editMember(User user, User user1);
   User getUser(User user);
+  User getUserByFullName(String fullName);
+  User getGuestByFullName(String fullName);
+  User getUserByPhoneNumber(Long phoneNumber);
   User getUser(int index);
   User getGuest(User guest);
   User getGuestByIndex(int index);
@@ -26,7 +30,8 @@ public interface BBCmodel
 
    void addGame (Game game);
    void editGame();
-   Game getGame(Game game);
+  Game getGameByOwner(String owner);
+  Game getGame(Game game);
   UserList getParticipantsList();
   int getGameListSize();
   void removeGame(Game game);
@@ -39,4 +44,13 @@ public interface BBCmodel
   ArrayList<User> getParticipantList();
   User getParticipants(int i);
   void addEvent(Event event);
+
+
+  //CODE FOR RESERVATION
+  int getReservationListSize();
+  GameReservation getReservation(int i);
+  void addReservation(GameReservation reservation);
+
+  void removeReservation(GameReservation reservation);
+  Game getGameByName(String name);
 }
