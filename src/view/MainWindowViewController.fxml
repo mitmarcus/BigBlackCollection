@@ -13,7 +13,7 @@
          <children>
             <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Logo_300x300.png" />
+                  <Image url="@../../../../../Documents/GitHub/BigBlackCollection/src/view/Logo_300x300.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="20.0" top="70.0" />
