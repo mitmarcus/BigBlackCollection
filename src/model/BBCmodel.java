@@ -30,7 +30,8 @@ public interface BBCmodel
 
    void addGame (Game game);
    void editGame();
-   Game getGame(Game game);
+  Game getGameByOwner(String owner);
+  Game getGame(Game game);
   UserList getParticipantsList();
   int getGameListSize();
   void removeGame(Game game);
@@ -51,4 +52,5 @@ public interface BBCmodel
   void addReservation(GameReservation reservation);
 
   void removeReservation(GameReservation reservation);
+  Game getGameByName(String name);
 }

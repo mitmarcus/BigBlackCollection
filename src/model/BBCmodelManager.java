@@ -52,8 +52,8 @@ public class BBCmodelManager implements BBCmodel
     LocalDate date22 =  LocalDate.parse("2022-12-28");
     LocalDate date33 =  LocalDate.parse("2022-12-30");
 
-    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,date11);
-    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , date22);
+    Event e1 = new Event("Chess Tournament", "VIA", "Tournament only Available for members" ,date11);
+    Event e2 = new Event("Checkers Tournament", "VIA", "Tournament only Available for members" , date22);
     eventList.addEvent(e1);
     eventList.addEvent(e2);
 
@@ -83,7 +83,7 @@ public class BBCmodelManager implements BBCmodel
 
 
 
-
+    //MEMBERS AND GUEST CODE
 
   }
   @Override public void addUser(User user)
@@ -169,7 +169,7 @@ public class BBCmodelManager implements BBCmodel
 
 
 
-
+//Event Code
 
   @Override public int getEventListSize()
   {
@@ -189,6 +189,10 @@ public class BBCmodelManager implements BBCmodel
   {
     eventList.addEvent(event);
   }
+
+
+
+  //Reservation code
 
   @Override
   public int getReservationListSize() {
@@ -210,7 +214,9 @@ public class BBCmodelManager implements BBCmodel
   {
     reservationList.removeReservation(reservation);
   }
-  //MEMBERS AND GUEST CODE
+
+
+
 
 
   //GAMES CODE
@@ -223,6 +229,16 @@ public class BBCmodelManager implements BBCmodel
   @Override public void editGame()
   {
 
+  }
+
+  @Override public Game getGameByName(String name)
+  {
+    return gameList.getGameByName(name);
+  }
+
+  @Override public Game getGameByOwner(String owner)
+  {
+    return gameList.getGameByOwner(owner);
   }
 
   @Override public Game getGame(Game game)
