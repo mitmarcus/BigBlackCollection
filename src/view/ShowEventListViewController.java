@@ -44,7 +44,7 @@ public class ShowEventListViewController  //
     eventDescription.setCellValueFactory(
         cellData -> cellData.getValue().getEventDescriptionProperty());
     eventListTable.setItems(viewModel.getList());
-    viewModel.update();
+    reset();
   }
 
   public Region getRoot()
@@ -52,7 +52,7 @@ public class ShowEventListViewController  //
     return root;
   }
   public void reset() {
-    viewModel.update();
+    eventListTable.setItems(viewModel.update());
   }
 
   @FXML private void goBack()
@@ -77,7 +77,7 @@ public class ShowEventListViewController  //
 
     if (remove)
     {
-      /*Event event = new Event(selectedItem.getEventNameProperty().get(),
+      Event event = new Event(selectedItem.getEventNameProperty().get(),
           selectedItem.getEventPlaceProperty().get(),
           selectedItem.getEventDescriptionProperty().get(),
           selectedItem.getEventDateProperty().get());
@@ -85,7 +85,8 @@ public class ShowEventListViewController  //
 
       model.removeEvent(event);
       viewModel.remove(event);
-     */ eventListTable.getSelectionModel().clearSelection();
+      eventListTable.getSelectionModel().clearSelection();
+      viewModel.update();
 
     }
   }

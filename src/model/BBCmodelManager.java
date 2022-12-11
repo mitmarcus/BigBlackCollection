@@ -45,18 +45,33 @@ public class BBCmodelManager implements BBCmodel
     guestList.addGuest(Duarte);
     guestList.addGuest(Stephen);
 
-     /* Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,null);
-    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , null);
-    eventList.addEvent(e1);
-    eventList.addEvent(e2); */
 
+
+      //DummyData for Events
+    LocalDate date11 =  LocalDate.parse("2022-12-26");
+    LocalDate date22 =  LocalDate.parse("2022-12-28");
+    LocalDate date33 =  LocalDate.parse("2022-12-30");
+
+    Event e1 = new Event("Drena", "VIA", "dfodsngsodnsdodu" ,date11);
+    Event e2 = new Event("Ddana", "Vsd", "dsdadu" , date22);
+    eventList.addEvent(e1);
+    eventList.addEvent(e2);
+
+    //DummyData for Games
+
+    Game g = new Game("Checkers", 2, Ricardo  );
+    Game h = new Game ("Chess", 2, Jakub);
+    gameList.addGame(g);
+    gameList.addGame(h);
+
+
+
+    //DummyData for GameReservations
     LocalDate date1 =  LocalDate.parse("2022-12-26");
     LocalDate date2 =  LocalDate.parse("2022-12-28");
     LocalDate date3 =  LocalDate.parse("2022-12-30");
 
-
-
-    GameReservation game = new GameReservation("Ricardo", "checkers",date1 , date2);
+    GameReservation game = new GameReservation("Ricardo", "Checkers",date1 , date2);
     GameReservation game1 = new GameReservation("Marcus", "Chess", date1, date3);
     reservationList.addReservation(game);
     reservationList.addReservation(game1);
