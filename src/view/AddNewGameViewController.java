@@ -58,7 +58,7 @@ public class AddNewGameViewController //
     {
       User user1 = model.getUser(i);
       Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()),
-          user1);
+          user1, 0);
       model.addGame(game);
       viewHandler.openView("games");
       break;

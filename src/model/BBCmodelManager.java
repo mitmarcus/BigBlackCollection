@@ -59,8 +59,8 @@ public class BBCmodelManager implements BBCmodel
 
     //DummyData for Games
 
-    Game g = new Game("Checkers", 2, Ricardo  );
-    Game h = new Game ("Chess", 2, Jakub);
+    Game g = new Game("Checkers", 2, Ricardo,0  );
+    Game h = new Game ("Chess", 2, Jakub,1);
     gameList.addGame(g);
     gameList.addGame(h);
 

@@ -49,6 +49,7 @@ public class ShowAllGamesViewController //
 
     ratingColumn.setCellValueFactory(
         cellData -> cellData.getValue().getRatingPropertyProperty());
+    ratingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
 
 
     playersColumn.setCellValueFactory(
@@ -92,15 +93,12 @@ public class ShowAllGamesViewController //
         if (model.getUser(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
         {
           Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i));
+              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i), selectedItem.getRatingPropertyProperty().get());
           model.removeGame(game);
           gameListTable.getSelectionModel().clearSelection();
           System.out.println("working");
         }
-
-
         //viewModel.remove(user);
-
       }
 
     }
@@ -142,6 +140,13 @@ public class ShowAllGamesViewController //
     GameViewModel game = gameListTable.getSelectionModel().getSelectedItem();
     Game game1 = model.getGameByName(game.getGameNamePropertyProperty().get());
     game1.setNoOfPlayers((Integer.parseInt(String.valueOf(gameViewModelNumberCellEditEvent.getNewValue()))));
+  }
+
+  public void editRatingScore(TableColumn.CellEditEvent<GameViewModel,Number> gameViewModelNumberCellEditEvent)
+  {
+    GameViewModel game = gameListTable.getSelectionModel().getSelectedItem();
+    Game game1 = model.getGameByName(game.getGameNamePropertyProperty().get());
+    game1.setRatingScore((Integer.parseInt(String.valueOf(gameViewModelNumberCellEditEvent.getNewValue()))));
   }
 
 
