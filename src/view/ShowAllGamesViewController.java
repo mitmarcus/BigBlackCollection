@@ -14,7 +14,6 @@ import java.util.Optional;
 
 public class ShowAllGamesViewController //
 {
-
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;

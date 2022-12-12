@@ -33,6 +33,7 @@ public class AddNewGameViewController //
 
     reset();
   }
+
   public Region getRoot()
   {
     return root;
