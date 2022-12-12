@@ -20,7 +20,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="50.0" minWidth="-Infinity">
+      <HBox alignment="CENTER" minHeight="70.0" minWidth="-Infinity">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="List of Reservations" textAlignment="CENTER" wrappingWidth="800.42138671875">
                <font>
