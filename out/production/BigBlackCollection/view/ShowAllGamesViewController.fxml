@@ -45,11 +45,6 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#editGame" prefWidth="100.0" text="Edit">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
@@ -58,7 +53,7 @@
             <TableView fx:id="gameListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
                   <TableColumn fx:id="nameColumn" onEditCommit="#editGameName" prefWidth="120.0" text="Name" />
-                  <TableColumn fx:id="ownerColumn"  prefWidth="129.60003662109375" text="Owner" />
+                  <TableColumn fx:id="ownerColumn" prefWidth="129.60003662109375" text="Owner" />
                   <TableColumn fx:id="ratingColumn" prefWidth="123.20001220703125" text="Rating" />
                   <TableColumn fx:id="playersColumn" onEditCommit="#editNoOfPlayers" prefWidth="131.99990844726562" text="Players" />
                </columns>
