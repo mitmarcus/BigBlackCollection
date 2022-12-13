@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class GameListViewModel  //
 {
   private ObservableList<GameViewModel> list;
-
   private BBCmodel model;
 
   public GameListViewModel(BBCmodel model)

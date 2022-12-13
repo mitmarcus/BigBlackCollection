@@ -8,14 +8,14 @@ public class Game
   private String nameOfGame;
   private int noOfPlayers;
   private User owner;
-  private ArrayList<Integer> rating;
+  private int rating;
 
-  public Game(String nameOfGame, int noOfPlayers , User owner)
+  public Game(String nameOfGame, int noOfPlayers , User owner, int rating)
   {
     this.nameOfGame = nameOfGame;
     this.noOfPlayers = noOfPlayers;
-    rating = new ArrayList<Integer>();
     this.owner = owner;
+    this.rating = rating;
   }
 
   public String getNameOfGame()
@@ -52,29 +52,18 @@ public class Game
     this.noOfPlayers = noOfPlayers;
   }
 
-  public void addRating(int rating)
+  public int getRating()
   {
-    this.rating.add(rating);
+    return rating;
   }
 
-  public String getRating()
+  public void setRatingScore(int rating)
   {
-    if (rating == null)
-      return "0";
-
-    int sum = 0;
-    for (int i = 0; i < rating.size(); i++)
+    if (rating > 0 && rating < 6)
     {
-      sum += rating.get(i);
+      this.rating = rating;
     }
-    double m = (double) sum / rating.size();
-
-    DecimalFormat df = new DecimalFormat("0.00");
-
-    return String.valueOf(df.format(m));
   }
-
-
 
   public boolean gameBelongsToAssociation(Game game)
   {

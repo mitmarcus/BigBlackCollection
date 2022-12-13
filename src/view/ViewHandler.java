@@ -109,8 +109,6 @@ public class ViewHandler
   public void start(Stage primaryStage)
   {
     this.primaryStage = primaryStage;
-    primaryStage.setResizable(false);
-    primaryStage.setTitle("BBC");
     openView("main");
   }
   public void closeView()

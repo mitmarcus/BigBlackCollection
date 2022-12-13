@@ -9,7 +9,6 @@ public class UserViewModel  //
   private StringProperty lastNameProperty;
   private LongProperty phoneProperty;
   private StringProperty fullNameProperty;
-
   private StringProperty statusProperty;
 
 

@@ -19,18 +19,30 @@ public class GameList
   {
     games.remove(game);
   }
-  public ArrayList<Game> getGamesByOwner(User user)
+
+  public Game getGameByName(String name)
   {
-    ArrayList<Game> gamesByUser = new ArrayList<Game>();
-    for(int i = 0; i<games.size(); i++)
+    for (int i = 0 ; i < games.size(); i ++)
     {
-      if(games.get(i).getOwner() == (user))
+      if (games.get(i).getNameOfGame().equals(name))
+        return games.get(i);
+    }
+    return null;
+  }
+
+  public Game getGameByOwner(String owner)
+  {
+    for (int i = 0 ; i < games.size(); i++)
+    {
+      if (games.get(i).getOwner().getFirstName()==owner)
       {
-        gamesByUser.add(games.get(i));
+        return games.get(i);
       }
     }
-    return gamesByUser;
+    return null;
   }
+
+
 
   public int getGamesListSize()
   {

@@ -13,7 +13,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button onAction="#goBack" mnemonicParsing="false" text="Return to main menu" />
+            <Button mnemonicParsing="false" onAction="#goBack" text="Return to main menu" />
          </children>
          <padding>
             <Insets left="45.0" />
@@ -35,19 +35,14 @@
          <children>
             <VBox minWidth="-Infinity" prefHeight="0.0" prefWidth="120.0">
                <children>
-                  <Button onAction="#addGame" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Add new">
+                  <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#addGame" prefWidth="100.0" text="Add new">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button onAction="#removeGame" layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Remove">
+                  <Button layoutX="20.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeGame" prefWidth="100.0" text="Remove">
                      <VBox.margin>
                         <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button onAction="#editGame" layoutX="20.0" layoutY="36.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Edit">
-                     <VBox.margin>
-                        <Insets />
                      </VBox.margin>
                   </Button>
                </children>
@@ -57,10 +52,10 @@
             </VBox>
             <TableView fx:id="gameListTable" prefHeight="230.0" prefWidth="680.0">
                <columns>
-                  <TableColumn fx:id="nameColumn" prefWidth="120.0" text="Name" />
+                  <TableColumn fx:id="nameColumn" onEditCommit="#editGameName" prefWidth="120.0" text="Name" />
                   <TableColumn fx:id="ownerColumn" prefWidth="129.60003662109375" text="Owner" />
-                  <TableColumn fx:id="ratingColumn" prefWidth="123.20001220703125" text="Rating" />
-                  <TableColumn fx:id="playersColumn" prefWidth="131.99990844726562" text="Players" />
+                  <TableColumn fx:id="ratingColumn" onEditCommit="#editRatingScore" prefWidth="123.20001220703125" text="Rating" />
+                  <TableColumn fx:id="playersColumn" onEditCommit="#editNoOfPlayers" prefWidth="131.99990844726562" text="Players" />
                </columns>
             </TableView>
          </children>

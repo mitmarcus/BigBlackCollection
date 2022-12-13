@@ -3,15 +3,17 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.Region;
+import javafx.util.converter.IntegerStringConverter;
+import javafx.util.converter.NumberStringConverter;
 import model.*;
 
 import java.util.Optional;
 
 public class ShowAllGamesViewController //
 {
-
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;
@@ -35,14 +37,24 @@ public class ShowAllGamesViewController //
     this.root = root;
     this.viewModel = new GameListViewModel(model);
 
+    gameListTable.setEditable(true);
+
    nameColumn.setCellValueFactory(
         cellData -> cellData.getValue().getGameNamePropertyProperty());
+    nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
     ownerColumn.setCellValueFactory(
         cellData -> cellData.getValue().getOwnerPropertyProperty());
+
+
     ratingColumn.setCellValueFactory(
         cellData -> cellData.getValue().getRatingPropertyProperty());
+    ratingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+
+
     playersColumn.setCellValueFactory(
         cellData -> cellData.getValue().getNoOfPlayersPropertyProperty());
+    playersColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
 
     gameListTable.setItems(viewModel.getList());
     viewModel.update();
@@ -81,15 +93,12 @@ public class ShowAllGamesViewController //
         if (model.getUser(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
         {
           Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i));
+              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i), selectedItem.getRatingPropertyProperty().get());
           model.removeGame(game);
           gameListTable.getSelectionModel().clearSelection();
           System.out.println("working");
         }
-
-
         //viewModel.remove(user);
-
       }
 
     }
@@ -118,4 +127,28 @@ public class ShowAllGamesViewController //
     return ((result.isPresent()) && (result.get() == ButtonType.OK)) ;
 
   }
+
+  public void editGameName(TableColumn.CellEditEvent<GameViewModel,String> gameViewModelStringCellEditEvent)
+  {
+    GameViewModel game = gameListTable.getSelectionModel().getSelectedItem();
+    Game game1 = model.getGameByName(game.getGameNamePropertyProperty().get());
+    game1.setNameOfGame((gameViewModelStringCellEditEvent.getNewValue()));
+  }
+
+  public void editNoOfPlayers(TableColumn.CellEditEvent<GameViewModel,Number> gameViewModelNumberCellEditEvent)
+  {
+    GameViewModel game = gameListTable.getSelectionModel().getSelectedItem();
+    Game game1 = model.getGameByName(game.getGameNamePropertyProperty().get());
+    game1.setNoOfPlayers((Integer.parseInt(String.valueOf(gameViewModelNumberCellEditEvent.getNewValue()))));
+  }
+
+  public void editRatingScore(TableColumn.CellEditEvent<GameViewModel,Number> gameViewModelNumberCellEditEvent)
+  {
+    GameViewModel game = gameListTable.getSelectionModel().getSelectedItem();
+    Game game1 = model.getGameByName(game.getGameNamePropertyProperty().get());
+    game1.setRatingScore((Integer.parseInt(String.valueOf(gameViewModelNumberCellEditEvent.getNewValue()))));
+  }
+
+
+
 }
