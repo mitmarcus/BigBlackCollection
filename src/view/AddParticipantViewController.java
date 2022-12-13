@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
+import model.User;
 import model.UserList;
 
 public class AddParticipantViewController //
@@ -32,7 +33,7 @@ public class AddParticipantViewController //
     nameColumn.setCellValueFactory(
         cellData -> cellData.getValue().getFullNameProperty());
     userListTable.setItems(viewModel.getList());
-    viewModel.update();
+    reset();
   }
 
   public Region getRoot()
@@ -46,11 +47,17 @@ public class AddParticipantViewController //
     viewHandler.openView("eventParticipants");
   }
   public void reset() {
-    viewModel.update();
+    userListTable.setItems(viewModel.update());
   }
   @FXML private void confirmAdd()
   {
     UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
+    User user = new User(selectedItem.getFirstNameProperty().get(),
+        selectedItem.getLastNameProperty().get(),
+        selectedItem.getPhoneProperty().get(), true);
+    model.addParticipant(user);
+    viewModel.update();
+    viewHandler.openView("events");
 
   }
 

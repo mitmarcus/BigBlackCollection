@@ -17,7 +17,7 @@
       </HBox>
       <TableView fx:id="userListTable" prefHeight="408.0" prefWidth="246.0">
         <columns>
-          <TableColumn prefWidth="244.7999939084053" text="Users" />
+          <TableColumn fx:id="nameColumn" prefWidth="244.7999939084053" text="Users" />
         </columns>
       </TableView>
    </children>
