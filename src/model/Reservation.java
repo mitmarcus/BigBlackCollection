@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDate;
 
 /**
- * A class that stores the reservation
+ * A class that stores the Reservation
  *
  * @author Marcus Mitelea
  */

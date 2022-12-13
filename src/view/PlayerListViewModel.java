@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class PlayerListViewModel  //
 {
-  private ObservableList<UserViewModel> list;
+  private ObservableList<PlayerViewModel> list;
 
   private BBCmodel model;
 
@@ -17,11 +17,11 @@ public class PlayerListViewModel  //
   list =FXCollections.observableArrayList();
   }
 
-  public ObservableList<UserViewModel> getList()
+  public ObservableList<PlayerViewModel> getList()
   {
     return list;
   }
-  public ObservableList<UserViewModel> update()  //Code For Member Table
+  public ObservableList<PlayerViewModel> update()  //Code For Member Table
   {
     ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
@@ -31,7 +31,7 @@ public class PlayerListViewModel  //
     list.clear();
     for (int j = 0; j< players.size(); j++)
     {
-      list.add(new UserViewModel(players.get(j)));
+      list.add(new PlayerViewModel(players.get(j)));
     }
     return list;
   }
@@ -53,7 +53,7 @@ public class PlayerListViewModel  //
 
   public void add(Player player)
   {
-    list.add(new UserViewModel(player));
+    list.add(new PlayerViewModel(player));
   }
 
 

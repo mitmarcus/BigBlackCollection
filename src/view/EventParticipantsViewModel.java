@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class EventParticipantsViewModel
 {
-  private ObservableList<UserViewModel> list;
+  private ObservableList<PlayerViewModel> list;
   private BBCmodel model;
 
   public EventParticipantsViewModel(BBCmodel model)
@@ -18,12 +18,12 @@ public class EventParticipantsViewModel
     list = FXCollections.observableArrayList();
   }
 
-  public ObservableList<UserViewModel> getList()
+  public ObservableList<PlayerViewModel> getList()
   {
     return list;
   }
 
-  public ObservableList<UserViewModel> update()  //Code For Member Table
+  public ObservableList<PlayerViewModel> update()  //Code For Member Table
   {
     ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
@@ -33,7 +33,7 @@ public class EventParticipantsViewModel
     list.clear();
     for (int j = 0; j< players.size(); j++)
     {
-      list.add(new UserViewModel(players.get(j)));
+      list.add(new PlayerViewModel(players.get(j)));
     }
     return list;
   }

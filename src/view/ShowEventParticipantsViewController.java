@@ -13,10 +13,10 @@ public class ShowEventParticipantsViewController
   private ViewHandler viewHandler;
   private EventParticipantsViewModel viewModel;
 
-  @FXML private TableView<UserViewModel> participantListTable;
-  @FXML private TableColumn<UserViewModel, String> nameColumn;
-  @FXML private TableColumn<UserViewModel, Number> phoneColumn;
-  @FXML private TableColumn<UserViewModel, String> statusColumn;
+  @FXML private TableView<PlayerViewModel> participantListTable;
+  @FXML private TableColumn<PlayerViewModel, String> nameColumn;
+  @FXML private TableColumn<PlayerViewModel, Number> phoneColumn;
+  @FXML private TableColumn<PlayerViewModel, String> statusColumn;
 
 
   public ShowEventParticipantsViewController()

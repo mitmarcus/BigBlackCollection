@@ -1,5 +1,10 @@
-  package model;
+package model;
 
+/**
+ * A class that stores the Player
+ *
+ * @author Marcus Mitelea
+ */
 public class Player {
     private String firstName;
     private String lastName;

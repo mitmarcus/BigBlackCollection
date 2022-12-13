@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * A class that stores the Game
+ *
+ * @author Marcus Mitelea
+ */
 public class Game
 {
     private String nameOfGame;

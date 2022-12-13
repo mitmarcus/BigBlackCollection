@@ -50,7 +50,7 @@ public class ViewHandler
         root = loadMainWindowViewController("MainWindowViewController.fxml");
         break;
       case "users":
-        root = loadUsersWindowViewController("PlayerViewController.fxml");
+        root = loadPlayersWindowViewController("PlayerViewController.fxml");
         break;
       case "member":
         root = loadMemberListWindowViewController("ShowMembersListViewController.fxml");
@@ -142,7 +142,7 @@ public class ViewHandler
     return mainWindowViewController.getRoot();
   }
 
-  private Region loadUsersWindowViewController(String fxmlFile)
+  private Region loadPlayersWindowViewController(String fxmlFile)
   {
     if(playerViewController == null)
 

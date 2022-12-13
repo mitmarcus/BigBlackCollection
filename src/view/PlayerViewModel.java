@@ -3,7 +3,7 @@ package view;
 import javafx.beans.property.*;
 import model.Player;
 
-public class UserViewModel  //
+public class PlayerViewModel  //
   {
   private StringProperty firstNameProperty;
   private StringProperty lastNameProperty;
@@ -13,7 +13,7 @@ public class UserViewModel  //
 
 
 
-  public UserViewModel(Player player)
+  public PlayerViewModel(Player player)
   {
   firstNameProperty = new SimpleStringProperty(player.getFirstName());
   lastNameProperty = new SimpleStringProperty(player.getLastName());

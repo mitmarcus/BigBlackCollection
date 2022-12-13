@@ -2,6 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * A class that stores the Game objects into a list
+ *
+ * @author Marcus Mitelea
+ */
 public class GameList {
     private ArrayList<Game> games;
 

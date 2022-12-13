@@ -19,9 +19,9 @@ public class ShowMembersListViewController //
   private BBCmodel model;
   private ViewHandler viewHandler;
   private PlayerListViewModel viewModel;
-  @FXML private TableView<UserViewModel> userListTable;
-  @FXML private TableColumn<UserViewModel, Number> phoneNumberColumn;
-  @FXML private TableColumn<UserViewModel, String> fullNameColumn;
+  @FXML private TableView<PlayerViewModel> userListTable;
+  @FXML private TableColumn<PlayerViewModel, Number> phoneNumberColumn;
+  @FXML private TableColumn<PlayerViewModel, String> fullNameColumn;
 
 
   public ShowMembersListViewController()
@@ -72,7 +72,7 @@ public class ShowMembersListViewController //
   @FXML private void removeMember()
   {
 
-    UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
+    PlayerViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
 
     boolean remove = confirmation();
 
@@ -96,7 +96,7 @@ public class ShowMembersListViewController //
   private boolean confirmation()
   {
     int index = userListTable.getSelectionModel().getSelectedIndex();
-    UserViewModel selectedItem = userListTable.getItems().get(index);
+    PlayerViewModel selectedItem = userListTable.getItems().get(index);
     if (index < 0 || index >= userListTable.getItems().size())
     {
       return false;
@@ -111,16 +111,16 @@ public class ShowMembersListViewController //
 
   }
 
-  public void editName(TableColumn.CellEditEvent<UserViewModel,String> userViewModelStringCellEditEvent)
+  public void editName(TableColumn.CellEditEvent<PlayerViewModel,String> userViewModelStringCellEditEvent)
   {
-    UserViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
+    PlayerViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
     Player player1 = model.getUserByFullName(user0.getFullNameProperty().get());
     player1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
   }
 
-  public void editPhoneNumber(TableColumn.CellEditEvent<UserViewModel,Number> userViewModelNumberCellEditEvent)
+  public void editPhoneNumber(TableColumn.CellEditEvent<PlayerViewModel,Number> userViewModelNumberCellEditEvent)
   {
-    UserViewModel user = userListTable.getSelectionModel().getSelectedItem();
+    PlayerViewModel user = userListTable.getSelectionModel().getSelectedItem();
     Player player1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
     player1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }

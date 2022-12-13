@@ -13,8 +13,8 @@ public class AddParticipantViewController //
   private ViewHandler viewHandler;
   private PlayerListViewModel viewModel;
 
-  @FXML private TableView<UserViewModel> userListTable;
-  @FXML private TableColumn<UserViewModel, String> nameColumn;
+  @FXML private TableView<PlayerViewModel> userListTable;
+  @FXML private TableColumn<PlayerViewModel, String> nameColumn;
 
   public AddParticipantViewController()
   {
@@ -49,7 +49,7 @@ public class AddParticipantViewController //
   }
   @FXML private void confirmAdd()
   {
-    UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
+    PlayerViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
     Player player = new Player(selectedItem.getFirstNameProperty().get(),
         selectedItem.getLastNameProperty().get(),
         selectedItem.getPhoneProperty().get(), true);

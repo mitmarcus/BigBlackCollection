@@ -3,10 +3,9 @@ package model;
 import java.util.ArrayList;
 
 /**
- * A class that stores information about an event
+ * A class that stores the Player objects into a member list and a guest list
  *
- * @author
- * @version 1.0
+ * @author Marcus Mitelea
  */
 public class PlayerList {
     private ArrayList<Player> memberList;
@@ -80,6 +79,6 @@ public class PlayerList {
             if (memberList.get(i).getFullName().equals(fullName))
                  return memberList.get(i);
         }
-        return null ;
+        return null;
     }
 }

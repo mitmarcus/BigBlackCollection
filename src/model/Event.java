@@ -2,8 +2,12 @@ package model;
 
 import java.time.LocalDate;
 
+/**
+ * A class that stores the Event
+ *
+ * @author Marcus Mitelea
+ */
 public class Event {
-
     private String title;
     private String location;
     private String description;

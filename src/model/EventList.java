@@ -2,6 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * A class that stores the Event objects into a list
+ *
+ * @author Marcus Mitelea
+ */
 public class EventList
 {
     private ArrayList<Event> eventList;
