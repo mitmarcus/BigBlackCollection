@@ -1,8 +1,7 @@
 package view;
 
 import javafx.beans.property.*;
-import javafx.beans.value.ObservableValue;
-import model.GameReservation;
+import model.Reservation;
 
 import java.time.LocalDate;
 
@@ -12,7 +11,7 @@ public class ReservationViewModel {
     private ObjectProperty<LocalDate> reservationDateFromProperty;
     private ObjectProperty<LocalDate> reservationDateToProperty;
 
-    public ReservationViewModel(GameReservation reservation)
+    public ReservationViewModel(Reservation reservation)
     {
         reservationBorrowerProperty = new SimpleStringProperty(reservation.lentTo().toString());
         reservationGameProperty = new SimpleStringProperty(reservation.getGame().toString());

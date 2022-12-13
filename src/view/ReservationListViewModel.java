@@ -3,7 +3,7 @@ package view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
-import model.GameReservation;
+import model.Reservation;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class ReservationListViewModel {
     }
     public ObservableList<ReservationViewModel> update()
     {
-        ArrayList<GameReservation> reservation = new ArrayList<>();
+        ArrayList<Reservation> reservation = new ArrayList<>();
         for (int i = 0; i <model.getReservationListSize(); i++)
         {
             reservation.add(model.getReservation(i));
@@ -35,7 +35,7 @@ public class ReservationListViewModel {
         return list;
     }
 
-    public void remove(GameReservation reservation)
+    public void remove(Reservation reservation)
     {
         for (int i = 0; i <list.size(); i++)
         {
@@ -46,7 +46,7 @@ public class ReservationListViewModel {
             }
         }
     }
-    public void add(GameReservation reservation)
+    public void add(Reservation reservation)
     {
         list.add(new ReservationViewModel(reservation));
     }
