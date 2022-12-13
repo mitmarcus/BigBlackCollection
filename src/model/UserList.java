@@ -1,6 +1,6 @@
 package model;
+
 import java.util.ArrayList;
-//mark
 
 public class UserList {
     private ArrayList<User> userList;
@@ -24,7 +24,14 @@ public class UserList {
     }
     public void removeGuest(User guest) {guestList.remove(guest);
     }
-
+    
+    public int size() {
+        return userList.size();
+    }
+    public int guestSize()
+    {
+        return guestList.size();
+    }
 
     public User getUserByPhone(Long phoneNumber)
     {
@@ -33,25 +40,6 @@ public class UserList {
             if (userList.get(i).getPhoneNumber() == phoneNumber)
             {
                 return userList.get(i);
-            }
-        }
-        return null;
-    }
-    public User getUser(User user){
-        for (User u : userList) {
-            if (u == user) {
-                return u;
-            }
-        }
-        return null;
-    }
-    public User getGuest(User guest)
-    {
-        for (User u :guestList)
-        {
-            if (u == guest)
-            {
-                return u;
             }
         }
         return null;
@@ -87,64 +75,5 @@ public class UserList {
                  return userList.get(i);
         }
         return null ;
-    }
-
-    public int size() {
-        return userList.size();
-    }
-    public int guestSize()
-    {
-        return guestList.size();
-    }
-
-    public long getUserPhone(User user){
-        for (User u : userList) {
-            if (u == user) {
-                return u.getPhoneNumber();
-            }
-        }
-        return 0;
-    }
-
-    public long getUserByPhone(long phoneNumber){
-        for (User u : userList) {
-            if (u.getPhoneNumber() == phoneNumber) {
-                return u.getPhoneNumber();
-            }
-        }
-        return 0;
-    }
-
-    public ArrayList<User> getMembersList() {
-        ArrayList<User> members = new ArrayList<User>();
-        for (User u : userList) {
-            if (u.isMember()) {members.add(u);}
-            }
-        return members;
-    }
-
-    public ArrayList<User> getGuestList() {
-        ArrayList<User> guests = new ArrayList<>();
-        for (User u : userList) {
-            if (!u.isMember()) {guests.add(u);}
-            }
-        return guests;
-    }
-
-    public ArrayList<User> getUserlist()
-    {
-        return userList;
-    }
-
-    //TODO: no idea if it works
-    public void setUser(User user, User user1)
-    {
-        for (int i = 0 ; i < userList.size(); i++)
-        {
-            if (user.equals(userList.get(i)))
-            {
-                user1 = userList.get(i);
-            }
-        }
     }
 }

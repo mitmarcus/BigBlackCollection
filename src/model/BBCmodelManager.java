@@ -1,7 +1,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class BBCmodelManager implements BBCmodel
 {
@@ -94,41 +93,20 @@ public class BBCmodelManager implements BBCmodel
   {
     guestList.addGuest(guest);
   }
-
   @Override public void removeUser(User user)
   {
     userList.removeUser(user);
   }
-
   @Override public void removeGuest(User guest){guestList.removeGuest(guest);}
-
-  @Override public void editMember(User user, User user1)
-  {
-    userList.setUser(user, user1);
-  }
-
-  @Override public User getUser(User user)
-  {
-    for (User user1 : userList.getUserlist())
-    {
-      if (user1.equals(user))
-      {
-        return user;
-      }
-    }
-    return null;
-  }
 
   @Override public User getUserByFullName(String fullName)
   {
     return userList.getUserByFullName(fullName);
   }
-
   @Override public User getGuestByFullName(String fullName)
   {
     return guestList.getGuestByFullName(fullName);
   }
-
   @Override public User getUserByPhoneNumber(Long phoneNumber)
   {
     return userList.getUserByPhone(phoneNumber);
@@ -136,10 +114,6 @@ public class BBCmodelManager implements BBCmodel
   @Override public User getUser(int index)
   {
     return userList.getUserByIndex(index);
-  }
-  @Override public User getGuest(User guest)
-  {
-   return guestList.getGuest(guest);
   }
   @Override public User getGuestByIndex(int index)
   {
@@ -157,19 +131,7 @@ public class BBCmodelManager implements BBCmodel
   }
 
 
-  @Override public ArrayList<User> getMemberList()
-  {
-    return userList.getMembersList();
-  }
-
-  @Override public ArrayList<User> getGuestList()
-  {
-    return null;
-  }
-
-
-
-//Event Code
+  //Event Code
 
   @Override public int getEventListSize()
   {
@@ -226,24 +188,9 @@ public class BBCmodelManager implements BBCmodel
     gameList.addGame(game);
   }
 
-  @Override public void editGame()
-  {
-
-  }
-
-  @Override public Game getGameByName(String name)
+    @Override public Game getGameByName(String name)
   {
     return gameList.getGameByName(name);
-  }
-
-  @Override public Game getGameByOwner(String owner)
-  {
-    return gameList.getGameByOwner(owner);
-  }
-
-  @Override public Game getGame(Game game)
-  {
-    return gameList.getGame(game);
   }
 
   @Override public Game getGameByIndex(int index)
@@ -265,29 +212,6 @@ public class BBCmodelManager implements BBCmodel
   {
 
   }
-
-  @Override public ArrayList<User> getParticipantList()
-  {
-    return null;
-  }
-
-  @Override public User getParticipants(int i)
-  {
-    return null;
-  }
-
-
-
-  @Override public UserList getParticipantsList()
-  {
-    return participantsList;
-  }
-
-
-
-
-
-
 
 
 }

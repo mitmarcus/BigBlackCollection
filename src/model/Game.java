@@ -1,8 +1,5 @@
 package model;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-
 public class Game
 {
   private String nameOfGame;
@@ -41,22 +38,14 @@ public class Game
   {
     this.nameOfGame = nameOfGame;
   }
-
-  public void setOwner(User owner)
-  {
-    this.owner = owner;
-  }
-
   public void setNoOfPlayers(int noOfPlayers)
   {
     this.noOfPlayers = noOfPlayers;
   }
-
   public int getRating()
   {
     return rating;
   }
-
   public void setRatingScore(int rating)
   {
     if (rating > 0 && rating < 6)
@@ -64,19 +53,6 @@ public class Game
       this.rating = rating;
     }
   }
-
-  public boolean gameBelongsToAssociation(Game game)
-  {
-    if(owner == null)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
-  }
-
 
 
 }

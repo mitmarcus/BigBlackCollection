@@ -21,18 +21,6 @@ public class EventList
     eventList.remove(event);
   }
 
-  public Event getEvent(Event event)
-  {
-    Event a = null;
-    for(int i = 0; i<eventList.size();i++)
-    {
-      if (event == eventList.get(i))
-      {
-        a = eventList.get(i);
-      }
-    }
-    return a;
-  }
   public int getEventListSize()
   {
     return eventList.size();
