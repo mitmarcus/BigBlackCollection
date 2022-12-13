@@ -21,13 +21,6 @@ public class Event {
         this.date =  (LocalDate) date;
     }
 
-    public Event(String title, String location, String description)
-    {
-        setTitle(title);
-        setLocation(location);
-        setDescription(description);
-    }
-
     public LocalDate getDate()
     {
         return date;
@@ -48,21 +41,6 @@ public class Event {
         return description;
     }
 
-
-    public void setLocation(String location)
-    {
-        this.location = location;
-    }
-
-    public void setTitle(String title)
-    {
-        this.title = title;
-    }
-
-    public void setDescription(String description)
-    {
-        this.description = description;
-    }
 
     @Override public boolean equals(Object obj){
         if ((obj == null) || (obj.getClass() != this.getClass())) {
