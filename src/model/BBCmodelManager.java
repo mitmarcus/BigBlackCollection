@@ -4,214 +4,159 @@ import java.time.LocalDate;
 
 public class BBCmodelManager implements BBCmodel
 {
-  private PlayerList playerList; //MEMBERS LIST
-  private PlayerList guestList; //GUEST LIST
+    private PlayerList playerList; //MEMBERS LIST
+    private PlayerList guestList; //GUEST LIST
+    private GameList gameList; //GAME LIST
+    private EventList eventList;
+    private ReservationList reservationList;
+    private PlayerList participantsList;
 
-  private GameList gameList; //GAME LIST
+    public BBCmodelManager()
+    {
+        playerList = new PlayerList();
+        guestList = new PlayerList();
+        gameList = new GameList();
+        reservationList = new ReservationList();
+        eventList = new EventList();
+        participantsList = new PlayerList();
+        createDummyData();
+    }
+    public void createDummyData()
+    {
 
-  private EventList eventList;
-  private GameReservationList reservationList;
-  private PlayerList participantsList;
+        //DummyData for Members List
+        Player Ricardo = new Player("Ricardo", "Fernandes", 91757485, true);
+        Player Jakub = new Player("Jacub", "Kuka", 91696968, true);
+        Player Marcus = new Player("Marcus", "Mitela", 91696969, true);
+        playerList.addUser(Ricardo);
+        playerList.addUser(Jakub);
+        playerList.addUser(Marcus);
 
-  public BBCmodelManager()
-  {
-    playerList = new PlayerList();
-    guestList = new PlayerList();
-    gameList = new GameList();
-    reservationList = new GameReservationList();
-    eventList = new EventList();
-    participantsList = new PlayerList();
-
-    createDummyData();
-  }
-  public void createDummyData()
-  {
-
-      //DummyData for Members List
-      Player Ricardo = new Player("Ricardo", "Fernandes", 91757485, true);
-      Player Jakub = new Player("Jacub", "Kuka", 91696968, true);
-      Player Marcus = new Player("Marcus", "Mitela", 91696969, true);
-          playerList.addUser(Ricardo);
-          playerList.addUser(Jakub);
-          playerList.addUser(Marcus);
-
-      //DummyData for Guest list
-
-    Player Filip = new Player("Filip", "asdadw", 91757485, false);
-    Player Duarte = new Player("Jorge", "Duarte", 91696968, false);
-    Player Stephen = new Player("Stephen", "oasdasi", 91696969, false);
-    guestList.addGuest(Filip);
-    guestList.addGuest(Duarte);
-    guestList.addGuest(Stephen);
+        //DummyData for Guest list
+        Player Filip = new Player("Filip", "asdadw", 91757485, false);
+        Player Duarte = new Player("Jorge", "Duarte", 91696968, false);
+        Player Stephen = new Player("Stephen", "oasdasi", 91696969, false);
+        guestList.addGuest(Filip);
+        guestList.addGuest(Duarte);
+        guestList.addGuest(Stephen);
 
 
 
-      //DummyData for Events
-    LocalDate date11 =  LocalDate.parse("2022-12-26");
-    LocalDate date22 =  LocalDate.parse("2022-12-28");
-    LocalDate date33 =  LocalDate.parse("2022-12-30");
+        //DummyData for Events
+        LocalDate date11 =  LocalDate.parse("2022-12-26");
+        LocalDate date22 =  LocalDate.parse("2022-12-28");
+        LocalDate date33 =  LocalDate.parse("2022-12-30");
 
-    Event e1 = new Event("Chess Tournament", "VIA", "Tournament only Available for members" ,date11);
-    Event e2 = new Event("Checkers Tournament", "VIA", "Tournament only Available for members" , date22);
-    eventList.addEvent(e1);
-    eventList.addEvent(e2);
+        Event e1 = new Event("Chess Tournament", "VIA", "Tournament only Available for members" ,date11);
+        Event e2 = new Event("Checkers Tournament", "VIA", "Tournament only Available for members" , date22);
+        eventList.addEvent(e1);
+        eventList.addEvent(e2);
 
-    //DummyData for Games
+        //DummyData for Games
 
-    Game g = new Game("Checkers", 2, Ricardo,0  );
-    Game h = new Game ("Chess", 2, Jakub,1);
-    gameList.addGame(g);
-    gameList.addGame(h);
-
-
-
-    //DummyData for GameReservations
-    LocalDate date1 =  LocalDate.parse("2022-12-26");
-    LocalDate date2 =  LocalDate.parse("2022-12-28");
-    LocalDate date3 =  LocalDate.parse("2022-12-30");
-
-    GameReservation game = new GameReservation("Ricardo", "Checkers",date1 , date2);
-    GameReservation game1 = new GameReservation("Marcus", "Chess", date1, date3);
-    reservationList.addReservation(game);
-    reservationList.addReservation(game1);
-
-    //System.out.println(game);
+        Game g = new Game("Checkers", 2, Ricardo,0  );
+        Game h = new Game ("Chess", 2, Jakub,1);
+        gameList.addGame(g);
+        gameList.addGame(h);
 
 
 
+        //DummyData for GameReservations
+        LocalDate date1 =  LocalDate.parse("2022-12-26");
+        LocalDate date2 =  LocalDate.parse("2022-12-28");
+        LocalDate date3 =  LocalDate.parse("2022-12-30");
+
+        Reservation game = new Reservation("Ricardo", "Checkers",date1 , date2);
+        Reservation game1 = new Reservation("Marcus", "Chess", date1, date3);
+        reservationList.addReservation(game);
+        reservationList.addReservation(game1);
+
+        //System.out.println(game);
+    }
+
+    @Override public void addUser(Player player) {
+        playerList.addUser(player);
+    }
+    @Override public void addGuest(Player guest) {
+        guestList.addGuest(guest);
+    }
+    @Override public void removeUser(Player player) {
+        playerList.removeUser(player);
+    }
+    @Override public void removeGuest(Player guest){guestList.removeGuest(guest);}
+
+    @Override public Player getUserByFullName(String fullName) {
+        return playerList.getUserByFullName(fullName);
+    }
+    @Override public Player getGuestByFullName(String fullName) {
+        return guestList.getGuestByFullName(fullName);
+    }
+    @Override public Player getUserByPhoneNumber(Long phoneNumber) {
+        return playerList.getUserByPhone(phoneNumber);
+    }
+    @Override public Player getUser(int index) {
+        return playerList.getUserByIndex(index);
+    }
+    @Override public Player getGuestByIndex(int index) {
+        return guestList.getGuestByIndex(index);
+    }
 
 
-
-    //MEMBERS AND GUEST CODE
-
-  }
-  @Override public void addUser(Player player)
-  {
-    playerList.addUser(player);
-  }
-  @Override public void addGuest(Player guest)
-  {
-    guestList.addGuest(guest);
-  }
-  @Override public void removeUser(Player player)
-  {
-    playerList.removeUser(player);
-  }
-  @Override public void removeGuest(Player guest){guestList.removeGuest(guest);}
-
-  @Override public Player getUserByFullName(String fullName)
-  {
-    return playerList.getUserByFullName(fullName);
-  }
-  @Override public Player getGuestByFullName(String fullName)
-  {
-    return guestList.getGuestByFullName(fullName);
-  }
-  @Override public Player getUserByPhoneNumber(Long phoneNumber)
-  {
-    return playerList.getUserByPhone(phoneNumber);
-  }
-  @Override public Player getUser(int index)
-  {
-    return playerList.getUserByIndex(index);
-  }
-  @Override public Player getGuestByIndex(int index)
-  {
-    return guestList.getGuestByIndex(index);
-  }
+    @Override public int getUserListSize() {
+        return playerList.size();
+    }
+    @Override public int getGuestListSize() {
+        return guestList.guestSize();
+    }
 
 
-  @Override public int getUserListSize()
-  {
-    return playerList.size();
-  }
-  @Override public int getGuestListSize()
-  {
-    return guestList.guestSize();
-  }
+    //Event Code
+    @Override public int getEventListSize() {
+        return eventList.getEventListSize();
+    }
+    @Override public Event getEvent(int index) {
+        return eventList.getEventByIndex(index);
+    }
+    @Override public void removeEvent(Event event) {
+        eventList.removeEvent(event);
+    }
+    @Override public void addEvent(Event event) {
+        eventList.addEvent(event);
+    }
 
 
-  //Event Code
-
-  @Override public int getEventListSize()
-  {
-    return eventList.getEventListSize();
-  }
-
-  @Override public Event getEvent(int index)
-  {
-    return eventList.getEventByIndex(index);
-  }
-
-  @Override public void removeEvent(Event event)
-  {
-    eventList.removeEvent(event);
-  }
-  @Override public void addEvent(Event event)
-  {
-    eventList.addEvent(event);
-  }
+    //Reservation code
+    @Override public int getReservationListSize() {
+        return reservationList.getReservationListSize();
+    }
+    @Override public Reservation getReservation(int index) {
+        return reservationList.getReservationByIndex(index);
+    }
+    @Override public void addReservation(Reservation reservation) {
+        reservationList.addReservation(reservation);
+    }
+    @Override public void removeReservation(Reservation reservation) {
+        reservationList.removeReservation(reservation);
+    }
 
 
+    //GAMES CODE
+    @Override public void addGame(Game game) {
+        gameList.addGame(game);
+    }
+    @Override public Game getGameByName(String name) {
+        return gameList.getGameByName(name);
+    }
+    @Override public Game getGameByIndex(int index) {
+        return gameList.getGameByIndex(index);
+    }
+    @Override public int getGameListSize() {
+        return gameList.getGamesListSize();
+    }
+    @Override public void removeGame(Game game) {
+        gameList.removeGame(game);
+    }
+    @Override public void addParticipant(Player player) {
 
-  //Reservation code
-
-  @Override
-  public int getReservationListSize() {
-    return reservationList.getReservationListSize();
-  }
-
-  @Override
-  public GameReservation getReservation(int index) {
-    return reservationList.getReservationByIndex(index);
-  }
-
-  @Override
-  public void addReservation(GameReservation reservation) {
-    reservationList.addReservation(reservation);
-  }
-
-
-  @Override public void removeReservation(GameReservation reservation)
-  {
-    reservationList.removeReservation(reservation);
-  }
-
-
-
-
-
-  //GAMES CODE
-
-  @Override public void addGame(Game game)
-  {
-    gameList.addGame(game);
-  }
-
-    @Override public Game getGameByName(String name)
-  {
-    return gameList.getGameByName(name);
-  }
-
-  @Override public Game getGameByIndex(int index)
-  {
-    return gameList.getGameByIndex(index);
-  }
-
-  @Override public int getGameListSize()
-  {
-    return gameList.getGamesListSize();
-  }
-
-  @Override public void removeGame(Game game)
-  {
-    gameList.removeGame(game);
-  }
-
-  @Override public void addParticipant(Player player)
-  {
-
-  }
-
-
+    }
 }

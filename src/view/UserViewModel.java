@@ -19,7 +19,7 @@ public class UserViewModel  //
   lastNameProperty = new SimpleStringProperty(player.getLastName());
   phoneProperty = new SimpleLongProperty(player.getPhoneNumber());
   fullNameProperty = new SimpleStringProperty(player.getFirstName() +" " + player.getLastName());
-    statusProperty = new SimpleStringProperty(player.getStatus());
+  statusProperty = new SimpleStringProperty(player.getStatus());
   }
 
 

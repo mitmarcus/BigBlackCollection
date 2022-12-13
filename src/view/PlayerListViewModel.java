@@ -5,13 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import java.util.ArrayList;
 
-public class UserlistViewModel  //
+public class PlayerListViewModel  //
 {
   private ObservableList<UserViewModel> list;
 
   private BBCmodel model;
 
-  public UserlistViewModel(BBCmodel model)
+  public PlayerListViewModel(BBCmodel model)
   {
   this.model = model;
   list =FXCollections.observableArrayList();

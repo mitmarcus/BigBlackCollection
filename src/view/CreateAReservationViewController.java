@@ -2,7 +2,6 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.*;
@@ -50,7 +49,7 @@ public class CreateAReservationViewController
 
     @FXML private void createAReservation()
     {
-        GameReservation reservation = new GameReservation(reservationBorrower.getText(), reservationGame.getText(), reservationDateFrom.getValue(),
+        Reservation reservation = new Reservation(reservationBorrower.getText(), reservationGame.getText(), reservationDateFrom.getValue(),
                 reservationDateTo.getValue());
         model.addReservation(reservation);
         viewHandler.openView("reservations");

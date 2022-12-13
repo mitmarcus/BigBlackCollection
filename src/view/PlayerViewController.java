@@ -1,18 +1,16 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-public class UserViewController       //
+public class PlayerViewController       //
 {
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;
 
 
-  public UserViewController()
+  public PlayerViewController()
   {
     // Called by FXMLLoader
   }

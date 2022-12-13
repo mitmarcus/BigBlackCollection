@@ -3,34 +3,34 @@ package model;
 import java.util.ArrayList;
 
 public class GameList {
-  private ArrayList<Game> games;
+    private ArrayList<Game> games;
 
-  public GameList()
-  {
-    games = new ArrayList<>();
-  }
-  public void addGame(Game game)
-  {
-    games.add(game);
-  }
-  public void removeGame(Game game)
-  {
-    games.remove(game);
-  }
-  public Game getGameByName(String name) {
-    for (int i = 0 ; i < games.size(); i ++)
+    public GameList()
     {
-      if (games.get(i).getNameOfGame().equals(name))
-        return games.get(i);
+        games = new ArrayList<>();
     }
-    return null;
-  }
-  public int getGamesListSize()
-  {
-    return games.size();
-  }
-  public Game getGameByIndex(int index)
-  {
-    return games.get(index);
-  }
+    public void addGame(Game game)
+    {
+        games.add(game);
+    }
+    public void removeGame(Game game)
+    {
+        games.remove(game);
+    }
+    public Game getGameByName(String name) {
+        for (int i = 0 ; i < games.size(); i ++)
+        {
+            if (games.get(i).getNameOfGame().equals(name))
+                return games.get(i);
+        }
+        return null;
+    }
+    public int getGamesListSize()
+    {
+        return games.size();
+    }
+    public Game getGameByIndex(int index)
+    {
+        return games.get(index);
+    }
 }

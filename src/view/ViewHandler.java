@@ -15,7 +15,7 @@ public class ViewHandler
   private Stage primaryStage;
   private BBCmodel model;
   private MainWindowViewController mainWindowViewController; //
-  private UserViewController userViewController;//
+  private PlayerViewController playerViewController;//
   private ShowMembersListViewController showMembersListViewController; //
   private AddMemberViewController addMemberViewController; //
   private AddGuestViewController addGuestViewController; //
@@ -50,7 +50,7 @@ public class ViewHandler
         root = loadMainWindowViewController("MainWindowViewController.fxml");
         break;
       case "users":
-        root = loadUsersWindowViewController("UserViewController.fxml");
+        root = loadUsersWindowViewController("PlayerViewController.fxml");
         break;
       case "member":
         root = loadMemberListWindowViewController("ShowMembersListViewController.fxml");
@@ -144,7 +144,7 @@ public class ViewHandler
 
   private Region loadUsersWindowViewController(String fxmlFile)
   {
-    if(userViewController == null)
+    if(playerViewController == null)
 
 
       try
@@ -152,8 +152,8 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        userViewController = loader.getController();
-        userViewController.init(this, model, root);
+        playerViewController = loader.getController();
+        playerViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -161,9 +161,9 @@ public class ViewHandler
       }
     else
     {
-      userViewController.reset();
+      playerViewController.reset();
     }
-    return userViewController.getRoot();
+    return playerViewController.getRoot();
   }
   private Region loadMemberListWindowViewController(String fxmlFile)
   {

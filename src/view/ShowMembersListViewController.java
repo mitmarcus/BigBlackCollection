@@ -18,7 +18,7 @@ public class ShowMembersListViewController //
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;
-  private UserlistViewModel viewModel;
+  private PlayerListViewModel viewModel;
   @FXML private TableView<UserViewModel> userListTable;
   @FXML private TableColumn<UserViewModel, Number> phoneNumberColumn;
   @FXML private TableColumn<UserViewModel, String> fullNameColumn;
@@ -34,7 +34,7 @@ public class ShowMembersListViewController //
     this.model = model;
     this.viewHandler = viewHandler;
     this.root = root;
-    this.viewModel = new UserlistViewModel(model);
+    this.viewModel = new PlayerListViewModel(model);
 
     userListTable.setEditable(true);
 

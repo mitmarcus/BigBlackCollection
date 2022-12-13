@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PlayerViewController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button onAction="#goBack" mnemonicParsing="false" text="Return to main menu" />
+            <Button mnemonicParsing="false" onAction="#goBack" text="Return to main menu" />
          </children>
          <VBox.margin>
             <Insets />
@@ -22,7 +22,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="160.0" prefWidth="200.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Users" textAlignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Players" textAlignment="CENTER">
                <font>
                   <Font size="25.0" />
                </font>
@@ -34,12 +34,12 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="90.0" prefWidth="200.0">
          <children>
-            <Button onAction="#showListOfMembers" layoutX="284.0" layoutY="64.0" mnemonicParsing="false" text="Show list of members">
+            <Button layoutX="284.0" layoutY="64.0" mnemonicParsing="false" onAction="#showListOfMembers" text="Show list of members">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>
             </Button>
-            <Button onAction="#showListOfGuest" layoutX="310.0" layoutY="64.0" mnemonicParsing="false" text="Show list of guests" />
+            <Button layoutX="310.0" layoutY="64.0" mnemonicParsing="false" onAction="#showListOfGuest" text="Show list of guests" />
          </children>
       </HBox>
    </children>

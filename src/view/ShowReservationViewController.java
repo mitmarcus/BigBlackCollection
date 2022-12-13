@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.Event;
-import model.GameReservation;
+import model.Reservation;
 
 import java.util.Optional;
 
@@ -71,7 +70,7 @@ public class ShowReservationViewController
 
         if (remove)
         {
-            GameReservation reservation = new GameReservation(selectedItem.getReservationBorrowerProperty().get(),
+            Reservation reservation = new Reservation(selectedItem.getReservationBorrowerProperty().get(),
                     selectedItem.getReservationGameProperty().get(),
                     selectedItem.getReservationDateFromProperty().get(), selectedItem.getReservationDateToProperty().get());
 
