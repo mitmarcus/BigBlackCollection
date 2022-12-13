@@ -3,7 +3,7 @@ package view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
-import model.User;
+import model.Player;
 
 import java.util.ArrayList;
 
@@ -25,15 +25,15 @@ public class EventParticipantsViewModel
 
   public ObservableList<UserViewModel> update()  //Code For Member Table
   {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
     {
-      users.add(model.getUser(i));
+      players.add(model.getUser(i));
     }
     list.clear();
-    for (int j = 0; j< users.size(); j++)
+    for (int j = 0; j< players.size(); j++)
     {
-      list.add(new UserViewModel(users.get(j)));
+      list.add(new UserViewModel(players.get(j)));
     }
     return list;
   }

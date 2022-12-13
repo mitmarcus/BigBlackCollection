@@ -4,10 +4,10 @@ public class Game
 {
   private String nameOfGame;
   private int noOfPlayers;
-  private User owner;
+  private Player owner;
   private int rating;
 
-  public Game(String nameOfGame, int noOfPlayers , User owner, int rating)
+  public Game(String nameOfGame, int noOfPlayers , Player owner, int rating)
   {
     this.nameOfGame = nameOfGame;
     this.noOfPlayers = noOfPlayers;
@@ -20,7 +20,7 @@ public class Game
     return nameOfGame;
   }
 
-  public User getOwner()
+  public Player getOwner()
   {
     return owner;
   }

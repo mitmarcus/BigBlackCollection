@@ -4,23 +4,23 @@ import java.time.LocalDate;
 
 public class BBCmodelManager implements BBCmodel
 {
-  private UserList userList; //MEMBERS LIST
-  private UserList guestList; //GUEST LIST
+  private PlayerList playerList; //MEMBERS LIST
+  private PlayerList guestList; //GUEST LIST
 
   private GameList gameList; //GAME LIST
 
   private EventList eventList;
   private GameReservationList reservationList;
-  private UserList participantsList;
+  private PlayerList participantsList;
 
   public BBCmodelManager()
   {
-    userList = new UserList();
-    guestList = new UserList();
+    playerList = new PlayerList();
+    guestList = new PlayerList();
     gameList = new GameList();
     reservationList = new GameReservationList();
     eventList = new EventList();
-    participantsList = new UserList();
+    participantsList = new PlayerList();
 
     createDummyData();
   }
@@ -28,18 +28,18 @@ public class BBCmodelManager implements BBCmodel
   {
 
       //DummyData for Members List
-      User Ricardo = new User("Ricardo", "Fernandes", 91757485, true);
-      User Jakub = new User("Jacub", "Kuka", 91696968, true);
-      User Marcus = new User("Marcus", "Mitela", 91696969, true);
-          userList.addUser(Ricardo);
-          userList.addUser(Jakub);
-          userList.addUser(Marcus);
+      Player Ricardo = new Player("Ricardo", "Fernandes", 91757485, true);
+      Player Jakub = new Player("Jacub", "Kuka", 91696968, true);
+      Player Marcus = new Player("Marcus", "Mitela", 91696969, true);
+          playerList.addUser(Ricardo);
+          playerList.addUser(Jakub);
+          playerList.addUser(Marcus);
 
       //DummyData for Guest list
 
-    User Filip = new User("Filip", "asdadw", 91757485, false);
-    User Duarte = new User("Jorge", "Duarte", 91696968, false);
-    User Stephen = new User("Stephen", "oasdasi", 91696969, false);
+    Player Filip = new Player("Filip", "asdadw", 91757485, false);
+    Player Duarte = new Player("Jorge", "Duarte", 91696968, false);
+    Player Stephen = new Player("Stephen", "oasdasi", 91696969, false);
     guestList.addGuest(Filip);
     guestList.addGuest(Duarte);
     guestList.addGuest(Stephen);
@@ -85,37 +85,37 @@ public class BBCmodelManager implements BBCmodel
     //MEMBERS AND GUEST CODE
 
   }
-  @Override public void addUser(User user)
+  @Override public void addUser(Player player)
   {
-    userList.addUser(user);
+    playerList.addUser(player);
   }
-  @Override public void addGuest(User guest)
+  @Override public void addGuest(Player guest)
   {
     guestList.addGuest(guest);
   }
-  @Override public void removeUser(User user)
+  @Override public void removeUser(Player player)
   {
-    userList.removeUser(user);
+    playerList.removeUser(player);
   }
-  @Override public void removeGuest(User guest){guestList.removeGuest(guest);}
+  @Override public void removeGuest(Player guest){guestList.removeGuest(guest);}
 
-  @Override public User getUserByFullName(String fullName)
+  @Override public Player getUserByFullName(String fullName)
   {
-    return userList.getUserByFullName(fullName);
+    return playerList.getUserByFullName(fullName);
   }
-  @Override public User getGuestByFullName(String fullName)
+  @Override public Player getGuestByFullName(String fullName)
   {
     return guestList.getGuestByFullName(fullName);
   }
-  @Override public User getUserByPhoneNumber(Long phoneNumber)
+  @Override public Player getUserByPhoneNumber(Long phoneNumber)
   {
-    return userList.getUserByPhone(phoneNumber);
+    return playerList.getUserByPhone(phoneNumber);
   }
-  @Override public User getUser(int index)
+  @Override public Player getUser(int index)
   {
-    return userList.getUserByIndex(index);
+    return playerList.getUserByIndex(index);
   }
-  @Override public User getGuestByIndex(int index)
+  @Override public Player getGuestByIndex(int index)
   {
     return guestList.getGuestByIndex(index);
   }
@@ -123,7 +123,7 @@ public class BBCmodelManager implements BBCmodel
 
   @Override public int getUserListSize()
   {
-    return userList.size();
+    return playerList.size();
   }
   @Override public int getGuestListSize()
   {
@@ -208,7 +208,7 @@ public class BBCmodelManager implements BBCmodel
     gameList.removeGame(game);
   }
 
-  @Override public void addParticipant(User user)
+  @Override public void addParticipant(Player player)
   {
 
   }

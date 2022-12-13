@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
 import model.Game;
-import model.User;
+import model.Player;
 
 public class AddNewGameViewController //
 {
@@ -56,9 +56,9 @@ public class AddNewGameViewController //
   {
     if (model.getUser(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
     {
-      User user1 = model.getUser(i);
+      Player player1 = model.getUser(i);
       Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()),
-          user1, 0);
+              player1, 0);
       model.addGame(game);
       viewHandler.openView("games");
       break;

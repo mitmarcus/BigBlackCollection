@@ -4,7 +4,7 @@ import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.User;
+import model.Player;
 
 public class GuestViewModel   //
   {
@@ -15,12 +15,12 @@ public class GuestViewModel   //
 
 
 
-  public GuestViewModel(User user)
+  public GuestViewModel(Player player)
   {
-  firstNameProperty = new SimpleStringProperty(user.getFirstName());
-  lastNameProperty = new SimpleStringProperty(user.getLastName());
-  phoneProperty = new SimpleLongProperty(user.getPhoneNumber());
-  fullNameProperty = new SimpleStringProperty(user.getFirstName() +" " + user.getLastName());
+  firstNameProperty = new SimpleStringProperty(player.getFirstName());
+  lastNameProperty = new SimpleStringProperty(player.getLastName());
+  phoneProperty = new SimpleLongProperty(player.getPhoneNumber());
+  fullNameProperty = new SimpleStringProperty(player.getFirstName() +" " + player.getLastName());
   }
 
   public StringProperty getFirstNameProperty()

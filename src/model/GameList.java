@@ -2,15 +2,13 @@ package model;
 
 import java.util.ArrayList;
 
-public class GameList
-{
+public class GameList {
   private ArrayList<Game> games;
 
   public GameList()
   {
-    games = new ArrayList<Game>();
+    games = new ArrayList<>();
   }
-
   public void addGame(Game game)
   {
     games.add(game);

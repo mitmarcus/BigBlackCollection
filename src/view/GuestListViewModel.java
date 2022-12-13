@@ -3,7 +3,7 @@ package view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.BBCmodel;
-import model.User;
+import model.Player;
 
 import java.util.ArrayList;
 
@@ -27,15 +27,15 @@ public class GuestListViewModel  //
 
   public ObservableList<GuestViewModel> update()  //Code For guesttable
   {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getGuestListSize(); i++)
     {
-      users.add(model.getGuestByIndex(i));
+      players.add(model.getGuestByIndex(i));
     }
     list.clear();
-    for (int j = 0; j< users.size(); j++)
+    for (int j = 0; j< players.size(); j++)
     {
-      list.add(new GuestViewModel(users.get(j)));
+      list.add(new GuestViewModel(players.get(j)));
     }
     return list;
   }
@@ -43,12 +43,12 @@ public class GuestListViewModel  //
 
 
 
-  public void remove(User user)
+  public void remove(Player player)
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if ((list.get(i).getFullNameProperty().get().equals(user.getFullName()) && Long.parseLong(
-        String.valueOf(list.get(i).getPhoneProperty().get()))== user.getPhoneNumber()))
+      if ((list.get(i).getFullNameProperty().get().equals(player.getFullName()) && Long.parseLong(
+        String.valueOf(list.get(i).getPhoneProperty().get()))== player.getPhoneNumber()))
       {
         list.remove(i);
 
@@ -57,9 +57,9 @@ public class GuestListViewModel  //
     }
   }
 
-  public void add(User user)
+  public void add(Player player)
   {
-    list.add(new GuestViewModel(user));
+    list.add(new GuestViewModel(player));
   }
 
 

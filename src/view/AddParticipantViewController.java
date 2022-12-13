@@ -1,12 +1,10 @@
 package view;
 
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.User;
-import model.UserList;
+import model.Player;
 
 public class AddParticipantViewController //
 {
@@ -52,10 +50,10 @@ public class AddParticipantViewController //
   @FXML private void confirmAdd()
   {
     UserViewModel selectedItem = userListTable.getSelectionModel().getSelectedItem();
-    User user = new User(selectedItem.getFirstNameProperty().get(),
+    Player player = new Player(selectedItem.getFirstNameProperty().get(),
         selectedItem.getLastNameProperty().get(),
         selectedItem.getPhoneProperty().get(), true);
-    model.addParticipant(user);
+    model.addParticipant(player);
     viewModel.update();
     viewHandler.openView("events");
 

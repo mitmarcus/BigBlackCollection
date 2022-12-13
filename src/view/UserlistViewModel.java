@@ -1,5 +1,5 @@
 package view;
-import model.User;
+import model.Player;
 import model.BBCmodel;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
@@ -23,27 +23,27 @@ public class UserlistViewModel  //
   }
   public ObservableList<UserViewModel> update()  //Code For Member Table
   {
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getUserListSize(); i++)
     {
-      users.add(model.getUser(i));
+      players.add(model.getUser(i));
     }
     list.clear();
-    for (int j = 0; j< users.size(); j++)
+    for (int j = 0; j< players.size(); j++)
     {
-      list.add(new UserViewModel(users.get(j)));
+      list.add(new UserViewModel(players.get(j)));
     }
     return list;
   }
 
 
 
-  public void remove(User user)
+  public void remove(Player player)
   {
     for (int i = 0; i <list.size(); i++)
     {
-      if (list.get(i).getFullNameProperty().get().equals(user.getFullName()) && Long.parseLong(
-          String.valueOf(list.get(i).getPhoneProperty().get()))== user.getPhoneNumber())
+      if (list.get(i).getFullNameProperty().get().equals(player.getFullName()) && Long.parseLong(
+          String.valueOf(list.get(i).getPhoneProperty().get()))== player.getPhoneNumber())
       {
         list.remove(i);
         break;
@@ -51,9 +51,9 @@ public class UserlistViewModel  //
     }
   }
 
-  public void add(User user)
+  public void add(Player player)
   {
-    list.add(new UserViewModel(user));
+    list.add(new UserViewModel(player));
   }
 
 

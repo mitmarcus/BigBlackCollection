@@ -1,13 +1,10 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.BBCmodel;
-import model.User;
-import model.UserList;
+import model.Player;
 
 public class EditMemberViewController
 {
@@ -54,9 +51,9 @@ public class EditMemberViewController
   }
   @FXML private void editMember()
   {
-    User user = new User(firstNameText.getText(), lastNameText.getText(),
+    Player player = new Player(firstNameText.getText(), lastNameText.getText(),
         Long.parseLong(phoneText.getText()), true);
-    model.addUser(user);
+    model.addUser(player);
     viewHandler.openView("member");
 
 

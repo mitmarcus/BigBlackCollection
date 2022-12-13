@@ -8,12 +8,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Region;
-import javafx.util.converter.IntegerStringConverter;
-import javafx.util.converter.LongStringConverter;
 import javafx.util.converter.NumberStringConverter;
 import model.BBCmodel;
-import model.User;
-import model.UserList;
+import model.Player;
 
 
 public class ShowMembersListViewController //
@@ -81,12 +78,12 @@ public class ShowMembersListViewController //
 
     if (remove)
     {
-      User user = new User(selectedItem.getFirstNameProperty().get(),
+      Player player = new Player(selectedItem.getFirstNameProperty().get(),
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), true);
 
-      model.removeUser(user);
-      viewModel.remove(user);
+      model.removeUser(player);
+      viewModel.remove(player);
       userListTable.getSelectionModel().clearSelection();
 
     }
@@ -117,14 +114,14 @@ public class ShowMembersListViewController //
   public void editName(TableColumn.CellEditEvent<UserViewModel,String> userViewModelStringCellEditEvent)
   {
     UserViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
-    User user1 = model.getUserByFullName(user0.getFullNameProperty().get());
-    user1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
+    Player player1 = model.getUserByFullName(user0.getFullNameProperty().get());
+    player1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
   }
 
   public void editPhoneNumber(TableColumn.CellEditEvent<UserViewModel,Number> userViewModelNumberCellEditEvent)
   {
     UserViewModel user = userListTable.getSelectionModel().getSelectedItem();
-    User user1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
-    user1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
+    Player player1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
+    player1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }
 }

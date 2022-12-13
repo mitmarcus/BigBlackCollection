@@ -2,20 +2,20 @@ package model;
 
 public interface BBCmodel
 {
-  void addUser(User user);
-  void removeUser(User user);
-  void removeGuest(User guest);
+  void addUser(Player player);
+  void removeUser(Player player);
+  void removeGuest(Player guest);
 
-  User getUserByFullName(String fullName);
-  User getGuestByFullName(String fullName);
-  User getUserByPhoneNumber(Long phoneNumber);
-  User getUser(int index);
+  Player getUserByFullName(String fullName);
+  Player getGuestByFullName(String fullName);
+  Player getUserByPhoneNumber(Long phoneNumber);
+  Player getUser(int index);
 
-  User getGuestByIndex(int index);
+  Player getGuestByIndex(int index);
   int getUserListSize();
   int getGuestListSize();
 
-  void addGuest(User guest);
+  void addGuest(Player guest);
   int getEventListSize();
   Event getEvent(int i);
   void removeEvent(Event event);
@@ -28,7 +28,7 @@ public interface BBCmodel
   int getGameListSize();
   void removeGame(Game game);
   Game getGameByIndex(int index);
-  void addParticipant(User user);
+  void addParticipant(Player player);
 
 
   void addEvent(Event event);

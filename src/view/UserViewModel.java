@@ -1,7 +1,7 @@
 package view;
 
 import javafx.beans.property.*;
-import model.User;
+import model.Player;
 
 public class UserViewModel  //
   {
@@ -13,13 +13,13 @@ public class UserViewModel  //
 
 
 
-  public UserViewModel(User user)
+  public UserViewModel(Player player)
   {
-  firstNameProperty = new SimpleStringProperty(user.getFirstName());
-  lastNameProperty = new SimpleStringProperty(user.getLastName());
-  phoneProperty = new SimpleLongProperty(user.getPhoneNumber());
-  fullNameProperty = new SimpleStringProperty(user.getFirstName() +" " + user.getLastName());
-    statusProperty = new SimpleStringProperty(user.getStatus());
+  firstNameProperty = new SimpleStringProperty(player.getFirstName());
+  lastNameProperty = new SimpleStringProperty(player.getLastName());
+  phoneProperty = new SimpleLongProperty(player.getPhoneNumber());
+  fullNameProperty = new SimpleStringProperty(player.getFirstName() +" " + player.getLastName());
+    statusProperty = new SimpleStringProperty(player.getStatus());
   }
 
 

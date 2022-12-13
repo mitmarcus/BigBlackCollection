@@ -2,13 +2,11 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.Region;
 import javafx.util.converter.NumberStringConverter;
 import model.BBCmodel;
-import model.User;
+import model.Player;
 
 
 import java.util.Optional;
@@ -81,12 +79,12 @@ public class ShowGuestsListViewController //
 
     if (remove)
     {
-      User user = new User(selectedItem.getFirstNameProperty().get(),
+      Player player = new Player(selectedItem.getFirstNameProperty().get(),
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), false);
 
-      model.removeGuest(user);
-      viewModel.remove(user);
+      model.removeGuest(player);
+      viewModel.remove(player);
       userListTable.getSelectionModel().clearSelection();
 
     }
@@ -120,15 +118,15 @@ public class ShowGuestsListViewController //
   public void editName(TableColumn.CellEditEvent<UserViewModel,String> userViewModelStringCellEditEvent)
   {
     GuestViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
-    User user1 = model.getGuestByFullName (user0.getFullNameProperty().get());
-    user1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
+    Player player1 = model.getGuestByFullName (user0.getFullNameProperty().get());
+    player1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
   }
 
   public void editPhoneNumber(TableColumn.CellEditEvent<UserViewModel,Number> userViewModelNumberCellEditEvent)
   {
     GuestViewModel user = userListTable.getSelectionModel().getSelectedItem();
-    User user1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
-    user1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
+    Player player1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
+    player1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }
 }
 
