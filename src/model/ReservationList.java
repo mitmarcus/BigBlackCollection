@@ -37,10 +37,20 @@ public class ReservationList {
         reservationList.remove(reservation);
     }
 
-
+    /**
+     * Get the number of reservations in the list as an integer
+     *
+     * @return integer representing the number of reservations in the list
+     */
     public int getReservationListSize() {
         return reservationList.size();
     }
+
+    /**
+     * Get Reservation object from the list at a specific index
+     *
+     * @return Reservation object at index
+     */
     public Reservation getReservationByIndex(int index)
     {
         return reservationList.get(index);

@@ -36,7 +36,7 @@ public interface BBCmodel
 
     //CODE FOR RESERVATION
     int getReservationListSize();
-    Reservation getReservation(int i);
+    Reservation getReservationByIndex(int i);
     void addReservation(Reservation reservation);
 
     void removeReservation(Reservation reservation);

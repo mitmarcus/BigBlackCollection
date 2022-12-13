@@ -25,7 +25,7 @@ public class ReservationListViewModel {
         ArrayList<Reservation> reservation = new ArrayList<>();
         for (int i = 0; i <model.getReservationListSize(); i++)
         {
-            reservation.add(model.getReservation(i));
+            reservation.add(model.getReservationByIndex(i));
         }
         list.clear();
         for (int j = 0; j< reservation.size(); j++)

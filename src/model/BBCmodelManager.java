@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class BBCmodelManager implements BBCmodel
 {
-    private PlayerList playerList; //MEMBERS LIST
+    private PlayerList memberList; //MEMBERS LIST
     private PlayerList guestList; //GUEST LIST
     private GameList gameList; //GAME LIST
     private EventList eventList;
@@ -13,7 +13,7 @@ public class BBCmodelManager implements BBCmodel
 
     public BBCmodelManager()
     {
-        playerList = new PlayerList();
+        memberList = new PlayerList();
         guestList = new PlayerList();
         gameList = new GameList();
         reservationList = new ReservationList();
@@ -28,9 +28,9 @@ public class BBCmodelManager implements BBCmodel
         Player Ricardo = new Player("Ricardo", "Fernandes", 91757485, true);
         Player Jakub = new Player("Jacub", "Kuka", 91696968, true);
         Player Marcus = new Player("Marcus", "Mitela", 91696969, true);
-        playerList.addUser(Ricardo);
-        playerList.addUser(Jakub);
-        playerList.addUser(Marcus);
+        memberList.addUser(Ricardo);
+        memberList.addUser(Jakub);
+        memberList.addUser(Marcus);
 
         //DummyData for Guest list
         Player Filip = new Player("Filip", "asdadw", 91757485, false);
@@ -74,28 +74,32 @@ public class BBCmodelManager implements BBCmodel
         //System.out.println(game);
     }
 
+    //MEMBERS AND GUESTS CODE
     @Override public void addUser(Player player) {
-        playerList.addUser(player);
+        memberList.addUser(player);
     }
     @Override public void addGuest(Player guest) {
         guestList.addGuest(guest);
     }
     @Override public void removeUser(Player player) {
-        playerList.removeUser(player);
+        memberList.removeUser(player);
     }
-    @Override public void removeGuest(Player guest){guestList.removeGuest(guest);}
+    @Override public void removeGuest(Player guest){
+        guestList.removeGuest(guest);
+    }
+
 
     @Override public Player getUserByFullName(String fullName) {
-        return playerList.getUserByFullName(fullName);
+        return memberList.getUserByFullName(fullName);
     }
     @Override public Player getGuestByFullName(String fullName) {
         return guestList.getGuestByFullName(fullName);
     }
     @Override public Player getUserByPhoneNumber(Long phoneNumber) {
-        return playerList.getUserByPhone(phoneNumber);
+        return memberList.getUserByPhone(phoneNumber);
     }
     @Override public Player getUser(int index) {
-        return playerList.getUserByIndex(index);
+        return memberList.getUserByIndex(index);
     }
     @Override public Player getGuestByIndex(int index) {
         return guestList.getGuestByIndex(index);
@@ -103,7 +107,7 @@ public class BBCmodelManager implements BBCmodel
 
 
     @Override public int getUserListSize() {
-        return playerList.size();
+        return memberList.size();
     }
     @Override public int getGuestListSize() {
         return guestList.guestSize();
@@ -117,11 +121,11 @@ public class BBCmodelManager implements BBCmodel
     @Override public Event getEvent(int index) {
         return eventList.getEventByIndex(index);
     }
-    @Override public void removeEvent(Event event) {
-        eventList.removeEvent(event);
-    }
     @Override public void addEvent(Event event) {
         eventList.addEvent(event);
+    }
+    @Override public void removeEvent(Event event) {
+        eventList.removeEvent(event);
     }
 
 
@@ -129,7 +133,7 @@ public class BBCmodelManager implements BBCmodel
     @Override public int getReservationListSize() {
         return reservationList.getReservationListSize();
     }
-    @Override public Reservation getReservation(int index) {
+    @Override public Reservation getReservationByIndex(int index) {
         return reservationList.getReservationByIndex(index);
     }
     @Override public void addReservation(Reservation reservation) {
