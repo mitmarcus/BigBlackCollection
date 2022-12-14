@@ -103,7 +103,7 @@ public class BBCmodelManager implements BBCmodel
      * @param index the index of the Player object
      * @return Player object at index
      */
-    public Player getMember(int index) {
+    public Player getMemberByIndex(int index) {
         return memberList.getMembersByIndex(index);
     }
 
