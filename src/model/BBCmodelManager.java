@@ -179,7 +179,7 @@ public class BBCmodelManager implements BBCmodel
      * @param index the position of the Event object in the list
      * @return the Event at index if one exists, else null
      */
-    public Event getEvent(int index) {
+    public Event getEventByIndex(int index) {
         return eventList.getEventByIndex(index);
     }
 
@@ -254,6 +254,7 @@ public class BBCmodelManager implements BBCmodel
     /**
      * Get the Game object from the list using the game name
      *
+     * @param name the name of the Game
      * @return Game object with the given name
      */
     public Game getGameByName(String name) {
