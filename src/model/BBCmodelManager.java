@@ -107,7 +107,7 @@ public class BBCmodelManager implements BBCmodel
 
 
     @Override public int getUserListSize() {
-        return memberList.size();
+        return memberList.memberSize();
     }
     @Override public int getGuestListSize() {
         return guestList.guestSize();

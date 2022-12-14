@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * A class that stores the Event objects into a list
  *
- * @author Marcus Mitelea
+ * @author Duarte Jorge
  */
 public class EventList
 {
@@ -35,6 +35,4 @@ public class EventList
     {
         return eventList.get(index);
     }
-
-
 }

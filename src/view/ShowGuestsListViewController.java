@@ -9,12 +9,11 @@ import model.BBCmodel;
 import model.Player;
 
 
+import java.text.DecimalFormat;
 import java.util.Optional;
 
 public class ShowGuestsListViewController //
-
 {
-
   private Region root;
   private BBCmodel model;
   private ViewHandler viewHandler;
@@ -23,6 +22,8 @@ public class ShowGuestsListViewController //
   @FXML private TableView<GuestViewModel> userListTable;
   @FXML private TableColumn<GuestViewModel, Number> phoneNumberColumn;
   @FXML private TableColumn<GuestViewModel, String> fullNameColumn;
+
+  DecimalFormat formatter = new DecimalFormat("########");
 
   public ShowGuestsListViewController()
   {
@@ -43,7 +44,7 @@ public class ShowGuestsListViewController //
 
     phoneNumberColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
-    phoneNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+    phoneNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter(formatter)));
 
     userListTable.setItems(viewModel.getList());
       reset();

@@ -47,10 +47,19 @@ public class Game
     {
         this.noOfPlayers = noOfPlayers;
     }
+
+    /**
+     * @return the rating
+     */
     public int getRating()
     {
         return rating;
     }
+
+    /**
+     * Sets the rating of the game
+     * @param rating the rating to set for the game
+     */
     public void setRatingScore(int rating)
     {
         if (rating > 0 && rating < 6)
@@ -58,7 +67,5 @@ public class Game
             this.rating = rating;
         }
     }
-
-
 }
 

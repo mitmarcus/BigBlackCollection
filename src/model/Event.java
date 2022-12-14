@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * A class that stores the Event
  *
- * @author Marcus Mitelea
+ * @author Duarte Jorge
  */
 public class Event {
     private String title;

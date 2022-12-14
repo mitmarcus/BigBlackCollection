@@ -1,5 +1,6 @@
 package view;
 
+import java.text.DecimalFormat;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -22,6 +23,8 @@ public class ShowMembersListViewController //
   @FXML private TableView<PlayerViewModel> userListTable;
   @FXML private TableColumn<PlayerViewModel, Number> phoneNumberColumn;
   @FXML private TableColumn<PlayerViewModel, String> fullNameColumn;
+  DecimalFormat formatter = new DecimalFormat("########");
+
 
 
   public ShowMembersListViewController()
@@ -46,7 +49,7 @@ public class ShowMembersListViewController //
 
     phoneNumberColumn.setCellValueFactory(
         cellData -> cellData.getValue().getPhoneProperty());
-   phoneNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+    phoneNumberColumn.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter(formatter)));
 
     userListTable.setItems(viewModel.getList());
     reset();
