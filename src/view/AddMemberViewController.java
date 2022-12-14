@@ -52,7 +52,7 @@ public class AddMemberViewController //
     {
         Player player = new Player(firstNameText.getText(), lastNameText.getText(),
             Long.parseLong(phoneText.getText()), true);
-        model.addUser(player);
+        model.addMember(player);
         viewHandler.openView("member");
 
 

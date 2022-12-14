@@ -126,7 +126,7 @@ public class ShowGuestsListViewController //
   public void editPhoneNumber(TableColumn.CellEditEvent<PlayerViewModel,Number> userViewModelNumberCellEditEvent)
   {
     GuestViewModel user = userListTable.getSelectionModel().getSelectedItem();
-    Player player1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
+    Player player1 = model.getMemberByPhoneNumber(user.getPhoneProperty().get());
     player1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }
 }

@@ -2,11 +2,8 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.Region;
-import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.NumberStringConverter;
 import model.*;
 
@@ -88,12 +85,12 @@ public class ShowAllGamesViewController //
 
     if (remove)
     {
-      for (int i = 0 ; i < model.getUserListSize() ; i++)
+      for (int i = 0; i < model.getMemberListSize() ; i++)
       {
-        if (model.getUser(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
+        if (model.getMember(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
         {
           Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getUser(i), selectedItem.getRatingPropertyProperty().get());
+              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getMember(i), selectedItem.getRatingPropertyProperty().get());
           model.removeGame(game);
           gameListTable.getSelectionModel().clearSelection();
           System.out.println("working");

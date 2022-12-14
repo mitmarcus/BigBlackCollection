@@ -10,18 +10,39 @@ import java.util.ArrayList;
 public class GameList {
     private ArrayList<Game> games;
 
+    /**
+     * No-argument constructor initializing the list
+     */
     public GameList()
     {
         games = new ArrayList<>();
     }
+
+    /**
+     * Adds a Game to the list
+     *
+     * @param game the Game to add
+     */
     public void addGame(Game game)
     {
         games.add(game);
     }
+
+    /**
+     * Removes a Game from the list
+     *
+     * @param game the Game to remove
+     */
     public void removeGame(Game game)
     {
         games.remove(game);
     }
+
+    /**
+     * Get the Game object from the list using the game name
+     *
+     * @return Game object with the given name
+     */
     public Game getGameByName(String name) {
         for (int i = 0 ; i < games.size(); i ++)
         {
@@ -30,10 +51,22 @@ public class GameList {
         }
         return null;
     }
+
+    /**
+     * Get the number of games in the list as an integer
+     *
+     * @return integer representing the number of games in the list
+     */
     public int getGamesListSize()
     {
         return games.size();
     }
+
+    /**
+     * Get Game object from the list at a specific index
+     *
+     * @return Game object at index
+     */
     public Game getGameByIndex(int index)
     {
         return games.get(index);

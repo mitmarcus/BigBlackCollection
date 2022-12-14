@@ -45,7 +45,11 @@ public class Player {
       return lastName + "";
     }
 
-
+    /**
+     * Gets the full name from the Player
+     *
+     * @return the full name as a String
+     */
     public String getFullName()
     {
       return firstName + " " + lastName;

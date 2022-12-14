@@ -52,11 +52,11 @@ public class AddNewGameViewController //
   }
   @FXML private void addGame()
   {
-     for (int i = 0; i < model.getUserListSize(); i++)
+     for (int i = 0; i < model.getMemberListSize(); i++)
   {
-    if (model.getUser(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
+    if (model.getMember(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
     {
-      Player player1 = model.getUser(i);
+      Player player1 = model.getMember(i);
       Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()),
               player1, 0);
       model.addGame(game);

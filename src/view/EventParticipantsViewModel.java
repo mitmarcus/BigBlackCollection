@@ -26,9 +26,9 @@ public class EventParticipantsViewModel
   public ObservableList<PlayerViewModel> update()  //Code For Member Table
   {
     ArrayList<Player> players = new ArrayList<>();
-    for (int i = 0; i <model.getUserListSize(); i++)
+    for (int i = 0; i <model.getMemberListSize(); i++)
     {
-      players.add(model.getUser(i));
+      players.add(model.getMember(i));
     }
     list.clear();
     for (int j = 0; j< players.size(); j++)

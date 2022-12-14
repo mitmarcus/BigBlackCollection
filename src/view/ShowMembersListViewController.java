@@ -85,7 +85,7 @@ public class ShowMembersListViewController //
           selectedItem.getLastNameProperty().get(),
           selectedItem.getPhoneProperty().get(), true);
 
-      model.removeUser(player);
+      model.removeMember(player);
       viewModel.remove(player);
       userListTable.getSelectionModel().clearSelection();
 
@@ -117,14 +117,14 @@ public class ShowMembersListViewController //
   public void editName(TableColumn.CellEditEvent<PlayerViewModel,String> userViewModelStringCellEditEvent)
   {
     PlayerViewModel user0 = userListTable.getSelectionModel().getSelectedItem();
-    Player player1 = model.getUserByFullName(user0.getFullNameProperty().get());
+    Player player1 = model.getMemberByFullName(user0.getFullNameProperty().get());
     player1.setFullName((userViewModelStringCellEditEvent.getNewValue()));
   }
 
   public void editPhoneNumber(TableColumn.CellEditEvent<PlayerViewModel,Number> userViewModelNumberCellEditEvent)
   {
     PlayerViewModel user = userListTable.getSelectionModel().getSelectedItem();
-    Player player1 = model.getUserByPhoneNumber(user.getPhoneProperty().get());
+    Player player1 = model.getMemberByPhoneNumber(user.getPhoneProperty().get());
     player1.setPhoneNumber(Long.parseLong(String.valueOf(userViewModelNumberCellEditEvent.getNewValue())));
   }
 }

@@ -24,7 +24,7 @@ public class PlayerList {
      *
      * @param player the Player to add
      */
-    public void addUser(Player player) {
+    public void addMember(Player player) {
         memberList.add(player);
     }
 
@@ -79,7 +79,7 @@ public class PlayerList {
      *
      * @return Player object with the specified phone number
      */
-    public Player getUserByPhone(Long phoneNumber)
+    public Player getMemberByPhone(Long phoneNumber)
     {
         for (int i = 0; i< memberList.size(); i++)
         {
@@ -96,7 +96,7 @@ public class PlayerList {
      *
      * @return Player object at index
      */
-    public Player getUserByIndex(int index)
+    public Player getMembersByIndex(int index)
     {
        return memberList.get(index);
     }
@@ -133,7 +133,7 @@ public class PlayerList {
      *
      * @return Player object with the specified full name
      */
-    public Player getUserByFullName(String fullName)
+    public Player getMemberByFullName(String fullName)
     {
         for (int i = 0; i < memberList.size(); i++)
         {

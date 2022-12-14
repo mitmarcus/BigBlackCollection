@@ -12,6 +12,14 @@ public class Game
     private Player owner;
     private int rating;
 
+    /**
+     * Four-argument constructor initializing the Game
+     *
+     * @param nameOfGame  the name of the game to initialize
+     * @param noOfPlayers  the number of players to initialize
+     * @param owner  the owner to initialize
+     * @param rating  the rating to initialize
+     */
     public Game(String nameOfGame, int noOfPlayers , Player owner, int rating)
     {
         this.nameOfGame = nameOfGame;
@@ -20,29 +28,51 @@ public class Game
         this.rating = rating;
     }
 
+    /**
+     * Gets the name of the game from the Game
+     *
+     * @return the name of the game as a String
+     */
     public String getNameOfGame()
     {
         return nameOfGame;
     }
 
+    /**
+     * Gets owner of the game from the Game
+     *
+     * @return owner as a Player
+     */
     public Player getOwner()
     {
         return owner;
     }
 
-
-
+    /**
+     * Gets the number of players from the Game
+     *
+     * @return the number of players as an int
+     */
     public int getNoOfPlayers()
     {
         return noOfPlayers;
     }
 
-
-
+    /**
+     * Sets the name of the game
+     *
+     * @param nameOfGame the name of the game to set
+     */
     public void setNameOfGame(String nameOfGame)
     {
         this.nameOfGame = nameOfGame;
     }
+
+    /**
+     * Sets the number of players
+     *
+     * @param noOfPlayers the number of players to set
+     */
     public void setNoOfPlayers(int noOfPlayers)
     {
         this.noOfPlayers = noOfPlayers;

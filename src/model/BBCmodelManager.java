@@ -28,9 +28,9 @@ public class BBCmodelManager implements BBCmodel
         Player Ricardo = new Player("Ricardo", "Fernandes", 91757485, true);
         Player Jakub = new Player("Jacub", "Kuka", 91696968, true);
         Player Marcus = new Player("Marcus", "Mitela", 91696969, true);
-        memberList.addUser(Ricardo);
-        memberList.addUser(Jakub);
-        memberList.addUser(Marcus);
+        memberList.addMember(Ricardo);
+        memberList.addMember(Jakub);
+        memberList.addMember(Marcus);
 
         //DummyData for Guest list
         Player Filip = new Player("Filip", "asdadw", 91757485, false);
@@ -75,13 +75,13 @@ public class BBCmodelManager implements BBCmodel
     }
 
     //MEMBERS AND GUESTS CODE
-    @Override public void addUser(Player player) {
-        memberList.addUser(player);
+    @Override public void addMember(Player player) {
+        memberList.addMember(player);
     }
     @Override public void addGuest(Player guest) {
         guestList.addGuest(guest);
     }
-    @Override public void removeUser(Player player) {
+    @Override public void removeMember(Player player) {
         memberList.removeUser(player);
     }
     @Override public void removeGuest(Player guest){
@@ -89,24 +89,24 @@ public class BBCmodelManager implements BBCmodel
     }
 
 
-    @Override public Player getUserByFullName(String fullName) {
-        return memberList.getUserByFullName(fullName);
+    @Override public Player getMemberByFullName(String fullName) {
+        return memberList.getMemberByFullName(fullName);
     }
     @Override public Player getGuestByFullName(String fullName) {
         return guestList.getGuestByFullName(fullName);
     }
-    @Override public Player getUserByPhoneNumber(Long phoneNumber) {
-        return memberList.getUserByPhone(phoneNumber);
+    @Override public Player getMemberByPhoneNumber(Long phoneNumber) {
+        return memberList.getMemberByPhone(phoneNumber);
     }
-    @Override public Player getUser(int index) {
-        return memberList.getUserByIndex(index);
+    @Override public Player getMember(int index) {
+        return memberList.getMembersByIndex(index);
     }
     @Override public Player getGuestByIndex(int index) {
         return guestList.getGuestByIndex(index);
     }
 
 
-    @Override public int getUserListSize() {
+    @Override public int getMemberListSize() {
         return memberList.memberSize();
     }
     @Override public int getGuestListSize() {

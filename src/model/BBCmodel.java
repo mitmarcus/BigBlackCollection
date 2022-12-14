@@ -2,43 +2,39 @@ package model;
 
 public interface BBCmodel
 {
-    void addUser(Player player);
-    void removeUser(Player player);
+    //MEMBER METHODS
+    void addMember(Player player);
+    void removeMember(Player player);
+    Player getMemberByFullName(String fullName);
+    Player getMemberByPhoneNumber(Long phoneNumber);
+    Player getMember(int index);
+    int getMemberListSize();
+
+    //GUEST METHODS
+    void addGuest(Player guest);
     void removeGuest(Player guest);
-
-    Player getUserByFullName(String fullName);
     Player getGuestByFullName(String fullName);
-    Player getUserByPhoneNumber(Long phoneNumber);
-    Player getUser(int index);
-
     Player getGuestByIndex(int index);
-    int getUserListSize();
     int getGuestListSize();
 
-    void addGuest(Player guest);
+    //EVENT METHODS
     int getEventListSize();
     Event getEvent(int i);
     void removeEvent(Event event);
+    void addEvent(Event event);
+    void addParticipant(Player player);
 
-    //MEMBERS AND GUESTS CODE
-
-    //CODE FOR GAME
-
+    //GAME METHODS
     void addGame (Game game);
     int getGameListSize();
     void removeGame(Game game);
     Game getGameByIndex(int index);
-    void addParticipant(Player player);
+    Game getGameByName(String name);
 
 
-    void addEvent(Event event);
-
-
-    //CODE FOR RESERVATION
+    //RESERVATION METHODS
     int getReservationListSize();
     Reservation getReservationByIndex(int i);
     void addReservation(Reservation reservation);
-
     void removeReservation(Reservation reservation);
-    Game getGameByName(String name);
 }
