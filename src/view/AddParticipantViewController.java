@@ -53,7 +53,7 @@ public class AddParticipantViewController //
     Player player = new Player(selectedItem.getFirstNameProperty().get(),
         selectedItem.getLastNameProperty().get(),
         selectedItem.getPhoneProperty().get(), true);
-    model.addParticipant(player);
+    //model.addParticipant(player);
     viewModel.update();
     viewHandler.openView("events");
 
