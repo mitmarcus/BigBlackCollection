@@ -43,7 +43,7 @@ public class PlayerList {
      *
      * @param player the Player to remove
      */
-    public void removeUser(Player player) {
+    public void removeMember(Player player) {
         memberList.remove(player);
     }
 
