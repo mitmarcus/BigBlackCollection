@@ -22,7 +22,6 @@ public interface BBCmodel
     Event getEvent(int i);
     void removeEvent(Event event);
     void addEvent(Event event);
-    void addParticipant(Player player);
 
     //GAME METHODS
     void addGame (Game game);

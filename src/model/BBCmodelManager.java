@@ -287,8 +287,4 @@ public class BBCmodelManager implements BBCmodel
     public void removeGame(Game game) {
         gameList.removeGame(game);
     }
-
-    public void addParticipant(Player player) {
-
-    }
 }
