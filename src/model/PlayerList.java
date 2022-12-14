@@ -81,11 +81,13 @@ public class PlayerList {
      */
     public Player getMemberByPhone(Long phoneNumber)
     {
-        // 
+        // loops through the member list and returns the player with the specified phone number
         for (int i = 0; i< memberList.size(); i++) // n operations
         {
+            // checks if the phone number of the player at index i is equal to the specified phone number
             if (memberList.get(i).getPhoneNumber() == phoneNumber) // 1 operation
             {
+                // returns the player at index i
                 return memberList.get(i); // 1 operation
             }
         }
