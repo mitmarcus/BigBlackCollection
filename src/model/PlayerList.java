@@ -81,15 +81,19 @@ public class PlayerList {
      */
     public Player getMemberByPhone(Long phoneNumber)
     {
-        for (int i = 0; i< memberList.size(); i++)
+        // 
+        for (int i = 0; i< memberList.size(); i++) // n operations
         {
-            if (memberList.get(i).getPhoneNumber() == phoneNumber)
+            if (memberList.get(i).getPhoneNumber() == phoneNumber) // 1 operation
             {
-                return memberList.get(i);
+                return memberList.get(i); // 1 operation
             }
         }
-        return null;
+        return null; // 1 operation
     }
+    // T(n): 3n + 2 total operations
+    // Big O: O(n)
+
 
     /**
      * Get Player object from the member list at a specific index
