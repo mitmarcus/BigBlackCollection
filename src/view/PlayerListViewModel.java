@@ -26,7 +26,7 @@ public class PlayerListViewModel  //
     ArrayList<Player> players = new ArrayList<>();
     for (int i = 0; i <model.getMemberListSize(); i++)
     {
-      players.add(model.getMember(i));
+      players.add(model.getMemberByIndex(i));
     }
     list.clear();
     for (int j = 0; j< players.size(); j++)

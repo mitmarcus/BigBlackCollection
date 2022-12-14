@@ -87,10 +87,10 @@ public class ShowAllGamesViewController //
     {
       for (int i = 0; i < model.getMemberListSize() ; i++)
       {
-        if (model.getMember(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
+        if (model.getMemberByIndex(i).getFirstName().equals(selectedItem.getOwnerPropertyProperty().get()))
         {
           Game game = new Game(selectedItem.getGameNamePropertyProperty().get(),
-              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getMember(i), selectedItem.getRatingPropertyProperty().get());
+              selectedItem.getNoOfPlayersPropertyProperty().get(), model.getMemberByIndex(i), selectedItem.getRatingPropertyProperty().get());
           model.removeGame(game);
           gameListTable.getSelectionModel().clearSelection();
           viewModel.update();

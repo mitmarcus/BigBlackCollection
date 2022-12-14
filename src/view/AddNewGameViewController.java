@@ -54,9 +54,9 @@ public class AddNewGameViewController //
   {
      for (int i = 0; i < model.getMemberListSize(); i++)
   {
-    if (model.getMember(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
+    if (model.getMemberByIndex(i).getPhoneNumber() == Long.parseLong(ownerTextField.getText()))
     {
-      Player player1 = model.getMember(i);
+      Player player1 = model.getMemberByIndex(i);
       Game game = new Game(nameTextField.getText(), Integer.parseInt(playersTextField.getText()),
               player1, 0);
       model.addGame(game);
