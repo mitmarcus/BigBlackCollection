@@ -33,7 +33,7 @@ public class PlayerList {
      *
      * @param guest the Player to add
      */
-    public  void addGuest(Player guest)
+    public void addGuest(Player guest)
     {
         guestList.add(guest);
     }
@@ -94,6 +94,7 @@ public class PlayerList {
     /**
      * Get Player object from the member list at a specific index
      *
+     * @param index the index of the Player object in the list
      * @return Player object at index
      */
     public Player getMembersByIndex(int index)
@@ -114,6 +115,7 @@ public class PlayerList {
     /**
      * Get Player object from the guest list using the player's full name
      *
+     * @param fullName the full name of the Player object
      * @return Player object with the specified full name
      */
     public Player getGuestByFullName(String fullName)
@@ -131,6 +133,7 @@ public class PlayerList {
     /**
      * Get Player object from the member list using the player's full name
      *
+     * @param fullName the full name of the Player object
      * @return Player object with the specified full name
      */
     public Player getMemberByFullName(String fullName)

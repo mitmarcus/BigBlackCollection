@@ -41,6 +41,7 @@ public class GameList {
     /**
      * Get the Game object from the list using the game name
      *
+     * @param name the name of the game
      * @return Game object with the given name
      */
     public Game getGameByName(String name) {
@@ -65,6 +66,7 @@ public class GameList {
     /**
      * Get Game object from the list at a specific index
      *
+     * @param index the position of the Game object in the list
      * @return Game object at index
      */
     public Game getGameByIndex(int index)

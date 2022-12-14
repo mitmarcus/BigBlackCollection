@@ -49,6 +49,7 @@ public class ReservationList {
     /**
      * Get Reservation object from the list at a specific index
      *
+     * @param index the index of the Reservation object
      * @return Reservation object at index
      */
     public Reservation getReservationByIndex(int index)
