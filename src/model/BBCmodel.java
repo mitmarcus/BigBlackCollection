@@ -91,22 +91,102 @@ public interface BBCmodel
     int getGuestListSize();
 
     //EVENT METHODS
+    /**
+     * Gets the number of events in the list
+     *
+     * @return the number of events in the list as an integer
+     */
     int getEventListSize();
-    Event getEvent(int i);
-    void removeEvent(Event event);
+
+    /**
+     * Gets an Event object from position index from the list
+     *
+     * @param index the position of the Event object in the list
+     * @return the Event at index if one exists, else null
+     */
+    Event getEventByIndex(int index);
+
+    /**
+     * Adds an Event to the event list
+     *
+     * @param event the Event to add
+     */
     void addEvent(Event event);
 
-    //GAME METHODS
-    void addGame (Game game);
-    int getGameListSize();
-    void removeGame(Game game);
-    Game getGameByIndex(int index);
-    Game getGameByName(String name);
-
+    /**
+     * Removes an Event from the event list
+     *
+     * @param event the Event to remove
+     */
+    void removeEvent(Event event);
 
     //RESERVATION METHODS
+    /**
+     * Get the number of reservations in the list as an integer
+     *
+     * @return integer representing the number of reservations in the list
+     */
     int getReservationListSize();
-    Reservation getReservationByIndex(int i);
+
+    /**
+     * Get Reservation object from the list at a specific index
+     *
+     * @param index the index of the Reservation object
+     * @return Reservation object at index
+     */
+    Reservation getReservationByIndex(int index);
+
+    /**
+     * Adds a Reservation to the list
+     *
+     * @param reservation the Reservation to add
+     */
     void addReservation(Reservation reservation);
+
+    /**
+     * Removes a Reservation from the list
+     *
+     * @param reservation the Reservation to remove
+     */
     void removeReservation(Reservation reservation);
+
+
+    //GAME METHODS
+    /**
+     * Adds a Game to the list
+     *
+     * @param game the Game to add
+     */
+    void addGame (Game game);
+
+    /**
+     * Get the number of games in the list as an integer
+     *
+     * @return integer representing the number of games in the list
+     */
+    int getGameListSize();
+
+    /**
+     * Removes a Game from the list
+     *
+     * @param game the Game to remove
+     */
+    void removeGame(Game game);
+
+    /**
+     * Get Game object from the list at a specific index
+     *
+     * @param index the position of the Game object in the list
+     * @return Game object at index
+     */
+    Game getGameByIndex(int index);
+
+    /**
+     * Get the Game object from the list using the game name
+     *
+     * @param name the name of the Game
+     * @return Game object with the given name
+     */
+    Game getGameByName(String name);
+
 }

@@ -26,7 +26,7 @@ public class EventListViewModel  //
     ArrayList<Event> events = new ArrayList<>();
     for (int i = 0; i <model.getEventListSize(); i++)
     {
-      events.add(model.getEvent(i));
+      events.add(model.getEventByIndex(i));
     }
     list.clear();
     for (int j = 0; j< events.size(); j++)
