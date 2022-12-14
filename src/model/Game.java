@@ -97,5 +97,16 @@ public class Game
             this.rating = rating;
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass()!= obj.getClass())
+        {
+            return false;
+        }
+        Game other = (Game)obj;
+
+        return nameOfGame.equals(other.nameOfGame) && rating == other.rating && noOfPlayers == other.noOfPlayers && owner.equals(other.owner);
+    }
 }
 

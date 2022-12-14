@@ -93,9 +93,10 @@ public class ShowAllGamesViewController //
               selectedItem.getNoOfPlayersPropertyProperty().get(), model.getMember(i), selectedItem.getRatingPropertyProperty().get());
           model.removeGame(game);
           gameListTable.getSelectionModel().clearSelection();
-          System.out.println("working");
+          viewModel.update();
+
         }
-        //viewModel.remove(user);
+
       }
 
     }
