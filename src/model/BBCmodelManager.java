@@ -82,7 +82,7 @@ public class BBCmodelManager implements BBCmodel
         guestList.addGuest(guest);
     }
     @Override public void removeMember(Player player) {
-        memberList.removeUser(player);
+        memberList.removeMember(player);
     }
     @Override public void removeGuest(Player guest){
         guestList.removeGuest(guest);
